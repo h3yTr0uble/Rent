@@ -23,16 +23,16 @@ namespace RentDemo
             ctlIntegratedSecurity.Items.Add("False");
             ctlIntegratedSecurity.Items.Add("True");
 
-            string conString = ConfigurationManager.ConnectionStrings["TestConnectionString"].ConnectionString;
-            ConnectionStringInfo connectionString = new ConnectionStringInfo(conString);
+            string connectionString = ActualConnectionString.Get();
             WriteInTextBoxes(connectionString);
         }
 
-        private void WriteInTextBoxes(ConnectionStringInfo conString)
+        private void WriteInTextBoxes(string connectionString)
         {
+            ConnectionStringInfo conString = new ConnectionStringInfo(connectionString);
+
             txtDataSource.Text = conString.DataSource;
             txtInitialCatalog.Text = conString.InitialCatalog;
-            txtConnectionTimeout.Text = conString.ConnectionTimeout.ToString();
             if (conString.IntegratedSecurity)
             {
                 ctlIntegratedSecurity.SelectedIndex = 1;
@@ -51,12 +51,8 @@ namespace RentDemo
         {
             StringBuilder connectionString = new StringBuilder();
             connectionString.Append($"Data Source={txtDataSource.Text.ToString()};");
-            connectionString.Append($"Initial Catalog ={txtInitialCatalog.Text.ToString()};");
-            if (txtConnectionTimeout.Text != "0")
-            {
-                connectionString.Append($"Connection Timeout={txtConnectionTimeout.Text};");
-            }
-                                             
+            connectionString.Append($"Initial Catalog={txtInitialCatalog.Text.ToString()};");
+
             if (ctlIntegratedSecurity.Text == "True")
             {
                 connectionString.Append($"Integrated Security={ctlIntegratedSecurity.Text};");
@@ -70,32 +66,37 @@ namespace RentDemo
             return connectionString.ToString();
         }
 
-        private string TestConnection(string connectionString)//TODO: решить вопрос с абстракцией
+        private bool TestConnection(string connectionString, out string connectionInfo)//TODO: решить вопрос с абстракцией
         {
-            StringBuilder connectionInfo = new StringBuilder();
+            StringBuilder conInfo = new StringBuilder();
+            bool succesfulConnections;
 
             SqlConnection connection = new SqlConnection(connectionString);
             try
             {
                 connection.Open();
-                connectionInfo.AppendLine("Успешное соединение с сервером.");
+                conInfo.AppendLine("Успешное соединение с сервером.");
+                succesfulConnections = true;
             }
             catch (SqlException ex)
             {
-                connectionInfo.AppendLine("Ошибка соединения с сервером.");
+                conInfo.AppendLine("Ошибка соединения с сервером.");
                 foreach (SqlError error in ex.Errors)
                 {
-                    connectionInfo.AppendLine();
-                    connectionInfo.AppendLine("Код ошибки:" + error.Number);
-                    connectionInfo.AppendLine(error.Message);
+                    conInfo.AppendLine();
+                    conInfo.AppendLine("Код ошибки:" + error.Number);
+                    conInfo.AppendLine(error.Message);
                 }
+                succesfulConnections = false;
             }
             finally
             {
                 connection.Close();
             }
 
-            return connectionInfo.ToString();
+            connectionInfo = conInfo.ToString();
+
+            return succesfulConnections;
         }
 
         private void ctlIntegratedSecurity_SelectedIndexChanged(object sender, EventArgs e)
@@ -115,30 +116,43 @@ namespace RentDemo
         private void btnTestConnection_Click(object sender, EventArgs e)
         {
             string connectionString = CombineConStringFromTextBoxes();
-            string connectionInfo = TestConnection(connectionString);
-            MessageBox.Show(connectionInfo, "Информация о подключении", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            if (TestConnection(connectionString, out string connectionInfo))
+            {
+                MessageBox.Show(connectionInfo, "Информация о подключении", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show(connectionInfo, "Информация о подключении", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+
         }
 
-        private void txtConnectionTimeout_KeyPress(object sender, KeyPressEventArgs e)
+        private void btnCancel_Click(object sender, EventArgs e)
         {
-            char number = e.KeyChar;
+            this.Close();
+        }
 
-            if (number == 8 && txtConnectionTimeout.Text.Length == 1)
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            string connectionString = CombineConStringFromTextBoxes();
+            if (TestConnection(connectionString, out _))
             {
-                txtConnectionTimeout.Text = "0";
-                e.Handled = true;
-                return;
+                ActualConnectionString.Set(connectionString);
+                this.Close();
             }
-
-            if (!Char.IsDigit(number) && number != 8)
+            else
             {
-                e.Handled = true;
-                return;
-            }
+                string dialogMessage = string.Format($"Отсутствует подключение к серверу.\r\nПрименить настройки по умолчанию?");//какое сообщение?
 
-            if (Char.IsDigit(number) && txtConnectionTimeout.Text == "0")
-            {
-                txtConnectionTimeout.Text = "";
+                var dialogResult = MessageBox.Show(dialogMessage, 
+                                                  "Информация о подключении", 
+                                                   MessageBoxButtons.OKCancel, 
+                                                   MessageBoxIcon.Warning);
+                if (DialogResult == 0)
+                {
+                    ActualConnectionString.SetDefault();
+                    this.Close();
+                }
             }
         }
     }

@@ -13,14 +13,13 @@ namespace BLL
         public bool IntegratedSecurity { get; }
         public string UserID { get; }
         public string Password { get; }
-        public int ConnectionTimeout { get; }
 
         public ConnectionStringInfo(string conString)
         {
             char[] separator = { ';' };
-            string[] propertys = conString.Split(separator, StringSplitOptions.RemoveEmptyEntries);
+            string[] properties = conString.Split(separator, StringSplitOptions.RemoveEmptyEntries);
 
-            foreach (string property in propertys)
+            foreach (string property in properties)
             {
                 string[] values = property.Split('=');
                 switch (values[0])
@@ -39,9 +38,6 @@ namespace BLL
                         break;
                     case "Password":
                         Password = values[1];
-                        break;
-                    case "Connection Timeout":
-                        ConnectionTimeout = int.Parse(values[1]);
                         break;
                     default:
                         break;

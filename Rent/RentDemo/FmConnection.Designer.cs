@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.txtDataSource = new System.Windows.Forms.TextBox();
             this.txtInitialCatalog = new System.Windows.Forms.TextBox();
             this.txtUserID = new System.Windows.Forms.TextBox();
@@ -35,7 +36,9 @@
             this.ctlIntegratedSecurity = new System.Windows.Forms.ComboBox();
             this.btnTestConnection = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
-            this.txtConnectionTimeout = new System.Windows.Forms.TextBox();
+            this.btnCancel = new System.Windows.Forms.Button();
+            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // txtDataSource
@@ -56,7 +59,7 @@
             // 
             // txtUserID
             // 
-            this.txtUserID.Location = new System.Drawing.Point(80, 222);
+            this.txtUserID.Location = new System.Drawing.Point(80, 169);
             this.txtUserID.Name = "txtUserID";
             this.txtUserID.Size = new System.Drawing.Size(100, 22);
             this.txtUserID.TabIndex = 2;
@@ -64,7 +67,7 @@
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(80, 267);
+            this.txtPassword.Location = new System.Drawing.Point(80, 214);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(100, 22);
             this.txtPassword.TabIndex = 3;
@@ -74,7 +77,7 @@
             // ctlIntegratedSecurity
             // 
             this.ctlIntegratedSecurity.FormattingEnabled = true;
-            this.ctlIntegratedSecurity.Location = new System.Drawing.Point(80, 174);
+            this.ctlIntegratedSecurity.Location = new System.Drawing.Point(80, 121);
             this.ctlIntegratedSecurity.Name = "ctlIntegratedSecurity";
             this.ctlIntegratedSecurity.Size = new System.Drawing.Size(121, 24);
             this.ctlIntegratedSecurity.TabIndex = 4;
@@ -98,22 +101,28 @@
             this.btnSave.TabIndex = 6;
             this.btnSave.Text = "btnSave";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // txtConnectionTimeout
+            // btnCancel
             // 
-            this.txtConnectionTimeout.Location = new System.Drawing.Point(80, 129);
-            this.txtConnectionTimeout.Name = "txtConnectionTimeout";
-            this.txtConnectionTimeout.Size = new System.Drawing.Size(140, 22);
-            this.txtConnectionTimeout.TabIndex = 7;
-            this.txtConnectionTimeout.Text = "txtConnectionTimeout";
-            this.txtConnectionTimeout.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtConnectionTimeout_KeyPress);
+            this.btnCancel.Location = new System.Drawing.Point(439, 352);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(75, 23);
+            this.btnCancel.TabIndex = 7;
+            this.btnCancel.Text = "btnCancel";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
+            // errorProvider
+            // 
+            this.errorProvider.ContainerControl = this;
             // 
             // FmConnection
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(548, 446);
-            this.Controls.Add(this.txtConnectionTimeout);
+            this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnTestConnection);
             this.Controls.Add(this.ctlIntegratedSecurity);
@@ -123,6 +132,7 @@
             this.Controls.Add(this.txtDataSource);
             this.Name = "FmConnection";
             this.Text = "Настройка подключения";
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -137,6 +147,7 @@
         private System.Windows.Forms.ComboBox ctlIntegratedSecurity;
         private System.Windows.Forms.Button btnTestConnection;
         private System.Windows.Forms.Button btnSave;
-        private System.Windows.Forms.TextBox txtConnectionTimeout;
+        private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.ErrorProvider errorProvider;
     }
 }
