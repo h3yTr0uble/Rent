@@ -48,6 +48,7 @@
             this.txtDataSource.Size = new System.Drawing.Size(100, 22);
             this.txtDataSource.TabIndex = 0;
             this.txtDataSource.Text = "txtDataSource";
+            this.txtDataSource.Validating += new System.ComponentModel.CancelEventHandler(this.txtDataSource_Validating);
             // 
             // txtInitialCatalog
             // 
@@ -56,6 +57,7 @@
             this.txtInitialCatalog.Size = new System.Drawing.Size(100, 22);
             this.txtInitialCatalog.TabIndex = 1;
             this.txtInitialCatalog.Text = "txtInitialCatalog";
+            this.txtInitialCatalog.Validating += new System.ComponentModel.CancelEventHandler(this.txtInitialCatalog_Validating);
             // 
             // txtUserID
             // 
@@ -115,12 +117,14 @@
             // 
             // errorProvider
             // 
+            this.errorProvider.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.errorProvider.ContainerControl = this;
             // 
             // FmConnection
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
             this.ClientSize = new System.Drawing.Size(548, 446);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSave);

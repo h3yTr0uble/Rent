@@ -115,6 +115,11 @@ namespace RentDemo
 
         private void btnTestConnection_Click(object sender, EventArgs e)
         {
+            if (ValidateChildren() == false)
+            {
+                return;
+            }
+
             string connectionString = CombineConStringFromTextBoxes();
             if (TestConnection(connectionString, out string connectionInfo))
             {
@@ -134,6 +139,11 @@ namespace RentDemo
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            if (ValidateChildren() == false)
+            {
+                return;
+            }
+
             string connectionString = CombineConStringFromTextBoxes();
             if (TestConnection(connectionString, out _))
             {
@@ -154,6 +164,32 @@ namespace RentDemo
                     this.Close();
                 }
             }
+        }
+
+        private void String_Validating(TextBox txt, object sender, CancelEventArgs e)
+        {
+            string input = txt.Text.Trim();
+
+            if (String.IsNullOrEmpty(input) == true)
+            {
+                errorProvider.SetError(txt, "Поле не должно быть пустым!");
+                e.Cancel = true;
+            }
+            else
+            {
+                errorProvider.SetError(txt, String.Empty);
+                e.Cancel = false;
+            }
+        }
+
+        private void txtDataSource_Validating(object sender, CancelEventArgs e)
+        {
+            String_Validating(txtDataSource, sender, e);
+        }
+
+        private void txtInitialCatalog_Validating(object sender, CancelEventArgs e)
+        {
+            String_Validating(txtInitialCatalog, sender, e);
         }
     }
 }

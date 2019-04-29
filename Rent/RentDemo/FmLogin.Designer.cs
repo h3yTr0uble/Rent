@@ -58,6 +58,7 @@
             this.btnEnter.TabIndex = 2;
             this.btnEnter.Text = "btnEnter";
             this.btnEnter.UseVisualStyleBackColor = true;
+            this.btnEnter.Click += new System.EventHandler(this.btnEnter_Click);
             // 
             // btnConnection
             // 

@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FmAdminMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FmAdminMenu.Designer.cs">
+      <DependentUpon>FmAdminMenu.cs</DependentUpon>
+    </Compile>
     <Compile Include="FmConnection.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -57,6 +63,12 @@
     </Compile>
     <Compile Include="FmLogin.Designer.cs">
       <DependentUpon>FmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FmMainMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FmMainMenu.Designer.cs">
+      <DependentUpon>FmMainMenu.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
