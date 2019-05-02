@@ -28,11 +28,46 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.ctlEmployee = new System.Windows.Forms.Label();
+            this.btnClient = new System.Windows.Forms.Button();
+            this.SuspendLayout();
+            // 
+            // ctlEmployee
+            // 
+            this.ctlEmployee.AutoSize = true;
+            this.ctlEmployee.Location = new System.Drawing.Point(165, 549);
+            this.ctlEmployee.Name = "ctlEmployee";
+            this.ctlEmployee.Size = new System.Drawing.Size(84, 17);
+            this.ctlEmployee.TabIndex = 0;
+            this.ctlEmployee.Text = "ctlEmployee";
+            // 
+            // btnClient
+            // 
+            this.btnClient.Location = new System.Drawing.Point(144, 52);
+            this.btnClient.Name = "btnClient";
+            this.btnClient.Size = new System.Drawing.Size(137, 45);
+            this.btnClient.TabIndex = 1;
+            this.btnClient.Text = "btnClient";
+            this.btnClient.UseVisualStyleBackColor = true;
+            this.btnClient.Click += new System.EventHandler(this.btnClient_Click);
+            // 
+            // FmMainMenu
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(822, 575);
+            this.Controls.Add(this.btnClient);
+            this.Controls.Add(this.ctlEmployee);
+            this.Name = "FmMainMenu";
             this.Text = "FmMainMenu";
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
+
+        private System.Windows.Forms.Label ctlEmployee;
+        private System.Windows.Forms.Button btnClient;
     }
 }

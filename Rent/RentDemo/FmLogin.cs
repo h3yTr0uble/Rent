@@ -1,4 +1,6 @@
 ﻿using BLL;
+using DAL;
+using Entities;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -29,10 +31,11 @@ namespace RentDemo
 
         private void btnEnter_Click(object sender, EventArgs e)
         {
-            string login = txtLogin.Text.Trim();//Надо шифровать логин?
-            string password = MD5Hasher.GetHash(txtPassword.Text.Trim());
+            Account account = new Account();
+            account.Login = txtLogin.Text.Trim();//Надо шифровать логин?
+            account.Password = MD5Hasher.GetHash(txtPassword.Text.Trim());
 
-            if (login == adminLogin && password == adminPassword)
+            if (account.Login == adminLogin && account.Password == adminPassword)
             {
                 FmAdminMenu adminMenu = new FmAdminMenu();
                 adminMenu.Show();
@@ -40,6 +43,20 @@ namespace RentDemo
 
                 return;
             }
+
+            AccountDAO.SearchEmployee(account);
+
+            if (account.Employee != null)
+            {
+                FmMainMenu mainMenu = new FmMainMenu(account.Employee);
+                mainMenu.Show();
+                this.Hide();
+
+                return;
+            }
+
+            string loginErrorMessage = $"Ошибка входа в систему./r/nНеверные имя пользователя или пароль.";
+            MessageBox.Show(loginErrorMessage, "Ошибка входа.", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
     }
 }

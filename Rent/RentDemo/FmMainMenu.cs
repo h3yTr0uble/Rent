@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Entities;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,17 @@ namespace RentDemo
 {
     public partial class FmMainMenu : Form
     {
-        public FmMainMenu()
+        public FmMainMenu(Employee employee)
         {
             InitializeComponent();
+            ctlEmployee.Text = employee.FullName;
+        }
+
+        private void btnClient_Click(object sender, EventArgs e)
+        {
+            FmClient fmClient = new FmClient();
+            fmClient.Show();
+            this.Hide();
         }
     }
 }
