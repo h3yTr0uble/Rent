@@ -10,11 +10,18 @@ using System.Windows.Forms;
 
 namespace RentDemo
 {
-    public partial class FmClient : Form
+    public partial class FmTransport : Form
     {
-        public FmClient()
+        public FmTransport()
         {
             InitializeComponent();
+        }
+
+        private void ctlAddTransport_Click(object sender, EventArgs e)
+        {
+            FmTransportEditor fmTransportEditor = new FmTransportEditor();
+            fmTransportEditor.ShowDialog();
+
         }
     }
 }

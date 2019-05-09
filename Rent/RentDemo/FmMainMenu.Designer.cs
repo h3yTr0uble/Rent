@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.ctlEmployee = new System.Windows.Forms.Label();
-            this.btnClient = new System.Windows.Forms.Button();
+            this.btnTransport = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // ctlEmployee
@@ -41,22 +41,22 @@
             this.ctlEmployee.TabIndex = 0;
             this.ctlEmployee.Text = "ctlEmployee";
             // 
-            // btnClient
+            // btnTransport
             // 
-            this.btnClient.Location = new System.Drawing.Point(144, 52);
-            this.btnClient.Name = "btnClient";
-            this.btnClient.Size = new System.Drawing.Size(137, 45);
-            this.btnClient.TabIndex = 1;
-            this.btnClient.Text = "btnClient";
-            this.btnClient.UseVisualStyleBackColor = true;
-            this.btnClient.Click += new System.EventHandler(this.btnClient_Click);
+            this.btnTransport.Location = new System.Drawing.Point(144, 52);
+            this.btnTransport.Name = "btnTransport";
+            this.btnTransport.Size = new System.Drawing.Size(137, 45);
+            this.btnTransport.TabIndex = 1;
+            this.btnTransport.Text = "btnTransport";
+            this.btnTransport.UseVisualStyleBackColor = true;
+            this.btnTransport.Click += new System.EventHandler(this.btnClient_Click);
             // 
             // FmMainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(822, 575);
-            this.Controls.Add(this.btnClient);
+            this.Controls.Add(this.btnTransport);
             this.Controls.Add(this.ctlEmployee);
             this.Name = "FmMainMenu";
             this.Text = "FmMainMenu";
@@ -68,6 +68,6 @@
         #endregion
 
         private System.Windows.Forms.Label ctlEmployee;
-        private System.Windows.Forms.Button btnClient;
+        private System.Windows.Forms.Button btnTransport;
     }
 }

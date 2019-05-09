@@ -44,7 +44,14 @@ namespace RentDemo
                 return;
             }
 
-            AccountDAO.SearchEmployee(account);
+            //try
+            //{
+                AccountDAO.SearchEmployee(account);
+            //}
+            //catch()
+            //{
+            //    //TODO
+            //}
 
             if (account.Employee != null)
             {
@@ -55,7 +62,7 @@ namespace RentDemo
                 return;
             }
 
-            string loginErrorMessage = $"Ошибка входа в систему./r/nНеверные имя пользователя или пароль.";
+            string loginErrorMessage = $"Ошибка входа в систему.{Environment.NewLine}Неверные имя пользователя или пароль.";
             MessageBox.Show(loginErrorMessage, "Ошибка входа.", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
     }

@@ -52,11 +52,11 @@
     <Compile Include="FmAdminMenu.Designer.cs">
       <DependentUpon>FmAdminMenu.cs</DependentUpon>
     </Compile>
-    <Compile Include="FmClient.cs">
+    <Compile Include="FmTransport.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FmClient.Designer.cs">
-      <DependentUpon>FmClient.cs</DependentUpon>
+    <Compile Include="FmTransport.Designer.cs">
+      <DependentUpon>FmTransport.cs</DependentUpon>
     </Compile>
     <Compile Include="FmConnection.cs">
       <SubType>Form</SubType>
@@ -76,13 +76,19 @@
     <Compile Include="FmMainMenu.Designer.cs">
       <DependentUpon>FmMainMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="FmTransportEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FmTransportEditor.Designer.cs">
+      <DependentUpon>FmTransportEditor.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FmAdminMenu.resx">
       <DependentUpon>FmAdminMenu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FmClient.resx">
-      <DependentUpon>FmClient.cs</DependentUpon>
+    <EmbeddedResource Include="FmTransport.resx">
+      <DependentUpon>FmTransport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FmConnection.resx">
       <DependentUpon>FmConnection.cs</DependentUpon>
@@ -92,6 +98,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FmMainMenu.resx">
       <DependentUpon>FmMainMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FmTransportEditor.resx">
+      <DependentUpon>FmTransportEditor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

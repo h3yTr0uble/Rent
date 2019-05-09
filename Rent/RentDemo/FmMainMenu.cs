@@ -21,8 +21,8 @@ namespace RentDemo
 
         private void btnClient_Click(object sender, EventArgs e)
         {
-            FmClient fmClient = new FmClient();
-            fmClient.Show();
+            FmTransport fmTransport = new FmTransport();
+            fmTransport.Show();
             this.Hide();
         }
     }
