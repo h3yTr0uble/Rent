@@ -1,4 +1,6 @@
-﻿using System;
+﻿using DAL;
+using Entities;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -23,5 +25,24 @@ namespace RentDemo
             fmTransportEditor.ShowDialog();
 
         }
+
+        private IEnumerable<Transport> GetTransports()
+        {
+            return TransportDAO.GetTransports();
+        }
+
+        private void FmTransport_Load(object sender, EventArgs e)
+        {
+            List<Transport> transports = new List<Transport>(GetTransports());
+            FillCtlTransports(transports);
+            ctlTransports.AutoGenerateColumns = false;
+        }
+
+        private void FillCtlTransports(IEnumerable<Transport> transports)
+        {
+            ctlTransports.DataSource = null;
+            ctlTransports.DataSource = transports;
+        }
+
     }
 }

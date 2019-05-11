@@ -6,23 +6,17 @@ using System.Threading.Tasks;
 
 namespace Entities
 {
-    public class Position
+    public class Position:StandartdEntity
     {
-        public int Id { get; }
-        public string Title { get; set; }
+        public Position(int id, string title) : base(id, title)
+        { }
 
         public Position()
         {
         }
 
-        public Position(string title)
+        public Position(string title):base(title)
         {
-            Title = title;
-        }
-
-        public Position(int id, string title):this(title)
-        {
-            Id = id;
         }
     }
 }

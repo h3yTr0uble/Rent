@@ -12,8 +12,6 @@ namespace DAL
 {
     public static class AccountDAO
     {
-        private static string connectionString = ActualConnectionString.Get();
-
         public static void SearchEmployee(Account account)
         {
             using (SqlConnection connection = new SqlConnection(ActualConnectionString.Get()))

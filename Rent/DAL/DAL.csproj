@@ -42,7 +42,13 @@
   <ItemGroup>
     <Compile Include="AccountDAO.cs" />
     <Compile Include="BackupDAO.cs" />
+    <Compile Include="BrandDAO.cs" />
+    <Compile Include="ColorDAO.cs" />
+    <Compile Include="DrivingCategoryDAO.cs" />
+    <Compile Include="ModelDAO.cs" />
+    <Compile Include="ParkingDAO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TransportDAO.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BLL\BLL.csproj">

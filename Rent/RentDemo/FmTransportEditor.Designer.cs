@@ -81,6 +81,7 @@
             this.ctlBrand.Name = "ctlBrand";
             this.ctlBrand.Size = new System.Drawing.Size(121, 24);
             this.ctlBrand.TabIndex = 3;
+            this.ctlBrand.SelectedIndexChanged += new System.EventHandler(this.ctlBrand_SelectedIndexChanged);
             // 
             // ctlParking
             // 

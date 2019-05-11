@@ -6,10 +6,8 @@ using System.Threading.Tasks;
 
 namespace Entities
 {
-    public class Transport
+    public class Transport:StandartdEntity
     {
-        public int Id { get; }
-        public string Title { get; set; }
         public Brand Brand { get; set; }
         public Model Model { get; set; }
         public Color Color { get; set; }
