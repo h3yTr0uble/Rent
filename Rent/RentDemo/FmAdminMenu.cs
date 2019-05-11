@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DAL;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,16 @@ namespace RentDemo
         public FmAdminMenu()
         {
             InitializeComponent();
+        }
+
+        private void btnCreateBackup_Click(object sender, EventArgs e)
+        {
+            BackupDAO.CreateBackup(@"D:\backup");//TODO: Добавить класс логики и реализовать выбор пути
+        }
+
+        private void btnRestoreDatabase_Click(object sender, EventArgs e)
+        {
+            BackupDAO.RestoreDatabase("Rent", @"D:\backup\Rent.Bak");//TODO: Реализовать выбор пути
         }
     }
 }

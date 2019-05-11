@@ -21,6 +21,11 @@ namespace BLL
             return connectionString;
         }
 
+        public static string GetMaster()
+        {
+            return ConfigurationManager.ConnectionStrings["ConnectionStringMaster"].ConnectionString;
+        }
+
         public static void Set(string connectionString)
         {
             ActualConnectionString.connectionString = connectionString;
