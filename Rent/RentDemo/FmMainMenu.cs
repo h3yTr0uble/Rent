@@ -19,10 +19,17 @@ namespace RentDemo
             ctlEmployee.Text = employee.FullName;
         }
 
-        private void btnClient_Click(object sender, EventArgs e)
+        private void btnTransport_Click(object sender, EventArgs e)
         {
             FmTransport fmTransport = new FmTransport();
             fmTransport.Show();
+            this.Hide();
+        }
+
+        private void btnClient_Click(object sender, EventArgs e)
+        {
+            FmClient fmClient = new FmClient();
+            fmClient.Show();
             this.Hide();
         }
     }

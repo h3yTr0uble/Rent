@@ -6,19 +6,16 @@ using System.Threading.Tasks;
 
 namespace Entities
 {
-    public class Employee
+    public class Employee:Person
     {
-        public int Id { get; set; }
-        public string Passport { get; set; }
         public Position Position { get; set; }
-        public string FullName { get; set; }
-        public string Phone { get; set; }
 
-        public Employee(int id, string passport, string fullName)
+        public Employee(int id, string passport, string fullName):base(id, passport, fullName)
+        { }
+
+        public Employee()
         {
-            Id = id;
-            Passport = passport;
-            FullName = fullName;
+
         }
     }
 }

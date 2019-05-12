@@ -52,6 +52,18 @@
     <Compile Include="FmAdminMenu.Designer.cs">
       <DependentUpon>FmAdminMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="FmClient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FmClient.Designer.cs">
+      <DependentUpon>FmClient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FmHistury.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FmHistury.Designer.cs">
+      <DependentUpon>FmHistury.cs</DependentUpon>
+    </Compile>
     <Compile Include="FmTransport.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -86,6 +98,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FmAdminMenu.resx">
       <DependentUpon>FmAdminMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FmClient.resx">
+      <DependentUpon>FmClient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FmHistury.resx">
+      <DependentUpon>FmHistury.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FmTransport.resx">
       <DependentUpon>FmTransport.cs</DependentUpon>

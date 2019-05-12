@@ -4,6 +4,9 @@
     {
         public TransportType TransportType { get; set; }
 
+        public DrivingCategory()
+        { }
+
         public DrivingCategory(int id, string title) : base(id, title)
         { }
 

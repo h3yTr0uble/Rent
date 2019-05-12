@@ -76,8 +76,6 @@ namespace RentDemo
             {
                 TransportDAO.Edit(transport);
             }
-
-            //DialogResult = DialogResult.OK;
         }
 
 
@@ -96,6 +94,7 @@ namespace RentDemo
 
         private void FillComboBox(ComboBox comboBox, IEnumerable<StandartdEntity> items)
         {
+            comboBox.SelectedItem = null;
             comboBox.Items.Clear();
             foreach (var item in items)
             {

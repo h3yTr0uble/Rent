@@ -43,6 +43,7 @@
     <Compile Include="AccountDAO.cs" />
     <Compile Include="BackupDAO.cs" />
     <Compile Include="BrandDAO.cs" />
+    <Compile Include="ClientDAO.cs" />
     <Compile Include="ColorDAO.cs" />
     <Compile Include="DrivingCategoryDAO.cs" />
     <Compile Include="ModelDAO.cs" />

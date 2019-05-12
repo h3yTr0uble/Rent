@@ -30,6 +30,7 @@
         {
             this.ctlEmployee = new System.Windows.Forms.Label();
             this.btnTransport = new System.Windows.Forms.Button();
+            this.btnClient = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // ctlEmployee
@@ -49,13 +50,24 @@
             this.btnTransport.TabIndex = 1;
             this.btnTransport.Text = "btnTransport";
             this.btnTransport.UseVisualStyleBackColor = true;
-            this.btnTransport.Click += new System.EventHandler(this.btnClient_Click);
+            this.btnTransport.Click += new System.EventHandler(this.btnTransport_Click);
+            // 
+            // btnClient
+            // 
+            this.btnClient.Location = new System.Drawing.Point(144, 112);
+            this.btnClient.Name = "btnClient";
+            this.btnClient.Size = new System.Drawing.Size(137, 45);
+            this.btnClient.TabIndex = 2;
+            this.btnClient.Text = "btnClient";
+            this.btnClient.UseVisualStyleBackColor = true;
+            this.btnClient.Click += new System.EventHandler(this.btnClient_Click);
             // 
             // FmMainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(822, 575);
+            this.Controls.Add(this.btnClient);
             this.Controls.Add(this.btnTransport);
             this.Controls.Add(this.ctlEmployee);
             this.Name = "FmMainMenu";
@@ -69,5 +81,6 @@
 
         private System.Windows.Forms.Label ctlEmployee;
         private System.Windows.Forms.Button btnTransport;
+        private System.Windows.Forms.Button btnClient;
     }
 }
