@@ -53,5 +53,48 @@ namespace DAL
 
             return transports;
         }
+
+        public static void Edit(Transport transport)
+        {
+            using (SqlConnection connection = new SqlConnection(ActualConnectionString.Get()))
+            {
+                SqlCommand command = new SqlCommand("EditTransport");
+                command.CommandType = CommandType.StoredProcedure;
+                command.Connection = connection;
+                command.Parameters.AddWithValue("@ID_transport",    transport.Id);
+                command.Parameters.AddWithValue("@title",           transport.Title);
+                command.Parameters.AddWithValue("@brand",           transport.Brand.Id);
+                command.Parameters.AddWithValue("@model",           transport.Model.Id);
+                command.Parameters.AddWithValue("@color",           transport.Color.Id);
+                command.Parameters.AddWithValue("@year",            transport.Year);
+                command.Parameters.AddWithValue("@drivingCategory", transport.DrivingCategory.Id);
+                command.Parameters.AddWithValue("@parking",         transport.Parking.Id);
+                command.Parameters.AddWithValue("@coef",            transport.Coef);
+
+                connection.Open();
+                command.ExecuteNonQuery();
+            }
+        }
+
+        public static void Add(Transport transport)
+        {
+            using (SqlConnection connection = new SqlConnection(ActualConnectionString.Get()))
+            {
+                SqlCommand command = new SqlCommand("AddTransport");
+                command.CommandType = CommandType.StoredProcedure;
+                command.Connection = connection;
+                command.Parameters.AddWithValue("@title",           transport.Title);
+                command.Parameters.AddWithValue("@brand",           transport.Brand.Id);
+                command.Parameters.AddWithValue("@model",           transport.Model.Id);
+                command.Parameters.AddWithValue("@color",           transport.Color.Id);
+                command.Parameters.AddWithValue("@year",            transport.Year);
+                command.Parameters.AddWithValue("@drivingCategory", transport.DrivingCategory.Id);
+                command.Parameters.AddWithValue("@parking",         transport.Parking.Id);
+                command.Parameters.AddWithValue("@coef",            transport.Coef);
+
+                connection.Open();
+                command.ExecuteNonQuery();
+            }
+        }
     }
 }

@@ -21,9 +21,32 @@ namespace RentDemo
 
         private void ctlAddTransport_Click(object sender, EventArgs e)
         {
-            FmTransportEditor fmTransportEditor = new FmTransportEditor();
-            fmTransportEditor.ShowDialog();
+            AddNewTransport();
+        }
 
+        private void AddNewTransport()
+        {
+            FmTransportEditor fmTransportEditor = new FmTransportEditor();
+            if (fmTransportEditor.ShowDialog() == DialogResult.OK)
+            {
+                List<Transport> transports = new List<Transport>(GetTransports());
+                FillCtlTransports(transports);
+            }
+        }
+
+        private void EditSelectedTransport()
+        {
+            if (ctlTransports.SelectedCells.Count > 0)
+            {
+                Transport transport = (Transport)ctlTransports.SelectedCells[0].OwningRow.DataBoundItem;
+
+                FmTransportEditor fmTransportEditor = new FmTransportEditor(transport);
+                if (fmTransportEditor.ShowDialog() == DialogResult.OK)
+                {
+                    List<Transport> transports = new List<Transport>(GetTransports());
+                    FillCtlTransports(transports);
+                }
+            }
         }
 
         private IEnumerable<Transport> GetTransports()
@@ -44,5 +67,19 @@ namespace RentDemo
             ctlTransports.DataSource = transports;
         }
 
+        private void ctlEditTransport_Click(object sender, EventArgs e)
+        {
+            EditSelectedTransport();
+        }
+
+        private void ctlAddTransportContext_Click(object sender, EventArgs e)
+        {
+            AddNewTransport();
+        }
+
+        private void ctlEditTransportContext_Click(object sender, EventArgs e)
+        {
+            EditSelectedTransport();
+        }
     }
 }
