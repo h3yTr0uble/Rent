@@ -32,6 +32,10 @@
             this.txtClientsDrivingCategory = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.ctlClients = new System.Windows.Forms.DataGridView();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.contextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.ctlAddClientContext = new System.Windows.Forms.ToolStripMenuItem();
             this.ctlEditClientContext = new System.Windows.Forms.ToolStripMenuItem();
@@ -48,10 +52,6 @@
             this.rb1 = new System.Windows.Forms.RadioButton();
             this.rb3 = new System.Windows.Forms.RadioButton();
             this.rb2 = new System.Windows.Forms.RadioButton();
-            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.ctlClients)).BeginInit();
             this.contextMenu.SuspendLayout();
             this.mainMenu.SuspendLayout();
@@ -96,6 +96,38 @@
             this.ctlClients.TabIndex = 5;
             this.ctlClients.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ctlClients_CellClick);
             // 
+            // Id
+            // 
+            this.Id.DataPropertyName = "Id";
+            this.Id.HeaderText = "Id";
+            this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
+            this.Id.Visible = false;
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "Passport";
+            this.Column1.HeaderText = "Паспорт";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Width = 115;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "FullName";
+            this.Column2.HeaderText = "ФИО";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            this.Column2.Width = 400;
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "Phone";
+            this.Column3.HeaderText = "Телефон";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            this.Column3.Width = 155;
+            // 
             // contextMenu
             // 
             this.contextMenu.ImageScalingSize = new System.Drawing.Size(20, 20);
@@ -103,19 +135,21 @@
             this.ctlAddClientContext,
             this.ctlEditClientContext});
             this.contextMenu.Name = "contextMenu";
-            this.contextMenu.Size = new System.Drawing.Size(240, 52);
+            this.contextMenu.Size = new System.Drawing.Size(240, 80);
             // 
             // ctlAddClientContext
             // 
             this.ctlAddClientContext.Name = "ctlAddClientContext";
             this.ctlAddClientContext.Size = new System.Drawing.Size(239, 24);
             this.ctlAddClientContext.Text = "Добавить клиента";
+            this.ctlAddClientContext.Click += new System.EventHandler(this.ctlAddClientContext_Click);
             // 
             // ctlEditClientContext
             // 
             this.ctlEditClientContext.Name = "ctlEditClientContext";
             this.ctlEditClientContext.Size = new System.Drawing.Size(239, 24);
             this.ctlEditClientContext.Text = "Редактировать клиента";
+            this.ctlEditClientContext.Click += new System.EventHandler(this.ctlEditClientContext_Click);
             // 
             // mainMenu
             // 
@@ -144,12 +178,14 @@
             this.ctlAddClient.Name = "ctlAddClient";
             this.ctlAddClient.Size = new System.Drawing.Size(245, 26);
             this.ctlAddClient.Text = "Добавить клиента";
+            this.ctlAddClient.Click += new System.EventHandler(this.ctlAddClient_Click);
             // 
             // ctlEditClient
             // 
             this.ctlEditClient.Name = "ctlEditClient";
             this.ctlEditClient.Size = new System.Drawing.Size(245, 26);
             this.ctlEditClient.Text = "Редактировать клиента";
+            this.ctlEditClient.Click += new System.EventHandler(this.ctlEditClient_Click);
             // 
             // toolStripMenuItem1
             // 
@@ -240,38 +276,6 @@
             this.rb2.TabStop = true;
             this.rb2.Text = "Поиск по паспорту";
             this.rb2.UseVisualStyleBackColor = true;
-            // 
-            // Id
-            // 
-            this.Id.DataPropertyName = "Id";
-            this.Id.HeaderText = "Id";
-            this.Id.Name = "Id";
-            this.Id.ReadOnly = true;
-            this.Id.Visible = false;
-            // 
-            // Column1
-            // 
-            this.Column1.DataPropertyName = "Passport";
-            this.Column1.HeaderText = "Паспорт";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Width = 115;
-            // 
-            // Column2
-            // 
-            this.Column2.DataPropertyName = "FullName";
-            this.Column2.HeaderText = "ФИО";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            this.Column2.Width = 400;
-            // 
-            // Column3
-            // 
-            this.Column3.DataPropertyName = "Phone";
-            this.Column3.HeaderText = "Телефон";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            this.Column3.Width = 155;
             // 
             // FmClient
             // 

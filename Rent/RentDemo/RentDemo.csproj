@@ -58,6 +58,12 @@
     <Compile Include="FmClient.Designer.cs">
       <DependentUpon>FmClient.cs</DependentUpon>
     </Compile>
+    <Compile Include="FmClientEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FmClientEditor.Designer.cs">
+      <DependentUpon>FmClientEditor.cs</DependentUpon>
+    </Compile>
     <Compile Include="FmHistury.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -101,6 +107,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FmClient.resx">
       <DependentUpon>FmClient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FmClientEditor.resx">
+      <DependentUpon>FmClientEditor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FmHistury.resx">
       <DependentUpon>FmHistury.cs</DependentUpon>

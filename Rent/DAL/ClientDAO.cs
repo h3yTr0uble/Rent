@@ -41,5 +41,60 @@ namespace DAL
 
             return сlients;
         }
+
+        public static void Add(Client client)
+        {
+            using (SqlConnection connection = new SqlConnection(ActualConnectionString.Get()))
+            {
+                SqlCommand command = new SqlCommand("AddClient");
+                command.CommandType = CommandType.StoredProcedure;
+                command.Connection = connection;
+                command.Parameters.AddWithValue("@passport", client.Passport);
+                command.Parameters.AddWithValue("@fullName", client.FullName);
+                command.Parameters.AddWithValue("@phone", client.Phone);
+
+                DataTable drivingCategoriesTable = new DataTable();
+                drivingCategoriesTable.Columns.Add(new DataColumn("id", typeof(int)));
+
+                foreach (DrivingCategory drivingCategory in client.DrivingCategories)
+                {
+                    drivingCategoriesTable.Rows.Add(drivingCategory.Id);
+                }
+
+                SqlParameter drivingCategoryParameter = command.Parameters.AddWithValue("@drivingCategoryIds", drivingCategoriesTable);
+                drivingCategoryParameter.SqlDbType = SqlDbType.Structured;
+
+                connection.Open();
+                command.ExecuteNonQuery();
+            }
+        }
+
+        public static void Edit(Client client)
+        {
+            using(SqlConnection connection = new SqlConnection(ActualConnectionString.Get()))
+            {
+                SqlCommand command = new SqlCommand("EditClient");
+                command.CommandType = CommandType.StoredProcedure;
+                command.Connection = connection;
+                command.Parameters.AddWithValue("@id", client.Id);
+                command.Parameters.AddWithValue("@passport", client.Passport);
+                command.Parameters.AddWithValue("@fullName", client.FullName);
+                command.Parameters.AddWithValue("@phone", client.Phone);
+
+                DataTable drivingCategoriesTable = new DataTable();
+                drivingCategoriesTable.Columns.Add(new DataColumn("id", typeof(int)));
+
+                foreach (DrivingCategory drivingCategory in client.DrivingCategories)
+                {
+                    drivingCategoriesTable.Rows.Add(drivingCategory.Id);
+                }
+
+                SqlParameter drivingCategoryParameter = command.Parameters.AddWithValue("@drivingCategoryIds", drivingCategoriesTable);
+                drivingCategoryParameter.SqlDbType = SqlDbType.Structured;
+
+                connection.Open();
+                command.ExecuteNonQuery();
+            }
+        }
     }
 }

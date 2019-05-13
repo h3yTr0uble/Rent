@@ -79,11 +79,6 @@ namespace RentDemo
         }
 
 
-        private void btnCancel_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void FillComboBoxes()
         {
             FillComboBox(ctlBrand, GetBrands());

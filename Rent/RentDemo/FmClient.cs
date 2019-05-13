@@ -55,5 +55,50 @@ namespace RentDemo
             Client client = (Client)ctlClients.SelectedCells[0].OwningRow.DataBoundItem;
             FillctlClientsDrivingCategory(client);
         }
+
+        private void AddNewClient()
+        {
+            FmClientEditor fmClientEditor = new FmClientEditor();
+            if (fmClientEditor.ShowDialog() == DialogResult.OK)
+            {
+                List<Client> clients = new List<Client>(GetClients());
+                FillCtlClients(clients);
+            }
+        }
+
+        private void EditSelectedClient()
+        {
+            if (ctlClients.SelectedCells.Count > 0)
+            {
+                Client client = (Client)ctlClients.SelectedCells[0].OwningRow.DataBoundItem;
+
+                FmClientEditor fmClientEditor = new FmClientEditor(client);
+                if (fmClientEditor.ShowDialog() == DialogResult.OK)
+                {
+                    List<Client> clients = new List<Client>(GetClients());
+                    FillCtlClients(clients);
+                }
+            }
+        }
+
+        private void ctlAddClient_Click(object sender, EventArgs e)
+        {
+            AddNewClient();
+        }
+
+        private void ctlEditClient_Click(object sender, EventArgs e)
+        {
+            EditSelectedClient();
+        }
+
+        private void ctlAddClientContext_Click(object sender, EventArgs e)
+        {
+            AddNewClient();
+        }
+
+        private void ctlEditClientContext_Click(object sender, EventArgs e)
+        {
+            EditSelectedClient();
+        }
     }
 }
