@@ -15,5 +15,6 @@ namespace Entities
         public DrivingCategory DrivingCategory { get; set; }
         public Parking Parking { get; set; }
         public double Coef { get; set; }
+        public double CorrectCoef { get; set; }
     }
 }

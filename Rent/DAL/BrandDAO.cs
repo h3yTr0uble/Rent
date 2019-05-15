@@ -28,7 +28,8 @@ namespace DAL
                 while (reader.Read())
                 {
                     brands.Add(new Brand(int.Parse(reader["ID_Марка"].ToString()),
-                                                reader["НазваниеМарки"].ToString()));
+                                         reader["НазваниеМарки"].ToString(),
+                                         double.Parse(reader["КоэфПрестижа"].ToString())));
                 }
             }
 

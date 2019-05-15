@@ -46,6 +46,7 @@ namespace DAL
                     }
 
                     transport.Coef = double.Parse(reader["КоэфСтоимости"].ToString());
+                    transport.CorrectCoef = double.Parse(reader["ПоправочныйКоэф"].ToString());
 
                     transports.Add(transport);
                 }
@@ -68,8 +69,13 @@ namespace DAL
                 command.Parameters.AddWithValue("@color",           transport.Color.Id);
                 command.Parameters.AddWithValue("@year",            transport.Year);
                 command.Parameters.AddWithValue("@drivingCategory", transport.DrivingCategory.Id);
-                command.Parameters.AddWithValue("@parking",         transport.Parking.Id);
+                if (transport.Parking != null)
+                {
+                    command.Parameters.AddWithValue("@parking", transport.Parking.Id);
+                }
+                
                 command.Parameters.AddWithValue("@coef",            transport.Coef);
+                command.Parameters.AddWithValue("@correctCoef",     transport.CorrectCoef);
 
                 connection.Open();
                 command.ExecuteNonQuery();
@@ -91,6 +97,7 @@ namespace DAL
                 command.Parameters.AddWithValue("@drivingCategory", transport.DrivingCategory.Id);
                 command.Parameters.AddWithValue("@parking",         transport.Parking.Id);
                 command.Parameters.AddWithValue("@coef",            transport.Coef);
+                command.Parameters.AddWithValue("@correctCoef",     transport.CorrectCoef);
 
                 connection.Open();
                 command.ExecuteNonQuery();

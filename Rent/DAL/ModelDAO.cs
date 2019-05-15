@@ -30,7 +30,8 @@ namespace DAL
                     models.Add(new Model(int.Parse(reader["ID_Модель"].ToString()),
                                          reader["НазваниеМодели"].ToString(),
                                          int.Parse(reader["ID_Марка"].ToString()),
-                                         reader["НазваниеМарки"].ToString()));
+                                         reader["НазваниеМарки"].ToString(),
+                                         double.Parse(reader["КоэфПрестижа"].ToString())));
                 }
             }
 

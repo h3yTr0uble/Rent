@@ -30,5 +30,10 @@ namespace Entities
         {
             return Title;
         }
+
+        public override bool Equals(object obj)
+        {
+            return this.ToString() == obj.ToString();
+        }
     }
 }

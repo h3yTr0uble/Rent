@@ -38,6 +38,8 @@ namespace RentDemo
                 this.Text = "Добавление нового транспорта";
                 btnOK.Text = "Создать";
                 transport = new Transport();
+                txtCorrectCoef.ReadOnly = true;
+                txtCorrectCoef.Text = "1";
             }
             else
             {
@@ -45,17 +47,18 @@ namespace RentDemo
                 btnOK.Text = "Обновить";
 
                 txtTitle.Text                   = transport.Title;
-                ctlBrand.SelectedItem           = transport.Brand.Title;
-                ctlModel.SelectedItem           = transport.Model.Title;
+                ctlBrand.SelectedItem = transport.Brand;
+                ctlModel.SelectedItem = transport.Model;
                 txtYear.Text                    = transport.Year.ToString();
-                ctlColor.SelectedItem           = transport.Color.Title;
-                ctlDrivingCategory.SelectedItem = transport.DrivingCategory.Title;
+                ctlColor.SelectedItem = transport.Color;
+                ctlDrivingCategory.SelectedItem = transport.DrivingCategory;
                 if (transport.Parking != null)
                 {
-                    ctlParking.SelectedItem     = transport.Parking.Title;
+                    ctlParking.SelectedItem = transport.Parking;
                 }
 
                 txtCoef.Text                    = transport.Coef.ToString();
+                txtCorrectCoef.Text             = transport.CorrectCoef.ToString();
             }
         }
 
@@ -93,7 +96,7 @@ namespace RentDemo
             comboBox.Items.Clear();
             foreach (var item in items)
             {
-                comboBox.Items.Add(item.Title);
+                comboBox.Items.Add(item);
             }
         }
 
@@ -131,13 +134,45 @@ namespace RentDemo
         private void UpdateTransport(Transport transport)
         {
             transport.Title           = txtTitle.Text;
-            transport.Brand           = GetBrands().Select(b => b).Where(b => b.Title == ctlBrand.Text).Single();
-            transport.Model           = GetModels().Select(m => m).Where(m => m.Title == ctlModel.Text).Single();
-            transport.Color           = GetColors().Select(c => c).Where(c => c.Title == ctlColor.Text).Single();
+            transport.Brand           = (Brand)ctlBrand.SelectedItem;
+            transport.Model           = (Model)ctlModel.SelectedItem;
+            transport.Color           = (Entities.Color)ctlColor.SelectedItem;
             transport.Year            = int.Parse(txtYear.Text);
-            transport.DrivingCategory = GetDrivingCategories().Select(d => d).Where(d => d.Title == ctlDrivingCategory.Text).Single();
-            transport.Parking         = GetParkings().Select(p => p).Where(p => p.Title == ctlParking.Text).Single();
+            transport.DrivingCategory = (DrivingCategory)ctlDrivingCategory.SelectedItem;
+            transport.Parking         = (Parking)ctlParking.SelectedItem;
             transport.Coef            = double.Parse(txtCoef.Text);
+            transport.CorrectCoef     = double.Parse(txtCoef.Text);
+        }
+
+        private double CalculateCoef(double brandCoef, double modelCoef, int year)
+        {
+            double itogCoef = brandCoef + modelCoef;
+            int yearsOld = DateTime.Now.Year - year;
+            itogCoef -= itogCoef * yearsOld / 100;
+
+            return Math.Round(itogCoef, 2);
+        }
+
+        private void txtYear_Leave(object sender, EventArgs e)
+        {
+            FilltxtCoef();
+        }
+
+        private void FilltxtCoef()
+        {
+            if (!string.IsNullOrEmpty(txtYear.Text) && !string.IsNullOrEmpty(ctlBrand.Text) && !string.IsNullOrEmpty(ctlModel.Text))
+            {
+                double brandCoef = ((Brand)ctlBrand.SelectedItem).Coef;
+                double modelCoef = ((Model)ctlModel.SelectedItem).Coef;
+                int year = int.Parse(txtYear.Text);
+
+                txtCoef.Text = CalculateCoef(brandCoef, modelCoef, year).ToString();
+            }
+        }
+
+        private void ctlModel_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            FilltxtCoef();
         }
     }
 }
