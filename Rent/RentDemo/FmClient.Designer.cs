@@ -86,10 +86,13 @@
             this.Column2,
             this.Column3});
             this.ctlClients.ContextMenuStrip = this.contextMenu;
+            this.ctlClients.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.ctlClients.Location = new System.Drawing.Point(3, 39);
             this.ctlClients.Margin = new System.Windows.Forms.Padding(5);
+            this.ctlClients.MultiSelect = false;
             this.ctlClients.Name = "ctlClients";
             this.ctlClients.ReadOnly = true;
+            this.ctlClients.RowHeadersVisible = false;
             this.ctlClients.RowTemplate.Height = 24;
             this.ctlClients.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.ctlClients.Size = new System.Drawing.Size(714, 226);
@@ -135,7 +138,7 @@
             this.ctlAddClientContext,
             this.ctlEditClientContext});
             this.contextMenu.Name = "contextMenu";
-            this.contextMenu.Size = new System.Drawing.Size(240, 80);
+            this.contextMenu.Size = new System.Drawing.Size(240, 52);
             // 
             // ctlAddClientContext
             // 
@@ -288,6 +291,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.ctlClients);
             this.Name = "FmClient";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FmClient";
             this.Load += new System.EventHandler(this.FmClient_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ctlClients)).EndInit();

@@ -36,6 +36,16 @@
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
             this.ctlToMainForm = new System.Windows.Forms.ToolStripMenuItem();
             this.ctlTransports = new System.Windows.Forms.DataGridView();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Title = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Brand = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Model = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Year = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Color = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DrivingCategory = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Parking = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Coef = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CorrectCoef = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.contextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.ctlAddTransportContext = new System.Windows.Forms.ToolStripMenuItem();
             this.ctlEditTransportContext = new System.Windows.Forms.ToolStripMenuItem();
@@ -62,16 +72,6 @@
             this.rb3 = new System.Windows.Forms.RadioButton();
             this.rb2 = new System.Windows.Forms.RadioButton();
             this.rb1 = new System.Windows.Forms.RadioButton();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Title = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Brand = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Model = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Year = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Color = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DrivingCategory = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Parking = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Coef = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CorrectCoef = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.mainMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ctlTransports)).BeginInit();
             this.contextMenu.SuspendLayout();
@@ -140,12 +140,76 @@
             this.Coef,
             this.CorrectCoef});
             this.ctlTransports.ContextMenuStrip = this.contextMenu;
+            this.ctlTransports.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.ctlTransports.Location = new System.Drawing.Point(0, 31);
+            this.ctlTransports.MultiSelect = false;
             this.ctlTransports.Name = "ctlTransports";
+            this.ctlTransports.RowHeadersVisible = false;
             this.ctlTransports.RowTemplate.Height = 24;
             this.ctlTransports.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.ctlTransports.Size = new System.Drawing.Size(1057, 222);
             this.ctlTransports.TabIndex = 1;
+            // 
+            // ID
+            // 
+            this.ID.DataPropertyName = "Id";
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            this.ID.Visible = false;
+            // 
+            // Title
+            // 
+            this.Title.DataPropertyName = "Title";
+            this.Title.HeaderText = "ГосНомер";
+            this.Title.Name = "Title";
+            // 
+            // Brand
+            // 
+            this.Brand.DataPropertyName = "Brand";
+            this.Brand.HeaderText = "Марка";
+            this.Brand.Name = "Brand";
+            // 
+            // Model
+            // 
+            this.Model.DataPropertyName = "Model";
+            this.Model.HeaderText = "Модель";
+            this.Model.Name = "Model";
+            // 
+            // Year
+            // 
+            this.Year.DataPropertyName = "Year";
+            this.Year.HeaderText = "Год выпуска";
+            this.Year.Name = "Year";
+            // 
+            // Color
+            // 
+            this.Color.DataPropertyName = "Color";
+            this.Color.HeaderText = "Цвет";
+            this.Color.Name = "Color";
+            // 
+            // DrivingCategory
+            // 
+            this.DrivingCategory.DataPropertyName = "DrivingCategory";
+            this.DrivingCategory.HeaderText = "Категория вождения";
+            this.DrivingCategory.Name = "DrivingCategory";
+            // 
+            // Parking
+            // 
+            this.Parking.DataPropertyName = "Parking";
+            this.Parking.HeaderText = "Парковка";
+            this.Parking.Name = "Parking";
+            // 
+            // Coef
+            // 
+            this.Coef.DataPropertyName = "Coef";
+            this.Coef.HeaderText = "Коэффициент стоимости";
+            this.Coef.Name = "Coef";
+            // 
+            // CorrectCoef
+            // 
+            this.CorrectCoef.DataPropertyName = "CorrectCoef";
+            this.CorrectCoef.HeaderText = "Поправочный коэффициент";
+            this.CorrectCoef.Name = "CorrectCoef";
             // 
             // contextMenu
             // 
@@ -420,77 +484,6 @@
             this.rb1.TabStop = true;
             this.rb1.Text = "Поиск по нормепу транспорта";
             this.rb1.UseVisualStyleBackColor = true;
-            // 
-            // ID
-            // 
-            this.ID.DataPropertyName = "Id";
-            this.ID.HeaderText = "ID";
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            this.ID.Visible = false;
-            // 
-            // Title
-            // 
-            this.Title.DataPropertyName = "Title";
-            this.Title.HeaderText = "ГосНомер";
-            this.Title.Name = "Title";
-            this.Title.ReadOnly = true;
-            // 
-            // Brand
-            // 
-            this.Brand.DataPropertyName = "Brand";
-            this.Brand.HeaderText = "Марка";
-            this.Brand.Name = "Brand";
-            this.Brand.ReadOnly = true;
-            // 
-            // Model
-            // 
-            this.Model.DataPropertyName = "Model";
-            this.Model.HeaderText = "Модель";
-            this.Model.Name = "Model";
-            this.Model.ReadOnly = true;
-            // 
-            // Year
-            // 
-            this.Year.DataPropertyName = "Year";
-            this.Year.HeaderText = "Год выпуска";
-            this.Year.Name = "Year";
-            this.Year.ReadOnly = true;
-            // 
-            // Color
-            // 
-            this.Color.DataPropertyName = "Color";
-            this.Color.HeaderText = "Цвет";
-            this.Color.Name = "Color";
-            this.Color.ReadOnly = true;
-            // 
-            // DrivingCategory
-            // 
-            this.DrivingCategory.DataPropertyName = "DrivingCategory";
-            this.DrivingCategory.HeaderText = "Категория вождения";
-            this.DrivingCategory.Name = "DrivingCategory";
-            this.DrivingCategory.ReadOnly = true;
-            // 
-            // Parking
-            // 
-            this.Parking.DataPropertyName = "Parking";
-            this.Parking.HeaderText = "Парковка";
-            this.Parking.Name = "Parking";
-            this.Parking.ReadOnly = true;
-            // 
-            // Coef
-            // 
-            this.Coef.DataPropertyName = "Coef";
-            this.Coef.HeaderText = "Коэффициент стоимости";
-            this.Coef.Name = "Coef";
-            this.Coef.ReadOnly = true;
-            // 
-            // CorrectCoef
-            // 
-            this.CorrectCoef.DataPropertyName = "CorrectCoef";
-            this.CorrectCoef.HeaderText = "Поправочный коэффициент";
-            this.CorrectCoef.Name = "CorrectCoef";
-            this.CorrectCoef.ReadOnly = true;
             // 
             // FmTransport
             // 

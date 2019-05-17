@@ -47,14 +47,14 @@ namespace RentDemo
                 btnOK.Text = "Обновить";
 
                 txtTitle.Text                   = transport.Title;
-                ctlBrand.SelectedItem = transport.Brand;
-                ctlModel.SelectedItem = transport.Model;
+                ctlBrand.SelectedItem           = transport.Brand;
+                ctlModel.SelectedItem           = transport.Model;
                 txtYear.Text                    = transport.Year.ToString();
-                ctlColor.SelectedItem = transport.Color;
+                ctlColor.SelectedItem           = transport.Color;
                 ctlDrivingCategory.SelectedItem = transport.DrivingCategory;
                 if (transport.Parking != null)
                 {
-                    ctlParking.SelectedItem = transport.Parking;
+                    ctlParking.SelectedItem     = transport.Parking;
                 }
 
                 txtCoef.Text                    = transport.Coef.ToString();
@@ -94,10 +94,7 @@ namespace RentDemo
         {
             comboBox.SelectedItem = null;
             comboBox.Items.Clear();
-            foreach (var item in items)
-            {
-                comboBox.Items.Add(item);
-            }
+            comboBox.Items.AddRange(items.ToArray());
         }
 
         private static IEnumerable<Brand> GetBrands()
@@ -141,7 +138,7 @@ namespace RentDemo
             transport.DrivingCategory = (DrivingCategory)ctlDrivingCategory.SelectedItem;
             transport.Parking         = (Parking)ctlParking.SelectedItem;
             transport.Coef            = double.Parse(txtCoef.Text);
-            transport.CorrectCoef     = double.Parse(txtCoef.Text);
+            transport.CorrectCoef     = double.Parse(txtCorrectCoef.Text);
         }
 
         private double CalculateCoef(double brandCoef, double modelCoef, int year)
@@ -171,6 +168,11 @@ namespace RentDemo
         }
 
         private void ctlModel_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            FilltxtCoef();
+        }
+
+        private void btnCalculateCoef_Click(object sender, EventArgs e)
         {
             FilltxtCoef();
         }

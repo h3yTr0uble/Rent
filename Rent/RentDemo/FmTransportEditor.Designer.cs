@@ -52,6 +52,7 @@
             this.btnCancel = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.txtCorrectCoef = new System.Windows.Forms.TextBox();
+            this.btnCalculateCoef = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txtTitle
@@ -264,11 +265,22 @@
             this.txtCorrectCoef.Size = new System.Drawing.Size(100, 22);
             this.txtCorrectCoef.TabIndex = 49;
             // 
+            // btnCalculateCoef
+            // 
+            this.btnCalculateCoef.Location = new System.Drawing.Point(300, 285);
+            this.btnCalculateCoef.Name = "btnCalculateCoef";
+            this.btnCalculateCoef.Size = new System.Drawing.Size(202, 33);
+            this.btnCalculateCoef.TabIndex = 51;
+            this.btnCalculateCoef.Text = "Рассчитать коэф";
+            this.btnCalculateCoef.UseVisualStyleBackColor = true;
+            this.btnCalculateCoef.Click += new System.EventHandler(this.btnCalculateCoef_Click);
+            // 
             // FmTransportEditor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(590, 476);
+            this.Controls.Add(this.btnCalculateCoef);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtCorrectCoef);
             this.Controls.Add(this.btnOK);
@@ -327,5 +339,6 @@
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtCorrectCoef;
+        private System.Windows.Forms.Button btnCalculateCoef;
     }
 }

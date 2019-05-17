@@ -31,6 +31,7 @@
             this.ctlEmployee = new System.Windows.Forms.Label();
             this.btnTransport = new System.Windows.Forms.Button();
             this.btnClient = new System.Windows.Forms.Button();
+            this.btnReciept = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // ctlEmployee
@@ -62,11 +63,22 @@
             this.btnClient.UseVisualStyleBackColor = true;
             this.btnClient.Click += new System.EventHandler(this.btnClient_Click);
             // 
+            // btnReciept
+            // 
+            this.btnReciept.Location = new System.Drawing.Point(144, 176);
+            this.btnReciept.Name = "btnReciept";
+            this.btnReciept.Size = new System.Drawing.Size(137, 45);
+            this.btnReciept.TabIndex = 3;
+            this.btnReciept.Text = "btnReciept";
+            this.btnReciept.UseVisualStyleBackColor = true;
+            this.btnReciept.Click += new System.EventHandler(this.btnReciept_Click);
+            // 
             // FmMainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(822, 575);
+            this.Controls.Add(this.btnReciept);
             this.Controls.Add(this.btnClient);
             this.Controls.Add(this.btnTransport);
             this.Controls.Add(this.ctlEmployee);
@@ -82,5 +94,6 @@
         private System.Windows.Forms.Label ctlEmployee;
         private System.Windows.Forms.Button btnTransport;
         private System.Windows.Forms.Button btnClient;
+        private System.Windows.Forms.Button btnReciept;
     }
 }

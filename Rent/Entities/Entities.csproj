@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Account.cs" />
+    <Compile Include="BaseEntity.cs" />
     <Compile Include="Brand.cs" />
     <Compile Include="Client.cs" />
     <Compile Include="Color.cs" />
@@ -51,7 +52,9 @@
     <Compile Include="Person.cs" />
     <Compile Include="Position.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reciept.cs" />
     <Compile Include="StandartdEntity.cs" />
+    <Compile Include="Tariff.cs" />
     <Compile Include="Transport.cs" />
     <Compile Include="TransportType.cs" />
   </ItemGroup>

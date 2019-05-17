@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace Entities
 {
-    public class Person
+    public class Person: BaseEntity
     {
-        public int Id { get; set; }
         public string Passport { get; set; }
         public string FullName { get; set; }
         public string Phone { get; set; }
@@ -49,6 +48,11 @@ namespace Entities
                 throw new ArgumentException("drivingCategory is null");
 
             DrivingCategories.Remove(drivingCategory);
+        }
+
+        public override string ToString()
+        {
+            return this.FullName;
         }
     }
 }
