@@ -115,9 +115,12 @@ namespace RentDemo
             {
                 return;
             }
+
+            Reciept reciept = CreateNewReciept();
+            RecieptDAO.Add(reciept);
         }
 
-        private Reciept CreateNewReciept()//TODO: Создание по кнопки и занесение в бд. Реализовать класс RecieptDAO
+        private Reciept CreateNewReciept()
         {
             Reciept reciept = new Reciept();
             reciept.Transport = (Transport)ctlTransport.SelectedItem;
