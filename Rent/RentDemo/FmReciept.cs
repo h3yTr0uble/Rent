@@ -116,8 +116,27 @@ namespace RentDemo
                 return;
             }
 
+            Client client = (Client)ctlClient.SelectedItem;
+            Transport transport = (Transport)ctlTransport.SelectedItem;
+
+            if (!IsClientDriver(client, transport))
+            {
+                string errorClientIsntDriver = string.Format("Клиент не имеет прав на управление выбранным транспортным средством.");
+                MessageBox.Show(errorClientIsntDriver,
+                               "Информационное сообщение",
+                                MessageBoxButtons.OKCancel,
+                                MessageBoxIcon.Warning);
+                return;
+            }
+
             Reciept reciept = CreateNewReciept();
             RecieptDAO.Add(reciept);
+
+            if (checkDriver.Checked)//TODO: добавить возвращаемый параметр для квитанции и реализовать оформление квитанции на водителя.
+            {
+                DriverReciept driverReciept = new DriverReciept();
+                DriverRecieptDAO.Add(driverReciept);
+            }
         }
 
         private Reciept CreateNewReciept()
@@ -156,11 +175,33 @@ namespace RentDemo
         private void checkDriver_CheckedChanged(object sender, EventArgs e)
         {
             lblPrice.Text = CalculatePrice().ToString();
+
+            if (checkDriver.Checked)
+            {
+                ctlDriver.Enabled = true;
+            }
+            else
+            {
+                ctlDriver.Enabled = false;
+                ctlDriver.SelectedItem = null;
+            }
         }
 
         private void ctlTransport_SelectedIndexChanged(object sender, EventArgs e)
         {
             lblPrice.Text = CalculatePrice().ToString();
+            Transport transport = (Transport)ctlTransport.SelectedItem;
+            FillComboBox(ctlDriver, GetDrivers(transport));
+        }
+
+        private IEnumerable<Employee> GetDrivers(Transport transport)
+        {
+            return EmployeeDAO.GetDrivers(transport);
+        }
+
+        private bool IsClientDriver(Client client, Transport transport)
+        {
+            return client.DrivingCategories.Exists(c => c.Id == transport.DrivingCategory.Id);
         }
     }
 }

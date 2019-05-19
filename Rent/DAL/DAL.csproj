@@ -45,7 +45,9 @@
     <Compile Include="BrandDAO.cs" />
     <Compile Include="ClientDAO.cs" />
     <Compile Include="ColorDAO.cs" />
+    <Compile Include="DriverRecieptDAO.cs" />
     <Compile Include="DrivingCategoryDAO.cs" />
+    <Compile Include="EmployeeDAO.cs" />
     <Compile Include="ModelDAO.cs" />
     <Compile Include="ParkingDAO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

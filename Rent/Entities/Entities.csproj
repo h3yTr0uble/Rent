@@ -45,6 +45,7 @@
     <Compile Include="Brand.cs" />
     <Compile Include="Client.cs" />
     <Compile Include="Color.cs" />
+    <Compile Include="DriverReciept.cs" />
     <Compile Include="DrivingCategory.cs" />
     <Compile Include="Employee.cs" />
     <Compile Include="Model.cs" />
