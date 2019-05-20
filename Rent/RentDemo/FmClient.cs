@@ -54,8 +54,8 @@ namespace RentDemo
         private void FmClient_Load(object sender, EventArgs e)
         {
             List<Client> clients = new List<Client>(GetClients());
-            FillCtlClients(clients);
             ctlClients.AutoGenerateColumns = false;
+            FillCtlClients(clients);
         }
 
         private IEnumerable<Client> GetClients()

@@ -52,6 +52,7 @@
     <Compile Include="ParkingDAO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RecieptDAO.cs" />
+    <Compile Include="RecieptForReturnDAO.cs" />
     <Compile Include="TariffsDAO.cs" />
     <Compile Include="TransportDAO.cs" />
   </ItemGroup>

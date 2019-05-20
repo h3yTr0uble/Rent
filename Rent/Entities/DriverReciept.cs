@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace Entities
 {
-    public class DriverReciept:AccessoryRecient
+    public class DriverReciept : BaseEntity
     {
+        public Reciept Reciept { get; set; }
         public Employee Driver { get; set; }
     }
 }

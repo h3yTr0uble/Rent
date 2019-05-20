@@ -82,12 +82,14 @@ namespace DAL
                     reciept.CreationDate        = DateTime.Parse(reader["ДатаОформления"].ToString());
                     reciept.NecessaryReturnDate = DateTime.Parse(reader["НеобходимаяДатаВозврата"].ToString());
                     reciept.Price               = double.Parse(reader["Стоимость"].ToString());
+                    int.TryParse(reader["ID_КвОВозврате"].ToString(), out int idRecieptForReturn);
 
                     reciept.Tariff = TariffsDAO.GetTariffById(idTariff);
                     reciept.Transport = TransportDAO.GetTransportById(idTransport);
                     reciept.Parking = ParkingDAO.GetParkingById(idParking);
                     reciept.Employee = EmployeeDAO.GetEmployeeById(idEmployee);
                     reciept.Client = ClientDAO.GetClientById(idClient);
+                    reciept.RecieptForReturn = RecieptForReturnDAO.GetRecieptForReturnById(idRecieptForReturn);
 
                     reciepts.Add(reciept);
                 }

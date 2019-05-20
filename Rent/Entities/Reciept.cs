@@ -16,5 +16,7 @@ namespace Entities
         public DateTime CreationDate { get; set; }
         public DateTime NecessaryReturnDate { get; set; }
         public double Price { get; set; }
+
+        public RecieptForReturn RecieptForReturn { get; set; }
     }
 }

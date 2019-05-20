@@ -74,8 +74,8 @@ namespace RentDemo
         private void FmTransport_Load(object sender, EventArgs e)
         {
             List<Transport> transports = new List<Transport>(GetTransports());
-            FillCtlTransports(transports);
             ctlTransports.AutoGenerateColumns = false;
+            FillCtlTransports(transports);
         }
 
         private void FillCtlTransports(IEnumerable<Transport> transports)

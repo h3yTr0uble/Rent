@@ -40,7 +40,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AccessoryRecient.cs" />
     <Compile Include="Account.cs" />
     <Compile Include="BaseEntity.cs" />
     <Compile Include="Brand.cs" />
@@ -49,12 +48,14 @@
     <Compile Include="DriverReciept.cs" />
     <Compile Include="DrivingCategory.cs" />
     <Compile Include="Employee.cs" />
+    <Compile Include="FineReciept.cs" />
     <Compile Include="Model.cs" />
     <Compile Include="Parking.cs" />
     <Compile Include="Person.cs" />
     <Compile Include="Position.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Reciept.cs" />
+    <Compile Include="RecieptForReturn.cs" />
     <Compile Include="StandartdEntity.cs" />
     <Compile Include="Tariff.cs" />
     <Compile Include="Transport.cs" />
