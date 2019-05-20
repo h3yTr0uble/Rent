@@ -15,24 +15,44 @@ namespace RentDemo
     public partial class FmHistury : Form
     {
         public Reciept SelectedReciept { get; private set; }
-        private List<Reciept> reciepts;
+        private List<Reciept> reciepts = new List<Reciept>();
+        private readonly int formMode = 0;
+        private Transport transport;
+        private Client client;
 
         public FmHistury()
         {
-            reciepts = new List<Reciept>(RecieptDAO.GetReciepts());
+            formMode = 0;
             InitializeComponent();
         }
 
         public FmHistury(Transport transport)
         {
-            reciepts = new List<Reciept>(RecieptDAO.GetRecieptsByTransport(transport));
+            formMode = 1;
+            this.transport = transport;
             InitializeComponent();
         }
 
         public FmHistury(Client client)
         {
-            reciepts = new List<Reciept>(RecieptDAO.GetRecieptsByClient(client));
+            formMode = 2;
+            this.client = client;
             InitializeComponent();
+        }
+
+        private IEnumerable<Reciept> GetReciepts()
+        {
+            switch (formMode)
+            {
+                case 0:
+                    return RecieptDAO.GetReciepts();
+                case 1:
+                    return RecieptDAO.GetRecieptsByTransport(transport);
+                case 2:
+                    return RecieptDAO.GetRecieptsByClient(client);
+                default:
+                    return null;
+            }
         }
 
         private void FillCtlReciepts(IEnumerable<Reciept> reciepts)
@@ -53,6 +73,7 @@ namespace RentDemo
 
         private void FmHistury_Load(object sender, EventArgs e)
         {
+            reciepts = GetReciepts().ToList();
             ctlReciepts.AutoGenerateColumns = false;
             FillCtlReciepts(reciepts);
         }
@@ -76,7 +97,11 @@ namespace RentDemo
         {
             SelectedReciept = (Reciept)ctlReciepts.SelectedCells[0].OwningRow.DataBoundItem;
             FmRecieptForReturn fmRecieptForReturn = new FmRecieptForReturn(SelectedReciept);
-            fmRecieptForReturn.ShowDialog();
+            if(fmRecieptForReturn.ShowDialog() == DialogResult.OK)
+            {
+                reciepts = GetReciepts().ToList();
+                FillCtlReciepts(reciepts);
+            }
         }
 
         private void ctlCreationRecieptForReturn_Click(object sender, EventArgs e)

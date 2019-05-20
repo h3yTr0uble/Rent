@@ -10,10 +10,14 @@ namespace Entities
     {
         public double Fine { get; set; }
 
-        public FineReciept(int id, double fine)
+        public FineReciept(double fine)
+        {
+            Fine = fine;
+        }
+
+        public FineReciept(int id, double fine) : this(fine)
         {
             Id = id;
-            Fine = fine;
         }
     }
 }

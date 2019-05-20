@@ -51,5 +51,31 @@ namespace DAL
 
             return null;
         }
+
+        public static void Add(RecieptForReturn recieptForReturn, Reciept reciept)
+        {
+            using (SqlConnection connection = new SqlConnection(ActualConnectionString.Get()))
+            {
+                SqlCommand command = new SqlCommand("AddRecieptForReturn");
+                command.CommandType = CommandType.StoredProcedure;
+                command.Connection = connection;
+                command.Parameters.AddWithValue("@idReciept", reciept.Id);
+                command.Parameters.AddWithValue("@idTransport", reciept.Transport.Id);
+                command.Parameters.AddWithValue("@idParking", recieptForReturn.Parking.Id);
+                command.Parameters.AddWithValue("@creationDate", recieptForReturn.CreationDate);
+                command.Parameters.Add(new SqlParameter("@idRecieptForReturn", SqlDbType.Int));
+                command.Parameters["@idRecieptForReturn"].Direction = ParameterDirection.Output;
+
+                connection.Open();
+                command.ExecuteNonQuery();
+
+                recieptForReturn.Id = (int)command.Parameters["@idRecieptForReturn"].Value;
+
+                if (recieptForReturn.FineReciept != null)
+                {
+                    FineRecieptDAO.Add(recieptForReturn);
+                }
+            }
+        }
     }
 }
