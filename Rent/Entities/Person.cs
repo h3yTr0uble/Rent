@@ -54,5 +54,20 @@ namespace Entities
         {
             return this.FullName;
         }
+
+        public override bool Equals(object obj)//Возможны проблемы. Протестировать!
+        {
+            Person person;
+            try
+            {
+                person = (Person)obj;
+            }
+            catch (Exception)
+            {
+                return base.Equals(obj);
+            }
+
+            return this.Id == person.Id;
+        }
     }
 }

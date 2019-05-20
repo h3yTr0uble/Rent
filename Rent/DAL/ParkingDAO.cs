@@ -34,5 +34,30 @@ namespace DAL
 
             return parkings;
         }
+
+        internal static Parking GetParkingById(int id)
+        {
+            using (SqlConnection connection = new SqlConnection(ActualConnectionString.Get()))
+            {
+                SqlCommand command = new SqlCommand("GetParkingByID");
+                command.CommandType = CommandType.StoredProcedure;
+                command.Connection = connection;
+                command.Parameters.AddWithValue("@id", id);
+
+                connection.Open();
+
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        Parking parking = new Parking(id, (string)reader["Адрес"]);
+
+                        return parking;
+                    }
+                }
+            }
+
+            return null;
+        }
     }
 }

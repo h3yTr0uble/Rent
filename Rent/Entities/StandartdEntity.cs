@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Entities
 {
-    public class StandartdEntity:BaseEntity
+    public abstract class StandartdEntity:BaseEntity
     {
         public string Title { get; set; }
 

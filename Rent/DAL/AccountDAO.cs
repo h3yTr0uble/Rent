@@ -29,19 +29,7 @@ namespace DAL
 
                 if (int.TryParse(command.Parameters["@idEmployee"].Value.ToString(), out int idEmployee))
                 {
-                    command = new SqlCommand("GetEmployeeByID");
-                    command.CommandType = CommandType.StoredProcedure;
-                    command.Connection = connection;
-                    command.Parameters.AddWithValue("@id", idEmployee);
-
-                    using (SqlDataReader reader = command.ExecuteReader())
-                    {
-                        while (reader.Read())
-                        {
-                            account.Employee = new Employee(idEmployee, (string)reader["Паспорт"], (string)reader["ФИО"]);
-                            return;
-                        }
-                    }
+                    account.Employee = EmployeeDAO.GetEmployeeById(idEmployee);
                 }
             }
         }

@@ -34,6 +34,9 @@
             this.ctlAddTransport = new System.Windows.Forms.ToolStripMenuItem();
             this.ctlEditTransport = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
+            this.ctlCreateRecieptTransport = new System.Windows.Forms.ToolStripMenuItem();
+            this.ctlEnterTransport = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
             this.ctlToMainForm = new System.Windows.Forms.ToolStripMenuItem();
             this.ctlTransports = new System.Windows.Forms.DataGridView();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -49,6 +52,9 @@
             this.contextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.ctlAddTransportContext = new System.Windows.Forms.ToolStripMenuItem();
             this.ctlEditTransportContext = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripSeparator();
+            this.ctlCreateRecieptTransportContext = new System.Windows.Forms.ToolStripMenuItem();
+            this.ctlEnterTransportContext = new System.Windows.Forms.ToolStripMenuItem();
             this.ctlSearch = new System.Windows.Forms.GroupBox();
             this.rb5 = new System.Windows.Forms.RadioButton();
             this.btnSbros = new System.Windows.Forms.Button();
@@ -72,6 +78,10 @@
             this.rb3 = new System.Windows.Forms.RadioButton();
             this.rb2 = new System.Windows.Forms.RadioButton();
             this.rb1 = new System.Windows.Forms.RadioButton();
+            this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripSeparator();
+            this.ctlHistoryTransportContext = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripSeparator();
+            this.ctlHistoryTransport = new System.Windows.Forms.ToolStripMenuItem();
             this.mainMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ctlTransports)).BeginInit();
             this.contextMenu.SuspendLayout();
@@ -95,6 +105,11 @@
             this.ctlAddTransport,
             this.ctlEditTransport,
             this.toolStripMenuItem1,
+            this.ctlCreateRecieptTransport,
+            this.ctlEnterTransport,
+            this.toolStripMenuItem2,
+            this.ctlHistoryTransport,
+            this.toolStripMenuItem5,
             this.ctlToMainForm});
             this.ctlFile.Name = "ctlFile";
             this.ctlFile.Size = new System.Drawing.Size(57, 24);
@@ -118,6 +133,25 @@
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
             this.toolStripMenuItem1.Size = new System.Drawing.Size(259, 6);
+            // 
+            // ctlCreateRecieptTransport
+            // 
+            this.ctlCreateRecieptTransport.Name = "ctlCreateRecieptTransport";
+            this.ctlCreateRecieptTransport.Size = new System.Drawing.Size(262, 26);
+            this.ctlCreateRecieptTransport.Text = "Оформить квитанцию";
+            this.ctlCreateRecieptTransport.Click += new System.EventHandler(this.ctlCreateRecieptTransport_Click);
+            // 
+            // ctlEnterTransport
+            // 
+            this.ctlEnterTransport.Name = "ctlEnterTransport";
+            this.ctlEnterTransport.Size = new System.Drawing.Size(262, 26);
+            this.ctlEnterTransport.Text = "Выбрать";
+            this.ctlEnterTransport.Click += new System.EventHandler(this.ctlEnterTransport_Click);
+            // 
+            // toolStripMenuItem2
+            // 
+            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(259, 6);
             // 
             // ctlToMainForm
             // 
@@ -216,9 +250,14 @@
             this.contextMenu.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.contextMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ctlAddTransportContext,
-            this.ctlEditTransportContext});
+            this.ctlEditTransportContext,
+            this.toolStripMenuItem3,
+            this.ctlCreateRecieptTransportContext,
+            this.ctlEnterTransportContext,
+            this.toolStripMenuItem4,
+            this.ctlHistoryTransportContext});
             this.contextMenu.Name = "contextMenu";
-            this.contextMenu.Size = new System.Drawing.Size(257, 52);
+            this.contextMenu.Size = new System.Drawing.Size(257, 164);
             // 
             // ctlAddTransportContext
             // 
@@ -233,6 +272,25 @@
             this.ctlEditTransportContext.Size = new System.Drawing.Size(256, 24);
             this.ctlEditTransportContext.Text = "Редактировать транспорт";
             this.ctlEditTransportContext.Click += new System.EventHandler(this.ctlEditTransportContext_Click);
+            // 
+            // toolStripMenuItem3
+            // 
+            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(253, 6);
+            // 
+            // ctlCreateRecieptTransportContext
+            // 
+            this.ctlCreateRecieptTransportContext.Name = "ctlCreateRecieptTransportContext";
+            this.ctlCreateRecieptTransportContext.Size = new System.Drawing.Size(256, 24);
+            this.ctlCreateRecieptTransportContext.Text = "Оформить квитанцию";
+            this.ctlCreateRecieptTransportContext.Click += new System.EventHandler(this.ctlCreateRecieptTransportContext_Click);
+            // 
+            // ctlEnterTransportContext
+            // 
+            this.ctlEnterTransportContext.Name = "ctlEnterTransportContext";
+            this.ctlEnterTransportContext.Size = new System.Drawing.Size(256, 24);
+            this.ctlEnterTransportContext.Text = "Выбрать";
+            this.ctlEnterTransportContext.Click += new System.EventHandler(this.ctlEnterTransportContext_Click);
             // 
             // ctlSearch
             // 
@@ -485,6 +543,30 @@
             this.rb1.Text = "Поиск по нормепу транспорта";
             this.rb1.UseVisualStyleBackColor = true;
             // 
+            // toolStripMenuItem4
+            // 
+            this.toolStripMenuItem4.Name = "toolStripMenuItem4";
+            this.toolStripMenuItem4.Size = new System.Drawing.Size(253, 6);
+            // 
+            // ctlHistoryTransportContext
+            // 
+            this.ctlHistoryTransportContext.Name = "ctlHistoryTransportContext";
+            this.ctlHistoryTransportContext.Size = new System.Drawing.Size(256, 24);
+            this.ctlHistoryTransportContext.Text = "История использования";
+            this.ctlHistoryTransportContext.Click += new System.EventHandler(this.ctlHistoryTransportContext_Click);
+            // 
+            // toolStripMenuItem5
+            // 
+            this.toolStripMenuItem5.Name = "toolStripMenuItem5";
+            this.toolStripMenuItem5.Size = new System.Drawing.Size(259, 6);
+            // 
+            // ctlHistoryTransport
+            // 
+            this.ctlHistoryTransport.Name = "ctlHistoryTransport";
+            this.ctlHistoryTransport.Size = new System.Drawing.Size(262, 26);
+            this.ctlHistoryTransport.Text = "История использования";
+            this.ctlHistoryTransport.Click += new System.EventHandler(this.ctlHistoryTransport_Click);
+            // 
             // FmTransport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -553,5 +635,15 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Parking;
         private System.Windows.Forms.DataGridViewTextBoxColumn Coef;
         private System.Windows.Forms.DataGridViewTextBoxColumn CorrectCoef;
+        private System.Windows.Forms.ToolStripMenuItem ctlCreateRecieptTransport;
+        private System.Windows.Forms.ToolStripMenuItem ctlEnterTransport;
+        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem2;
+        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem3;
+        private System.Windows.Forms.ToolStripMenuItem ctlCreateRecieptTransportContext;
+        private System.Windows.Forms.ToolStripMenuItem ctlEnterTransportContext;
+        private System.Windows.Forms.ToolStripMenuItem ctlHistoryTransport;
+        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem5;
+        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem4;
+        private System.Windows.Forms.ToolStripMenuItem ctlHistoryTransportContext;
     }
 }

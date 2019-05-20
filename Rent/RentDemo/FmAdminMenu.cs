@@ -18,14 +18,11 @@ namespace RentDemo
             InitializeComponent();
         }
 
-        private void btnCreateBackup_Click(object sender, EventArgs e)
+        private void btnOpenBackup_Click(object sender, EventArgs e)
         {
-            BackupDAO.CreateBackup(@"D:\backup");//TODO: Добавить класс логики и реализовать выбор пути
-        }
-
-        private void btnRestoreDatabase_Click(object sender, EventArgs e)
-        {
-            BackupDAO.RestoreDatabase("Rent", @"D:\backup\Rent.Bak");//TODO: Реализовать выбор пути
+            FmBackup fmBackup = new FmBackup();
+            fmBackup.Show();
+            this.Hide();
         }
     }
 }

@@ -36,5 +36,32 @@ namespace DAL
 
             return tariffs;
         }
+
+        internal static Tariff GetTariffById(int id)
+        {
+            using (SqlConnection connection = new SqlConnection(ActualConnectionString.Get()))
+            {
+                SqlCommand command = new SqlCommand("GetTariffByID");
+                command.CommandType = CommandType.StoredProcedure;
+                command.Connection = connection;
+                command.Parameters.AddWithValue("@id", id);
+
+                connection.Open();
+
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        Tariff tariff = new Tariff(id,
+                                                   reader["Название"].ToString(),
+                                                   int.Parse(reader["СрокАренды"].ToString()),
+                                                   double.Parse(reader["СтоимостьЗаЧас"].ToString()));
+                        return tariff;
+                    }
+                }
+            }
+
+            return null;
+        }
     }
 }

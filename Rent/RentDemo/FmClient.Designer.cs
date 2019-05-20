@@ -39,11 +39,21 @@
             this.contextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.ctlAddClientContext = new System.Windows.Forms.ToolStripMenuItem();
             this.ctlEditClientContext = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
+            this.ctlCreateRecieptClientContext = new System.Windows.Forms.ToolStripMenuItem();
+            this.ctlEnterClientContext = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripSeparator();
+            this.ctlHistoryClientContext = new System.Windows.Forms.ToolStripMenuItem();
             this.mainMenu = new System.Windows.Forms.MenuStrip();
             this.ctlFile = new System.Windows.Forms.ToolStripMenuItem();
             this.ctlAddClient = new System.Windows.Forms.ToolStripMenuItem();
             this.ctlEditClient = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripSeparator();
+            this.ctlEnterClient = new System.Windows.Forms.ToolStripMenuItem();
+            this.ctlCreateRecieptClient = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
+            this.ctlHistoryClient = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripSeparator();
             this.ctlToMainForm = new System.Windows.Forms.ToolStripMenuItem();
             this.ctlSearch = new System.Windows.Forms.GroupBox();
             this.tbPasportPoisk = new System.Windows.Forms.MaskedTextBox();
@@ -136,9 +146,14 @@
             this.contextMenu.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.contextMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ctlAddClientContext,
-            this.ctlEditClientContext});
+            this.ctlEditClientContext,
+            this.toolStripMenuItem2,
+            this.ctlCreateRecieptClientContext,
+            this.ctlEnterClientContext,
+            this.toolStripMenuItem4,
+            this.ctlHistoryClientContext});
             this.contextMenu.Name = "contextMenu";
-            this.contextMenu.Size = new System.Drawing.Size(240, 52);
+            this.contextMenu.Size = new System.Drawing.Size(240, 136);
             // 
             // ctlAddClientContext
             // 
@@ -153,6 +168,38 @@
             this.ctlEditClientContext.Size = new System.Drawing.Size(239, 24);
             this.ctlEditClientContext.Text = "Редактировать клиента";
             this.ctlEditClientContext.Click += new System.EventHandler(this.ctlEditClientContext_Click);
+            // 
+            // toolStripMenuItem2
+            // 
+            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(236, 6);
+            // 
+            // ctlCreateRecieptClientContext
+            // 
+            this.ctlCreateRecieptClientContext.Name = "ctlCreateRecieptClientContext";
+            this.ctlCreateRecieptClientContext.Size = new System.Drawing.Size(239, 24);
+            this.ctlCreateRecieptClientContext.Text = "Оформить квитанцию";
+            this.ctlCreateRecieptClientContext.Click += new System.EventHandler(this.ctlCreateRecieptClientContext_Click);
+            // 
+            // ctlEnterClientContext
+            // 
+            this.ctlEnterClientContext.Name = "ctlEnterClientContext";
+            this.ctlEnterClientContext.Size = new System.Drawing.Size(239, 24);
+            this.ctlEnterClientContext.Text = "Выбрать";
+            this.ctlEnterClientContext.Visible = false;
+            this.ctlEnterClientContext.Click += new System.EventHandler(this.ctlEnterClientContext_Click);
+            // 
+            // toolStripMenuItem4
+            // 
+            this.toolStripMenuItem4.Name = "toolStripMenuItem4";
+            this.toolStripMenuItem4.Size = new System.Drawing.Size(236, 6);
+            // 
+            // ctlHistoryClientContext
+            // 
+            this.ctlHistoryClientContext.Name = "ctlHistoryClientContext";
+            this.ctlHistoryClientContext.Size = new System.Drawing.Size(239, 24);
+            this.ctlHistoryClientContext.Text = "История активности";
+            this.ctlHistoryClientContext.Click += new System.EventHandler(this.ctlHistoryClientContext_Click);
             // 
             // mainMenu
             // 
@@ -170,7 +217,12 @@
             this.ctlFile.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ctlAddClient,
             this.ctlEditClient,
+            this.toolStripMenuItem3,
+            this.ctlEnterClient,
+            this.ctlCreateRecieptClient,
             this.toolStripMenuItem1,
+            this.ctlHistoryClient,
+            this.toolStripMenuItem5,
             this.ctlToMainForm});
             this.ctlFile.Name = "ctlFile";
             this.ctlFile.Size = new System.Drawing.Size(57, 24);
@@ -190,10 +242,41 @@
             this.ctlEditClient.Text = "Редактировать клиента";
             this.ctlEditClient.Click += new System.EventHandler(this.ctlEditClient_Click);
             // 
+            // toolStripMenuItem3
+            // 
+            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(242, 6);
+            // 
+            // ctlEnterClient
+            // 
+            this.ctlEnterClient.Name = "ctlEnterClient";
+            this.ctlEnterClient.Size = new System.Drawing.Size(245, 26);
+            this.ctlEnterClient.Text = "Выбрать";
+            this.ctlEnterClient.Click += new System.EventHandler(this.ctlEnterClient_Click);
+            // 
+            // ctlCreateRecieptClient
+            // 
+            this.ctlCreateRecieptClient.Name = "ctlCreateRecieptClient";
+            this.ctlCreateRecieptClient.Size = new System.Drawing.Size(245, 26);
+            this.ctlCreateRecieptClient.Text = "Оформить квитанцию";
+            this.ctlCreateRecieptClient.Click += new System.EventHandler(this.ctlCreateRecieptClient_Click);
+            // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
             this.toolStripMenuItem1.Size = new System.Drawing.Size(242, 6);
+            // 
+            // ctlHistoryClient
+            // 
+            this.ctlHistoryClient.Name = "ctlHistoryClient";
+            this.ctlHistoryClient.Size = new System.Drawing.Size(245, 26);
+            this.ctlHistoryClient.Text = "История активности";
+            this.ctlHistoryClient.Click += new System.EventHandler(this.ctlHistoryClient_Click);
+            // 
+            // toolStripMenuItem5
+            // 
+            this.toolStripMenuItem5.Name = "toolStripMenuItem5";
+            this.toolStripMenuItem5.Size = new System.Drawing.Size(242, 6);
             // 
             // ctlToMainForm
             // 
@@ -330,5 +413,15 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem ctlCreateRecieptClientContext;
+        private System.Windows.Forms.ToolStripMenuItem ctlEnterClientContext;
+        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem3;
+        private System.Windows.Forms.ToolStripMenuItem ctlEnterClient;
+        private System.Windows.Forms.ToolStripMenuItem ctlCreateRecieptClient;
+        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem4;
+        private System.Windows.Forms.ToolStripMenuItem ctlHistoryClientContext;
+        private System.Windows.Forms.ToolStripMenuItem ctlHistoryClient;
+        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem5;
     }
 }

@@ -96,5 +96,36 @@ namespace DAL
                 command.ExecuteNonQuery();
             }
         }
+
+        internal static Client GetClientById(int id)
+        {
+            using (SqlConnection connection = new SqlConnection(ActualConnectionString.Get()))
+            {
+                SqlCommand command = new SqlCommand("GetClientByID");
+                command.CommandType = CommandType.StoredProcedure;
+                command.Connection = connection;
+                command.Parameters.AddWithValue("@id", id);
+
+                connection.Open();
+
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        Client client = new Client();
+                        client.Id = id;
+                        client.Passport = reader["Паспорт"].ToString();
+                        client.FullName = reader["ФИО"].ToString();
+                        client.Phone = reader["Телефон"].ToString();
+
+                        client.AddDrivingCategory(DrivingCategoryDAO.GetClientsDrivingCategories(client));
+
+                        return client;
+                    }
+                }
+            }
+
+            return null;
+        }
     }
 }

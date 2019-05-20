@@ -14,9 +14,26 @@ namespace RentDemo
 {
     public partial class FmClient : Form
     {
-        public FmClient()
+        public Client SelectedClient { get; private set; }
+        public Employee Employee { get; private set; }
+
+        public FmClient(Employee employee)
+        {
+            this.Employee = employee;
+            InitializeComponent();
+            ctlEnterClientContext.Visible = false;
+            ctlEnterClient.Visible = false;
+            ctlCreateRecieptClientContext.Visible = true;
+            ctlCreateRecieptClient.Visible = true;
+        }
+
+        public FmClient(FmReciept fmReciept)
         {
             InitializeComponent();
+            ctlEnterClientContext.Visible = true;
+            ctlEnterClient.Visible = true;
+            ctlCreateRecieptClientContext.Visible = false;
+            ctlCreateRecieptClient.Visible = false;
         }
 
         private void FillCtlClients(IEnumerable<Client> clients)
@@ -99,6 +116,72 @@ namespace RentDemo
         private void ctlEditClientContext_Click(object sender, EventArgs e)
         {
             EditSelectedClient();
+        }
+
+        private void ctlCreateRecieptClientContext_Click(object sender, EventArgs e)
+        {
+            OpenCreationReciept();
+        }
+
+        private void OpenHistorySelectedClient()
+        {
+            if (ctlClients.SelectedCells.Count > 0)
+            {
+                Client client = (Client)ctlClients.SelectedCells[0].OwningRow.DataBoundItem;
+
+                FmHistury fmHistory = new FmHistury(client);
+                fmHistory.ShowDialog();
+            }
+        }
+
+        private void ctlEnterClientContext_Click(object sender, EventArgs e)
+        {
+            EnterSelectedClient();
+        }
+
+        private void EnterSelectedClient()
+        {
+            if (ctlClients.SelectedCells.Count > 0)
+            {
+                SelectedClient = (Client)ctlClients.SelectedCells[0].OwningRow.DataBoundItem;
+                DialogResult = DialogResult.OK;
+                this.Close();
+            }
+        }
+
+        private void ctlEnterClient_Click(object sender, EventArgs e)
+        {
+            EnterSelectedClient();
+        }
+
+        private void OpenCreationReciept()
+        {
+            SelectedClient = (Client)ctlClients.SelectedCells[0].OwningRow.DataBoundItem;
+            FmReciept fmReciept = new FmReciept(this);
+            fmReciept.Show();
+            this.Close();
+        }
+
+        private void ctlCreateRecieptClient_Click(object sender, EventArgs e)
+        {
+            OpenCreationReciept();
+        }
+
+        private void ctlHistoryClientContext_Click(object sender, EventArgs e)
+        {
+            OpenSelectedClientHistory();
+        }
+
+        private void OpenSelectedClientHistory()
+        {
+            SelectedClient = (Client)ctlClients.SelectedCells[0].OwningRow.DataBoundItem;
+            FmHistury fmHistory = new FmHistury(SelectedClient);
+            fmHistory.ShowDialog();
+        }
+
+        private void ctlHistoryClient_Click(object sender, EventArgs e)
+        {
+            OpenSelectedClientHistory();
         }
     }
 }

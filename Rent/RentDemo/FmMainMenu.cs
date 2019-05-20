@@ -24,14 +24,14 @@ namespace RentDemo
 
         private void btnTransport_Click(object sender, EventArgs e)
         {
-            FmTransport fmTransport = new FmTransport();
+            FmTransport fmTransport = new FmTransport(employee);
             fmTransport.Show();
             this.Hide();
         }
 
         private void btnClient_Click(object sender, EventArgs e)
         {
-            FmClient fmClient = new FmClient();
+            FmClient fmClient = new FmClient(employee);
             fmClient.Show();
             this.Hide();
         }
@@ -40,6 +40,13 @@ namespace RentDemo
         {
             FmReciept fmReciept = new FmReciept(employee);
             fmReciept.Show();
+            this.Hide();
+        }
+
+        private void btnRecieptsList_Click(object sender, EventArgs e)
+        {
+            FmHistury fmHistory = new FmHistury();
+            fmHistory.Show();
             this.Hide();
         }
     }

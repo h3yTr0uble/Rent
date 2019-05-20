@@ -14,9 +14,26 @@ namespace RentDemo
 {
     public partial class FmTransport : Form
     {
-        public FmTransport()
+        public Transport SelectedTransport { get; private set; }
+        public Employee Employee { get; private set; }
+
+        public FmTransport(Employee employee)
+        {
+            this.Employee = employee;
+            InitializeComponent();
+            ctlEnterTransportContext.Visible = false;
+            ctlEnterTransport.Visible = false;
+            ctlCreateRecieptTransportContext.Visible = true;
+            ctlCreateRecieptTransport.Visible = true;
+        }
+
+        public FmTransport(FmReciept fmReciept)
         {
             InitializeComponent();
+            ctlEnterTransportContext.Visible = true;
+            ctlEnterTransport.Visible = true;
+            ctlCreateRecieptTransportContext.Visible = false;
+            ctlCreateRecieptTransport.Visible = false;
         }
 
         private void ctlAddTransport_Click(object sender, EventArgs e)
@@ -80,6 +97,61 @@ namespace RentDemo
         private void ctlEditTransportContext_Click(object sender, EventArgs e)
         {
             EditSelectedTransport();
+        }
+
+        private void EnterSelectedTransport()
+        {
+            if (ctlTransports.SelectedCells.Count > 0)
+            {
+                SelectedTransport = (Transport)ctlTransports.SelectedCells[0].OwningRow.DataBoundItem;
+                DialogResult = DialogResult.OK;
+                this.Close();
+            }
+        }
+
+        private void ctlEnterTransportContext_Click(object sender, EventArgs e)
+        {
+            EnterSelectedTransport();
+        }
+
+        private void ctlEnterTransport_Click(object sender, EventArgs e)
+        {
+            EnterSelectedTransport();
+        }
+
+        private void ctlCreateRecieptTransport_Click(object sender, EventArgs e)
+        {
+            OpenCreationReciept();
+        }
+
+        private void OpenCreationReciept()
+        {
+            SelectedTransport = (Transport)ctlTransports.SelectedCells[0].OwningRow.DataBoundItem;
+            FmReciept fmReciept = new FmReciept(this);
+            fmReciept.Show();
+            this.Close();
+        }
+
+        private void ctlCreateRecieptTransportContext_Click(object sender, EventArgs e)
+        {
+            OpenCreationReciept();
+        }
+
+        private void OpenSelectedTransportHistory()
+        {
+            SelectedTransport = (Transport)ctlTransports.SelectedCells[0].OwningRow.DataBoundItem;
+            FmHistury fmHistory = new FmHistury(SelectedTransport);
+            fmHistory.ShowDialog();
+        }
+
+        private void ctlHistoryTransport_Click(object sender, EventArgs e)
+        {
+            OpenSelectedTransportHistory();
+        }
+
+        private void ctlHistoryTransportContext_Click(object sender, EventArgs e)
+        {
+            OpenSelectedTransportHistory();
         }
     }
 }

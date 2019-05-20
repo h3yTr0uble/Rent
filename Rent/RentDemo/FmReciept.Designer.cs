@@ -67,8 +67,8 @@
             // 
             // gbClient
             // 
-            this.gbClient.Controls.Add(this.linkLblTransportInfo);
             this.gbClient.Controls.Add(this.txtClientPassport);
+            this.gbClient.Controls.Add(this.linkLblClientInfo);
             this.gbClient.Controls.Add(this.ctlClient);
             this.gbClient.Controls.Add(this.label2);
             this.gbClient.Controls.Add(this.label1);
@@ -84,12 +84,13 @@
             this.linkLblTransportInfo.AutoSize = true;
             this.linkLblTransportInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.linkLblTransportInfo.LinkColor = System.Drawing.Color.Blue;
-            this.linkLblTransportInfo.Location = new System.Drawing.Point(558, 31);
+            this.linkLblTransportInfo.Location = new System.Drawing.Point(387, 48);
             this.linkLblTransportInfo.Name = "linkLblTransportInfo";
             this.linkLblTransportInfo.Size = new System.Drawing.Size(101, 20);
             this.linkLblTransportInfo.TabIndex = 42;
             this.linkLblTransportInfo.TabStop = true;
             this.linkLblTransportInfo.Text = "подробнее";
+            this.linkLblTransportInfo.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLblTransportInfo_LinkClicked);
             // 
             // txtClientPassport
             // 
@@ -129,9 +130,9 @@
             // 
             // gbTransport
             // 
+            this.gbTransport.Controls.Add(this.linkLblTransportInfo);
             this.gbTransport.Controls.Add(this.label3);
             this.gbTransport.Controls.Add(this.ctlTransport);
-            this.gbTransport.Controls.Add(this.linkLblClientInfo);
             this.gbTransport.Location = new System.Drawing.Point(12, 176);
             this.gbTransport.Name = "gbTransport";
             this.gbTransport.Size = new System.Drawing.Size(1015, 110);
@@ -163,12 +164,13 @@
             this.linkLblClientInfo.AutoSize = true;
             this.linkLblClientInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.linkLblClientInfo.LinkColor = System.Drawing.Color.Blue;
-            this.linkLblClientInfo.Location = new System.Drawing.Point(387, 55);
+            this.linkLblClientInfo.Location = new System.Drawing.Point(558, 34);
             this.linkLblClientInfo.Name = "linkLblClientInfo";
             this.linkLblClientInfo.Size = new System.Drawing.Size(101, 20);
             this.linkLblClientInfo.TabIndex = 34;
             this.linkLblClientInfo.TabStop = true;
             this.linkLblClientInfo.Text = "подробнее";
+            this.linkLblClientInfo.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLblClientInfo_LinkClicked);
             // 
             // ctlRentInterval
             // 
@@ -378,7 +380,6 @@
             this.Controls.Add(this.gbClient);
             this.Name = "FmReciept";
             this.Text = "FmReciept";
-            this.Load += new System.EventHandler(this.FmReciept_Load);
             this.gbClient.ResumeLayout(false);
             this.gbClient.PerformLayout();
             this.gbTransport.ResumeLayout(false);

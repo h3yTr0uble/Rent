@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace Entities
 {
-    public class DriverReciept
+    public class DriverReciept:AccessoryRecient
     {
+        public Employee Driver { get; set; }
     }
 }

@@ -40,5 +40,29 @@ namespace DAL
 
             return drivers;
         }
+
+        public static Employee GetEmployeeById(int id)
+        {
+            using (SqlConnection connection = new SqlConnection(ActualConnectionString.Get()))
+            {
+                SqlCommand command = new SqlCommand("GetEmployeeByID");
+                command.CommandType = CommandType.StoredProcedure;
+                command.Connection = connection;
+                command.Parameters.AddWithValue("@id", id);
+
+                connection.Open();
+
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        Employee employee = new Employee(id, (string)reader["Паспорт"], (string)reader["ФИО"]);
+                        return employee;
+                    }
+                }
+            }
+
+            return null;
+        }
     }
 }

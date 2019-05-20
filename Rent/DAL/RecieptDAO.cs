@@ -27,10 +27,73 @@ namespace DAL
                 command.Parameters.AddWithValue("@creationDate", reciept.CreationDate);
                 command.Parameters.AddWithValue("@necessaryReturnDate", reciept.NecessaryReturnDate);
                 command.Parameters.AddWithValue("@price", reciept.Price);
+                command.Parameters.Add(new SqlParameter("@idReciept", SqlDbType.Int));
+                command.Parameters["@idReciept"].Direction = ParameterDirection.Output;
 
                 connection.Open();
                 command.ExecuteNonQuery();
+
+                reciept.Id = (int)command.Parameters["@idReciept"].Value;
             }
+        }
+
+        public static IEnumerable<Reciept> GetRecieptsByClient(Client client)
+        {
+            return GetReciepts(new SqlParameter("@idClient", client.Id));
+        }
+
+        public static IEnumerable<Reciept> GetRecieptsByTransport(Transport transport)
+        {
+            return GetReciepts(new SqlParameter("@idTransport", transport.Id));
+        }
+
+        public static IEnumerable<Reciept> GetReciepts()
+        {
+            return GetReciepts(null);
+        }
+
+        private static IEnumerable<Reciept> GetReciepts(SqlParameter parameter)
+        {
+            List<Reciept> reciepts = new List<Reciept>();
+
+            using (SqlConnection connection = new SqlConnection(ActualConnectionString.Get()))
+            {
+                SqlCommand command = new SqlCommand("GetReciepts");
+                command.CommandType = CommandType.StoredProcedure;
+                command.Connection = connection;
+
+                if (parameter != null)
+                {
+                    command.Parameters.Add(parameter);
+                }
+
+                connection.Open();
+
+                SqlDataReader reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    Reciept reciept = new Reciept();
+                    reciept.Id                  = int.Parse(reader["ID_КвОВыдаче"].ToString());
+                    int idTariff                = int.Parse(reader["Тариф"].ToString());
+                    int idTransport             = int.Parse(reader["Транспорт"].ToString());
+                    int idParking               = int.Parse(reader["Парковка"].ToString());
+                    int idEmployee              = int.Parse(reader["Работник"].ToString());
+                    int idClient                = int.Parse(reader["Клиент"].ToString());
+                    reciept.CreationDate        = DateTime.Parse(reader["ДатаОформления"].ToString());
+                    reciept.NecessaryReturnDate = DateTime.Parse(reader["НеобходимаяДатаВозврата"].ToString());
+                    reciept.Price               = double.Parse(reader["Стоимость"].ToString());
+
+                    reciept.Tariff = TariffsDAO.GetTariffById(idTariff);
+                    reciept.Transport = TransportDAO.GetTransportById(idTransport);
+                    reciept.Parking = ParkingDAO.GetParkingById(idParking);
+                    reciept.Employee = EmployeeDAO.GetEmployeeById(idEmployee);
+                    reciept.Client = ClientDAO.GetClientById(idClient);
+
+                    reciepts.Add(reciept);
+                }
+            }
+
+            return reciepts;
         }
     }
 }

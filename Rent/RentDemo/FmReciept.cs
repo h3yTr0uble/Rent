@@ -23,15 +23,26 @@ namespace RentDemo
         {
             this.employee = employee;
             InitializeComponent();
-        }
-
-        private void FmReciept_Load(object sender, EventArgs e)
-        {
             lblEmployee.Text = employee.ToString();
             FillComboBox(ctlClient, GetClients());
             FillComboBox(ctlTransport, GetAvailableTransports());
             tariffs = new List<Tariff>(GetTariffs());
             RefreshDinamicItems();
+        }
+
+        public FmReciept(FmTransport fmTransport) : this(fmTransport.Employee)
+        {
+            ctlTransport.SelectedItem = fmTransport.SelectedTransport;
+        }
+
+        public FmReciept(FmClient fmClient) : this(fmClient.Employee)
+        {
+            ctlClient.SelectedItem = fmClient.SelectedClient;
+        }
+
+        private void FmReciept_Load(object sender, EventArgs e)
+        {
+            
         }
 
         private void FillComboBox(ComboBox comboBox, IEnumerable<BaseEntity> items)
@@ -119,12 +130,12 @@ namespace RentDemo
             Client client = (Client)ctlClient.SelectedItem;
             Transport transport = (Transport)ctlTransport.SelectedItem;
 
-            if (!IsClientDriver(client, transport))
+            if (!IsClientDriver(client, transport) && !checkDriver.Checked)
             {
                 string errorClientIsntDriver = string.Format("Клиент не имеет прав на управление выбранным транспортным средством.");
                 MessageBox.Show(errorClientIsntDriver,
                                "Информационное сообщение",
-                                MessageBoxButtons.OKCancel,
+                                MessageBoxButtons.OK,
                                 MessageBoxIcon.Warning);
                 return;
             }
@@ -132,9 +143,11 @@ namespace RentDemo
             Reciept reciept = CreateNewReciept();
             RecieptDAO.Add(reciept);
 
-            if (checkDriver.Checked)//TODO: добавить возвращаемый параметр для квитанции и реализовать оформление квитанции на водителя.
+            if (checkDriver.Checked)
             {
                 DriverReciept driverReciept = new DriverReciept();
+                driverReciept.Reciept = reciept;
+                driverReciept.Driver = (Employee)ctlDriver.SelectedItem;
                 DriverRecieptDAO.Add(driverReciept);
             }
         }
@@ -202,6 +215,26 @@ namespace RentDemo
         private bool IsClientDriver(Client client, Transport transport)
         {
             return client.DrivingCategories.Exists(c => c.Id == transport.DrivingCategory.Id);
+        }
+
+        private void linkLblTransportInfo_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            FmTransport fmTransport = new FmTransport(this);
+            if(fmTransport.ShowDialog() == DialogResult.OK)
+            {
+                ctlTransport.SelectedItem = null;
+                ctlTransport.SelectedItem = fmTransport.SelectedTransport;
+            }
+        }
+
+        private void linkLblClientInfo_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            FmClient fmClient = new FmClient(this);
+            if(fmClient.ShowDialog() == DialogResult.OK)
+            {
+                ctlClient.SelectedItem = null;
+                ctlClient.SelectedItem = fmClient.SelectedClient;
+            }
         }
     }
 }

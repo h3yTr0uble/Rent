@@ -82,6 +82,50 @@ namespace DAL
             }
         }
 
+        internal static Transport GetTransportById(int id)
+        {
+            using (SqlConnection connection = new SqlConnection(ActualConnectionString.Get()))
+            {
+                SqlCommand command = new SqlCommand("GetTransportByID");
+                command.CommandType = CommandType.StoredProcedure;
+                command.Connection = connection;
+                command.Parameters.AddWithValue("@id", id);
+
+                connection.Open();
+
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        Transport transport = new Transport();
+                        transport.Id = id;
+                        transport.Title = reader["ГосНомер"].ToString();
+                        transport.Brand = new Brand(int.Parse(reader["ID_Марка"].ToString()),
+                                                    reader["НазваниеМарки"].ToString());
+                        transport.Model = new Model(int.Parse(reader["ID_Модель"].ToString()),
+                                                    reader["НазваниеМодели"].ToString());
+                        transport.Color = new Color(int.Parse(reader["ID_Цвет"].ToString()),
+                                                    reader["НазваниеЦвета"].ToString());
+                        transport.Year = int.Parse(reader["ГодВыпуска"].ToString());
+                        transport.DrivingCategory = new DrivingCategory(int.Parse(reader["ID_Категория"].ToString()),
+                                                                        reader["Категория"].ToString());
+                        if (!string.IsNullOrEmpty(reader["ID_Парковка"].ToString()))
+                        {
+                            transport.Parking = new Parking(int.Parse(reader["ID_Парковка"].ToString()),
+                                    reader["Адрес"].ToString());
+                        }
+
+                        transport.Coef = double.Parse(reader["КоэфСтоимости"].ToString());
+                        transport.CorrectCoef = double.Parse(reader["ПоправочныйКоэф"].ToString());
+
+                        return transport;
+                    }
+                }
+            }
+
+            return null;
+        }
+
         public static void Add(Transport transport)
         {
             using (SqlConnection connection = new SqlConnection(ActualConnectionString.Get()))

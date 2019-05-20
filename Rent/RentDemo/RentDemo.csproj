@@ -52,6 +52,12 @@
     <Compile Include="FmAdminMenu.Designer.cs">
       <DependentUpon>FmAdminMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="FmBackup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FmBackup.Designer.cs">
+      <DependentUpon>FmBackup.cs</DependentUpon>
+    </Compile>
     <Compile Include="FmClient.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -110,6 +116,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FmAdminMenu.resx">
       <DependentUpon>FmAdminMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FmBackup.resx">
+      <DependentUpon>FmBackup.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FmClient.resx">
       <DependentUpon>FmClient.cs</DependentUpon>

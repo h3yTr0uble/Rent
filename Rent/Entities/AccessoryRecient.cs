@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace Entities
 {
-    public abstract class BaseEntity
+    public abstract class AccessoryRecient:BaseEntity
     {
-        public int Id { get; set; }
+        public Reciept Reciept { get; set; }
     }
 }

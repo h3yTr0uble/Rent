@@ -28,37 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnCreateBackup = new System.Windows.Forms.Button();
-            this.btnRestoreDatabase = new System.Windows.Forms.Button();
+            this.btnOpenBackup = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // btnCreateBackup
+            // btnOpenBackup
             // 
-            this.btnCreateBackup.Location = new System.Drawing.Point(417, 104);
-            this.btnCreateBackup.Name = "btnCreateBackup";
-            this.btnCreateBackup.Size = new System.Drawing.Size(278, 42);
-            this.btnCreateBackup.TabIndex = 0;
-            this.btnCreateBackup.Text = "btnCreateBackup";
-            this.btnCreateBackup.UseVisualStyleBackColor = true;
-            this.btnCreateBackup.Click += new System.EventHandler(this.btnCreateBackup_Click);
-            // 
-            // btnRestoreDatabase
-            // 
-            this.btnRestoreDatabase.Location = new System.Drawing.Point(156, 315);
-            this.btnRestoreDatabase.Name = "btnRestoreDatabase";
-            this.btnRestoreDatabase.Size = new System.Drawing.Size(278, 39);
-            this.btnRestoreDatabase.TabIndex = 1;
-            this.btnRestoreDatabase.Text = "btnRestoreDatabase";
-            this.btnRestoreDatabase.UseVisualStyleBackColor = true;
-            this.btnRestoreDatabase.Click += new System.EventHandler(this.btnRestoreDatabase_Click);
+            this.btnOpenBackup.Location = new System.Drawing.Point(44, 91);
+            this.btnOpenBackup.Name = "btnOpenBackup";
+            this.btnOpenBackup.Size = new System.Drawing.Size(278, 42);
+            this.btnOpenBackup.TabIndex = 2;
+            this.btnOpenBackup.Text = "btnOpenBackup";
+            this.btnOpenBackup.UseVisualStyleBackColor = true;
+            this.btnOpenBackup.Click += new System.EventHandler(this.btnOpenBackup_Click);
             // 
             // FmAdminMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(805, 573);
-            this.Controls.Add(this.btnRestoreDatabase);
-            this.Controls.Add(this.btnCreateBackup);
+            this.Controls.Add(this.btnOpenBackup);
             this.Name = "FmAdminMenu";
             this.Text = "FmAdminMenu";
             this.ResumeLayout(false);
@@ -66,8 +54,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btnCreateBackup;
-        private System.Windows.Forms.Button btnRestoreDatabase;
+        private System.Windows.Forms.Button btnOpenBackup;
     }
 }
