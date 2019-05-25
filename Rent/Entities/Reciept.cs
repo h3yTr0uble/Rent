@@ -18,5 +18,6 @@ namespace Entities
         public double Price { get; set; }
 
         public RecieptForReturn RecieptForReturn { get; set; }
+        public DriverReciept DriverReciept { get; set; }
     }
 }

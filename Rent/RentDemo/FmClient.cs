@@ -129,7 +129,7 @@ namespace RentDemo
             {
                 Client client = (Client)ctlClients.SelectedCells[0].OwningRow.DataBoundItem;
 
-                FmHistury fmHistory = new FmHistury(client);
+                FmHistory fmHistory = new FmHistory(client);
                 fmHistory.ShowDialog();
             }
         }
@@ -175,7 +175,7 @@ namespace RentDemo
         private void OpenSelectedClientHistory()
         {
             SelectedClient = (Client)ctlClients.SelectedCells[0].OwningRow.DataBoundItem;
-            FmHistury fmHistory = new FmHistury(SelectedClient);
+            FmHistory fmHistory = new FmHistory(SelectedClient);
             fmHistory.ShowDialog();
         }
 

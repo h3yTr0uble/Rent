@@ -34,6 +34,11 @@ namespace DAL
                 command.ExecuteNonQuery();
 
                 reciept.Id = (int)command.Parameters["@idReciept"].Value;
+
+                if (reciept.DriverReciept != null)
+                {
+                    DriverRecieptDAO.Add(reciept);
+                }
             }
         }
 
@@ -83,6 +88,7 @@ namespace DAL
                     reciept.NecessaryReturnDate = DateTime.Parse(reader["НеобходимаяДатаВозврата"].ToString());
                     reciept.Price               = double.Parse(reader["Стоимость"].ToString());
                     int.TryParse(reader["ID_КвОВозврате"].ToString(), out int idRecieptForReturn);
+                    int.TryParse(reader["ID_КвВодитель"].ToString(), out int idDriverReciept);
 
                     reciept.Tariff = TariffsDAO.GetTariffById(idTariff);
                     reciept.Transport = TransportDAO.GetTransportById(idTransport);
@@ -90,6 +96,7 @@ namespace DAL
                     reciept.Employee = EmployeeDAO.GetEmployeeById(idEmployee);
                     reciept.Client = ClientDAO.GetClientById(idClient);
                     reciept.RecieptForReturn = RecieptForReturnDAO.GetRecieptForReturnById(idRecieptForReturn);
+                    reciept.DriverReciept = DriverRecieptDAO.GetDriverRecieptById(idDriverReciept);
 
                     reciepts.Add(reciept);
                 }

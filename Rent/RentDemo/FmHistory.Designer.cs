@@ -1,6 +1,6 @@
 ﻿namespace RentDemo
 {
-    partial class FmHistury
+    partial class FmHistory
     {
         /// <summary>
         /// Required designer variable.
@@ -34,6 +34,10 @@
             this.Transport = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Client = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CreationDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.contextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.ctlCreationRecieptForReturnContext = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
+            this.ctlInfoContext = new System.Windows.Forms.ToolStripMenuItem();
             this.tbTransportPoisk = new System.Windows.Forms.TextBox();
             this.tbKvPoisk = new System.Windows.Forms.TextBox();
             this.rb2 = new System.Windows.Forms.RadioButton();
@@ -42,11 +46,7 @@
             this.tbDatePoisk1 = new System.Windows.Forms.DateTimePicker();
             this.label20 = new System.Windows.Forms.Label();
             this.check2 = new System.Windows.Forms.CheckBox();
-            this.contextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.mainMenu = new System.Windows.Forms.MenuStrip();
-            this.ctlCreationRecieptForReturnContext = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
-            this.подробнаяИнформацияToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.файлToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ctlCreationRecieptForReturn = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.ctlReciepts)).BeginInit();
@@ -72,6 +72,7 @@
             this.ctlReciepts.Name = "ctlReciepts";
             this.ctlReciepts.ReadOnly = true;
             this.ctlReciepts.RowHeadersVisible = false;
+            this.ctlReciepts.RowHeadersWidth = 51;
             this.ctlReciepts.RowTemplate.Height = 24;
             this.ctlReciepts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.ctlReciepts.Size = new System.Drawing.Size(1000, 226);
@@ -82,29 +83,66 @@
             // 
             this.Id.DataPropertyName = "Id";
             this.Id.HeaderText = "Номер квитанции";
+            this.Id.MinimumWidth = 6;
             this.Id.Name = "Id";
             this.Id.ReadOnly = true;
+            this.Id.Width = 125;
             // 
             // Transport
             // 
             this.Transport.DataPropertyName = "transport";
             this.Transport.HeaderText = "Транспорт";
+            this.Transport.MinimumWidth = 6;
             this.Transport.Name = "Transport";
             this.Transport.ReadOnly = true;
+            this.Transport.Width = 125;
             // 
             // Client
             // 
             this.Client.DataPropertyName = "client";
             this.Client.HeaderText = "Клиент";
+            this.Client.MinimumWidth = 6;
             this.Client.Name = "Client";
             this.Client.ReadOnly = true;
+            this.Client.Width = 125;
             // 
             // CreationDate
             // 
             this.CreationDate.DataPropertyName = "creationDate";
             this.CreationDate.HeaderText = "Дата оформления";
+            this.CreationDate.MinimumWidth = 6;
             this.CreationDate.Name = "CreationDate";
             this.CreationDate.ReadOnly = true;
+            this.CreationDate.Width = 125;
+            // 
+            // contextMenu
+            // 
+            this.contextMenu.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ctlCreationRecieptForReturnContext,
+            this.toolStripMenuItem1,
+            this.ctlInfoContext});
+            this.contextMenu.Name = "contextMenu";
+            this.contextMenu.Size = new System.Drawing.Size(313, 86);
+            // 
+            // ctlCreationRecieptForReturnContext
+            // 
+            this.ctlCreationRecieptForReturnContext.Name = "ctlCreationRecieptForReturnContext";
+            this.ctlCreationRecieptForReturnContext.Size = new System.Drawing.Size(312, 24);
+            this.ctlCreationRecieptForReturnContext.Text = "Оформить квитанцию на возврат";
+            this.ctlCreationRecieptForReturnContext.Click += new System.EventHandler(this.ctlCreationRecieptForReturnContext_Click);
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(309, 6);
+            // 
+            // ctlInfoContext
+            // 
+            this.ctlInfoContext.Name = "ctlInfoContext";
+            this.ctlInfoContext.Size = new System.Drawing.Size(312, 24);
+            this.ctlInfoContext.Text = "Подробная информация";
+            this.ctlInfoContext.Click += new System.EventHandler(this.ctlInfoContext_Click);
             // 
             // tbTransportPoisk
             // 
@@ -187,16 +225,6 @@
             this.check2.Text = "Поиск по диапазону дат оформления";
             this.check2.UseVisualStyleBackColor = true;
             // 
-            // contextMenu
-            // 
-            this.contextMenu.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.contextMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ctlCreationRecieptForReturnContext,
-            this.toolStripMenuItem1,
-            this.подробнаяИнформацияToolStripMenuItem});
-            this.contextMenu.Name = "contextMenu";
-            this.contextMenu.Size = new System.Drawing.Size(313, 86);
-            // 
             // mainMenu
             // 
             this.mainMenu.ImageScalingSize = new System.Drawing.Size(20, 20);
@@ -208,40 +236,22 @@
             this.mainMenu.TabIndex = 31;
             this.mainMenu.Text = "menuStrip1";
             // 
-            // ctlCreationRecieptForReturnContext
-            // 
-            this.ctlCreationRecieptForReturnContext.Name = "ctlCreationRecieptForReturnContext";
-            this.ctlCreationRecieptForReturnContext.Size = new System.Drawing.Size(312, 24);
-            this.ctlCreationRecieptForReturnContext.Text = "Оформить квитанцию на возврат";
-            this.ctlCreationRecieptForReturnContext.Click += new System.EventHandler(this.ctlCreationRecieptForReturnContext_Click);
-            // 
-            // toolStripMenuItem1
-            // 
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(309, 6);
-            // 
-            // подробнаяИнформацияToolStripMenuItem
-            // 
-            this.подробнаяИнформацияToolStripMenuItem.Name = "подробнаяИнформацияToolStripMenuItem";
-            this.подробнаяИнформацияToolStripMenuItem.Size = new System.Drawing.Size(312, 24);
-            this.подробнаяИнформацияToolStripMenuItem.Text = "Подробная информация";
-            // 
             // файлToolStripMenuItem
             // 
             this.файлToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ctlCreationRecieptForReturn});
             this.файлToolStripMenuItem.Name = "файлToolStripMenuItem";
-            this.файлToolStripMenuItem.Size = new System.Drawing.Size(57, 24);
+            this.файлToolStripMenuItem.Size = new System.Drawing.Size(59, 24);
             this.файлToolStripMenuItem.Text = "Файл";
             // 
             // ctlCreationRecieptForReturn
             // 
             this.ctlCreationRecieptForReturn.Name = "ctlCreationRecieptForReturn";
-            this.ctlCreationRecieptForReturn.Size = new System.Drawing.Size(318, 26);
+            this.ctlCreationRecieptForReturn.Size = new System.Drawing.Size(326, 26);
             this.ctlCreationRecieptForReturn.Text = "Оформить квитанцию на возврат";
             this.ctlCreationRecieptForReturn.Click += new System.EventHandler(this.ctlCreationRecieptForReturn_Click);
             // 
-            // FmHistury
+            // FmHistory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -257,7 +267,7 @@
             this.Controls.Add(this.rb1);
             this.Controls.Add(this.ctlReciepts);
             this.MainMenuStrip = this.mainMenu;
-            this.Name = "FmHistury";
+            this.Name = "FmHistory";
             this.Load += new System.EventHandler(this.FmHistury_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ctlReciepts)).EndInit();
             this.contextMenu.ResumeLayout(false);
@@ -286,7 +296,7 @@
         private System.Windows.Forms.ContextMenuStrip contextMenu;
         private System.Windows.Forms.ToolStripMenuItem ctlCreationRecieptForReturnContext;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem подробнаяИнформацияToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ctlInfoContext;
         private System.Windows.Forms.MenuStrip mainMenu;
         private System.Windows.Forms.ToolStripMenuItem файлToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ctlCreationRecieptForReturn;

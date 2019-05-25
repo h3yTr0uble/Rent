@@ -45,7 +45,7 @@ namespace RentDemo
 
         private void btnRecieptsList_Click(object sender, EventArgs e)
         {
-            FmHistury fmHistory = new FmHistury();
+            FmHistory fmHistory = new FmHistory();
             fmHistory.Show();
             this.Hide();
         }

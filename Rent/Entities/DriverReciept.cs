@@ -8,7 +8,6 @@ namespace Entities
 {
     public class DriverReciept : BaseEntity
     {
-        public Reciept Reciept { get; set; }
         public Employee Driver { get; set; }
     }
 }

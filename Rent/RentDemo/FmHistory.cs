@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace RentDemo
 {
-    public partial class FmHistury : Form
+    public partial class FmHistory : Form
     {
         public Reciept SelectedReciept { get; private set; }
         private List<Reciept> reciepts = new List<Reciept>();
@@ -20,20 +20,20 @@ namespace RentDemo
         private Transport transport;
         private Client client;
 
-        public FmHistury()
+        public FmHistory()
         {
             formMode = 0;
             InitializeComponent();
         }
 
-        public FmHistury(Transport transport)
+        public FmHistory(Transport transport)
         {
             formMode = 1;
             this.transport = transport;
             InitializeComponent();
         }
 
-        public FmHistury(Client client)
+        public FmHistory(Client client)
         {
             formMode = 2;
             this.client = client;
@@ -112,6 +112,18 @@ namespace RentDemo
         private void ctlCreationRecieptForReturnContext_Click(object sender, EventArgs e)
         {
             OpenCreationRecieptForReturn();
+        }
+
+        private void ctlInfoContext_Click(object sender, EventArgs e)
+        {
+            OpenSelectedRecieptInfo();
+        }
+
+        private void OpenSelectedRecieptInfo()
+        {
+            SelectedReciept = (Reciept)ctlReciepts.SelectedCells[0].OwningRow.DataBoundItem;
+            FmRecieptInfoReport fmRecieptInfoReport = new FmRecieptInfoReport(SelectedReciept);
+            fmRecieptInfoReport.ShowDialog();
         }
     }
 }

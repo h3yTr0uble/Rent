@@ -141,15 +141,15 @@ namespace RentDemo
             }
 
             Reciept reciept = CreateNewReciept();
-            RecieptDAO.Add(reciept);
+            
 
             if (checkDriver.Checked)
             {
-                DriverReciept driverReciept = new DriverReciept();
-                driverReciept.Reciept = reciept;
-                driverReciept.Driver = (Employee)ctlDriver.SelectedItem;
-                DriverRecieptDAO.Add(driverReciept);
+                reciept.DriverReciept = new DriverReciept();
+                reciept.DriverReciept.Driver = (Employee)ctlDriver.SelectedItem;
             }
+
+            RecieptDAO.Add(reciept);
         }
 
         private Reciept CreateNewReciept()

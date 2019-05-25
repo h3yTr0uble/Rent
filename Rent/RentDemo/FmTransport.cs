@@ -140,7 +140,7 @@ namespace RentDemo
         private void OpenSelectedTransportHistory()
         {
             SelectedTransport = (Transport)ctlTransports.SelectedCells[0].OwningRow.DataBoundItem;
-            FmHistury fmHistory = new FmHistury(SelectedTransport);
+            FmHistory fmHistory = new FmHistory(SelectedTransport);
             fmHistory.ShowDialog();
         }
 

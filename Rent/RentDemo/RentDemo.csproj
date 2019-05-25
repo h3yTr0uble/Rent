@@ -88,11 +88,11 @@
     <Compile Include="FmClientEditor.Designer.cs">
       <DependentUpon>FmClientEditor.cs</DependentUpon>
     </Compile>
-    <Compile Include="FmHistury.cs">
+    <Compile Include="FmHistory.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FmHistury.Designer.cs">
-      <DependentUpon>FmHistury.cs</DependentUpon>
+    <Compile Include="FmHistory.Designer.cs">
+      <DependentUpon>FmHistory.cs</DependentUpon>
     </Compile>
     <Compile Include="FmReciept.cs">
       <SubType>Form</SubType>
@@ -105,6 +105,12 @@
     </Compile>
     <Compile Include="FmRecieptForReturn.Designer.cs">
       <DependentUpon>FmRecieptForReturn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FmRecieptInfoReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FmRecieptInfoReport.Designer.cs">
+      <DependentUpon>FmRecieptInfoReport.cs</DependentUpon>
     </Compile>
     <Compile Include="FmReport.cs">
       <SubType>Form</SubType>
@@ -156,14 +162,17 @@
     <EmbeddedResource Include="FmClientEditor.resx">
       <DependentUpon>FmClientEditor.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FmHistury.resx">
-      <DependentUpon>FmHistury.cs</DependentUpon>
+    <EmbeddedResource Include="FmHistory.resx">
+      <DependentUpon>FmHistory.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FmReciept.resx">
       <DependentUpon>FmReciept.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FmRecieptForReturn.resx">
       <DependentUpon>FmRecieptForReturn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FmRecieptInfoReport.resx">
+      <DependentUpon>FmRecieptInfoReport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FmReport.resx">
       <DependentUpon>FmReport.cs</DependentUpon>
@@ -193,6 +202,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Reports\ParkingsAttendanceReport.rdlc" />
+    <EmbeddedResource Include="Reports\RecieptInfoReport.rdlc" />
     <EmbeddedResource Include="Reports\RecieptsReport.rdlc">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
