@@ -61,6 +61,7 @@
     <Compile Include="StandartdEntity.cs" />
     <Compile Include="Tariff.cs" />
     <Compile Include="Transport.cs" />
+    <Compile Include="TransportReport.cs" />
     <Compile Include="TransportType.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

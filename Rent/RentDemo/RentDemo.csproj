@@ -196,6 +196,8 @@
     <EmbeddedResource Include="Reports\RecieptsReport.rdlc">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reports\RelevanceTransportsReport.rdlc" />
+    <None Include="Reports\Entities.TransportReport.datasource" />
     <None Include="Reports\Entities.ParkingAttendancePerort.datasource" />
     <None Include="Reports\Entities.RecieptReport.datasource">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

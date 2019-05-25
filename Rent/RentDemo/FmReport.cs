@@ -29,7 +29,7 @@ namespace RentDemo
         {
             ctlRecieptsReport.Visible = false;
             ctlParkingsAttendanceReport.Visible = false;
-            ctlRecieptsReport.Visible = false;
+            ctlRelevanceTransportsReport.Visible = false;
 
             DateTime fromDate = ctlFromDate.Value;
             DateTime toDate = ctlToDate.Value;
@@ -47,7 +47,7 @@ namespace RentDemo
 
             if (ctlKindsReports.SelectedIndex == RelevanceTransportIndex)
             {
-                GenerateRecieptsReport(fromDate, toDate);
+                GenerateRelevanceTransportsReport(fromDate, toDate);
                 return;
             }
         }
@@ -61,13 +61,17 @@ namespace RentDemo
 
         private void GenerateParkingsAttendanceReport(DateTime fromDate, DateTime toDate)
         {
-            //Microsoft.Reporting.WinForms.ReportDataSource reportDataSource = new Microsoft.Reporting.WinForms.ReportDataSource();
-            //reportDataSource.Name = "ParkingsAttendance";
-            //reportDataSource.Value = ParkingAttendanceReportBindingSource;
-            //ctlParkingsAttendanceReport.LocalReport.DataSources.Add(reportDataSource);
             ctlParkingsAttendanceReport.Visible = true;
             ParkingAttendanceReportBindingSource.DataSource = ParkingAttendanceReportDAO.GetParkingsAttendance(fromDate, toDate).ToList();
             ctlParkingsAttendanceReport.RefreshReport();
+        }
+
+        private void GenerateRelevanceTransportsReport(DateTime fromDate, DateTime toDate)
+        {
+            ctlRelevanceTransportsReport.Visible = true;
+            RelevanceTransportHoursBindingSource.DataSource = TransportReportDAO.GetTransportHours(fromDate, toDate).ToList();
+            RelevanceTransportHoursCoefBindingSource.DataSource = TransportReportDAO.GetTransportHoursCoef(fromDate, toDate).ToList();
+            ctlRelevanceTransportsReport.RefreshReport();
         }
     }
 }

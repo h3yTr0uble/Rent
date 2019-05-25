@@ -58,6 +58,7 @@
     <Compile Include="RecieptReportDAO.cs" />
     <Compile Include="TariffsDAO.cs" />
     <Compile Include="TransportDAO.cs" />
+    <Compile Include="TransportReportDAO.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BLL\BLL.csproj">
