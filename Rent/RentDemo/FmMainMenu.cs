@@ -49,5 +49,12 @@ namespace RentDemo
             fmHistory.Show();
             this.Hide();
         }
+
+        private void BtnReport_Click(object sender, EventArgs e)
+        {
+            FmReport fmReport = new FmReport();
+            fmReport.Show();
+            this.Hide();
+        }
     }
 }
