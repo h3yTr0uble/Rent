@@ -42,35 +42,35 @@
             // 
             // txtPassport
             // 
-            this.txtPassport.Location = new System.Drawing.Point(182, 50);
+            this.txtPassport.Location = new System.Drawing.Point(172, 12);
             this.txtPassport.Mask = "0000000000";
             this.txtPassport.Name = "txtPassport";
-            this.txtPassport.Size = new System.Drawing.Size(494, 22);
+            this.txtPassport.Size = new System.Drawing.Size(325, 22);
             this.txtPassport.TabIndex = 15;
             this.txtPassport.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtPhone
             // 
-            this.txtPhone.Location = new System.Drawing.Point(182, 145);
+            this.txtPhone.Location = new System.Drawing.Point(172, 77);
             this.txtPhone.Mask = "8(999)-000-00-00";
             this.txtPhone.Name = "txtPhone";
-            this.txtPhone.Size = new System.Drawing.Size(494, 22);
+            this.txtPhone.Size = new System.Drawing.Size(325, 22);
             this.txtPhone.TabIndex = 14;
             this.txtPhone.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtFullName
             // 
-            this.txtFullName.Location = new System.Drawing.Point(182, 95);
+            this.txtFullName.Location = new System.Drawing.Point(172, 44);
             this.txtFullName.MaxLength = 255;
             this.txtFullName.Name = "txtFullName";
-            this.txtFullName.Size = new System.Drawing.Size(494, 22);
+            this.txtFullName.Size = new System.Drawing.Size(325, 22);
             this.txtFullName.TabIndex = 13;
             this.txtFullName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(39, 150);
+            this.label4.Location = new System.Drawing.Point(98, 77);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(68, 17);
             this.label4.TabIndex = 12;
@@ -79,7 +79,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(39, 100);
+            this.label3.Location = new System.Drawing.Point(124, 44);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(42, 17);
             this.label3.TabIndex = 11;
@@ -88,7 +88,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(39, 50);
+            this.label2.Location = new System.Drawing.Point(105, 12);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(64, 17);
             this.label2.TabIndex = 10;
@@ -98,7 +98,7 @@
             // 
             this.ctlDrivingCategories.FormattingEnabled = true;
             this.ctlDrivingCategories.ItemHeight = 16;
-            this.ctlDrivingCategories.Location = new System.Drawing.Point(237, 192);
+            this.ctlDrivingCategories.Location = new System.Drawing.Point(172, 105);
             this.ctlDrivingCategories.Name = "ctlDrivingCategories";
             this.ctlDrivingCategories.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
             this.ctlDrivingCategories.Size = new System.Drawing.Size(200, 84);
@@ -107,7 +107,7 @@
             // lblAwards
             // 
             this.lblAwards.AutoSize = true;
-            this.lblAwards.Location = new System.Drawing.Point(49, 192);
+            this.lblAwards.Location = new System.Drawing.Point(12, 105);
             this.lblAwards.Name = "lblAwards";
             this.lblAwards.Size = new System.Drawing.Size(157, 17);
             this.lblAwards.TabIndex = 18;
@@ -116,9 +116,9 @@
             // btnOK
             // 
             this.btnOK.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnOK.Location = new System.Drawing.Point(479, 276);
+            this.btnOK.Location = new System.Drawing.Point(295, 203);
             this.btnOK.Name = "btnOK";
-            this.btnOK.Size = new System.Drawing.Size(88, 23);
+            this.btnOK.Size = new System.Drawing.Size(103, 32);
             this.btnOK.TabIndex = 16;
             this.btnOK.Text = "Сохранить";
             this.btnOK.UseVisualStyleBackColor = true;
@@ -127,9 +127,9 @@
             // btnCancel
             // 
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCancel.Location = new System.Drawing.Point(572, 276);
+            this.btnCancel.Location = new System.Drawing.Point(403, 203);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(94, 23);
+            this.btnCancel.Size = new System.Drawing.Size(94, 32);
             this.btnCancel.TabIndex = 17;
             this.btnCancel.Text = "Отмена";
             this.btnCancel.UseVisualStyleBackColor = true;
@@ -138,7 +138,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(712, 311);
+            this.ClientSize = new System.Drawing.Size(503, 238);
             this.Controls.Add(this.ctlDrivingCategories);
             this.Controls.Add(this.lblAwards);
             this.Controls.Add(this.btnOK);
@@ -150,7 +150,6 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Name = "FmClientEditor";
-            this.Text = "FmClientEditor";
             this.Load += new System.EventHandler(this.FmClientEditor_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

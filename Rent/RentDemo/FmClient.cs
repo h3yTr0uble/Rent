@@ -183,5 +183,10 @@ namespace RentDemo
         {
             OpenSelectedClientHistory();
         }
+
+        private void CtlToMainForm_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

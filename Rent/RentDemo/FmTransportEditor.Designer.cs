@@ -57,82 +57,90 @@
             // 
             // txtTitle
             // 
-            this.txtTitle.Location = new System.Drawing.Point(147, 26);
+            this.txtTitle.Location = new System.Drawing.Point(216, 12);
+            this.txtTitle.Margin = new System.Windows.Forms.Padding(9);
             this.txtTitle.Name = "txtTitle";
-            this.txtTitle.Size = new System.Drawing.Size(100, 22);
+            this.txtTitle.Size = new System.Drawing.Size(139, 22);
             this.txtTitle.TabIndex = 0;
             this.txtTitle.Text = "txtTitle";
             // 
             // txtCoef
             // 
-            this.txtCoef.Location = new System.Drawing.Point(168, 290);
+            this.txtCoef.Location = new System.Drawing.Point(218, 291);
+            this.txtCoef.Margin = new System.Windows.Forms.Padding(9);
             this.txtCoef.Name = "txtCoef";
-            this.txtCoef.Size = new System.Drawing.Size(100, 22);
+            this.txtCoef.Size = new System.Drawing.Size(137, 22);
             this.txtCoef.TabIndex = 1;
             // 
             // txtYear
             // 
-            this.txtYear.Location = new System.Drawing.Point(147, 139);
+            this.txtYear.Location = new System.Drawing.Point(218, 128);
+            this.txtYear.Margin = new System.Windows.Forms.Padding(9);
             this.txtYear.Name = "txtYear";
-            this.txtYear.Size = new System.Drawing.Size(100, 22);
+            this.txtYear.Size = new System.Drawing.Size(137, 22);
             this.txtYear.TabIndex = 2;
             this.txtYear.Leave += new System.EventHandler(this.txtYear_Leave);
             // 
             // ctlBrand
             // 
             this.ctlBrand.FormattingEnabled = true;
-            this.ctlBrand.Location = new System.Drawing.Point(147, 64);
+            this.ctlBrand.Location = new System.Drawing.Point(216, 48);
+            this.ctlBrand.Margin = new System.Windows.Forms.Padding(5);
             this.ctlBrand.Name = "ctlBrand";
-            this.ctlBrand.Size = new System.Drawing.Size(121, 24);
+            this.ctlBrand.Size = new System.Drawing.Size(139, 24);
             this.ctlBrand.TabIndex = 3;
             this.ctlBrand.SelectedIndexChanged += new System.EventHandler(this.ctlBrand_SelectedIndexChanged);
             // 
             // ctlParking
             // 
             this.ctlParking.FormattingEnabled = true;
-            this.ctlParking.Location = new System.Drawing.Point(160, 250);
+            this.ctlParking.Location = new System.Drawing.Point(218, 249);
+            this.ctlParking.Margin = new System.Windows.Forms.Padding(9);
             this.ctlParking.Name = "ctlParking";
-            this.ctlParking.Size = new System.Drawing.Size(121, 24);
+            this.ctlParking.Size = new System.Drawing.Size(137, 24);
             this.ctlParking.TabIndex = 4;
             // 
             // ctlModel
             // 
             this.ctlModel.FormattingEnabled = true;
-            this.ctlModel.Location = new System.Drawing.Point(147, 105);
+            this.ctlModel.Location = new System.Drawing.Point(216, 86);
+            this.ctlModel.Margin = new System.Windows.Forms.Padding(9);
             this.ctlModel.Name = "ctlModel";
-            this.ctlModel.Size = new System.Drawing.Size(121, 24);
+            this.ctlModel.Size = new System.Drawing.Size(139, 24);
             this.ctlModel.TabIndex = 5;
             this.ctlModel.SelectedIndexChanged += new System.EventHandler(this.ctlModel_SelectedIndexChanged);
             // 
             // ctlColor
             // 
             this.ctlColor.FormattingEnabled = true;
-            this.ctlColor.Location = new System.Drawing.Point(147, 176);
+            this.ctlColor.Location = new System.Drawing.Point(218, 165);
+            this.ctlColor.Margin = new System.Windows.Forms.Padding(9);
             this.ctlColor.Name = "ctlColor";
-            this.ctlColor.Size = new System.Drawing.Size(121, 24);
+            this.ctlColor.Size = new System.Drawing.Size(137, 24);
             this.ctlColor.TabIndex = 6;
             // 
             // ctlDrivingCategory
             // 
             this.ctlDrivingCategory.FormattingEnabled = true;
-            this.ctlDrivingCategory.Location = new System.Drawing.Point(160, 213);
+            this.ctlDrivingCategory.Location = new System.Drawing.Point(218, 207);
+            this.ctlDrivingCategory.Margin = new System.Windows.Forms.Padding(9);
             this.ctlDrivingCategory.Name = "ctlDrivingCategory";
-            this.ctlDrivingCategory.Size = new System.Drawing.Size(121, 24);
+            this.ctlDrivingCategory.Size = new System.Drawing.Size(137, 24);
             this.ctlDrivingCategory.TabIndex = 7;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(9, 290);
+            this.label9.Location = new System.Drawing.Point(30, 294);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(120, 17);
+            this.label9.Size = new System.Drawing.Size(174, 17);
             this.label9.TabIndex = 41;
-            this.label9.Text = "Коэф. стоимости";
+            this.label9.Text = "Коэффициент стоимости";
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(9, 253);
+            this.label10.Location = new System.Drawing.Point(91, 252);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(113, 17);
             this.label10.TabIndex = 40;
@@ -141,7 +149,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(9, 216);
+            this.label11.Location = new System.Drawing.Point(59, 210);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(145, 17);
             this.label11.TabIndex = 39;
@@ -150,7 +158,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(9, 179);
+            this.label12.Location = new System.Drawing.Point(163, 168);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(41, 17);
             this.label12.TabIndex = 38;
@@ -159,7 +167,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(9, 142);
+            this.label13.Location = new System.Drawing.Point(114, 131);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(90, 17);
             this.label13.TabIndex = 37;
@@ -168,7 +176,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(9, 105);
+            this.label14.Location = new System.Drawing.Point(146, 89);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(58, 17);
             this.label14.TabIndex = 36;
@@ -177,7 +185,7 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(9, 68);
+            this.label15.Location = new System.Drawing.Point(154, 51);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(50, 17);
             this.label15.TabIndex = 35;
@@ -186,7 +194,7 @@
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(9, 31);
+            this.label16.Location = new System.Drawing.Point(72, 15);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(132, 17);
             this.label16.TabIndex = 34;
@@ -194,36 +202,36 @@
             // 
             // btnAddParking
             // 
-            this.btnAddParking.Location = new System.Drawing.Point(300, 241);
+            this.btnAddParking.Location = new System.Drawing.Point(363, 246);
             this.btnAddParking.Name = "btnAddParking";
-            this.btnAddParking.Size = new System.Drawing.Size(202, 33);
+            this.btnAddParking.Size = new System.Drawing.Size(202, 29);
             this.btnAddParking.TabIndex = 46;
             this.btnAddParking.Text = "Добавить парковку";
             this.btnAddParking.UseVisualStyleBackColor = true;
             // 
             // btnAddColor
             // 
-            this.btnAddColor.Location = new System.Drawing.Point(281, 171);
+            this.btnAddColor.Location = new System.Drawing.Point(363, 162);
             this.btnAddColor.Name = "btnAddColor";
-            this.btnAddColor.Size = new System.Drawing.Size(202, 33);
+            this.btnAddColor.Size = new System.Drawing.Size(202, 29);
             this.btnAddColor.TabIndex = 45;
             this.btnAddColor.Text = "Добавить цвет";
             this.btnAddColor.UseVisualStyleBackColor = true;
             // 
             // btnAddModel
             // 
-            this.btnAddModel.Location = new System.Drawing.Point(281, 105);
+            this.btnAddModel.Location = new System.Drawing.Point(363, 83);
             this.btnAddModel.Name = "btnAddModel";
-            this.btnAddModel.Size = new System.Drawing.Size(202, 33);
+            this.btnAddModel.Size = new System.Drawing.Size(202, 29);
             this.btnAddModel.TabIndex = 44;
             this.btnAddModel.Text = "Добавить модель";
             this.btnAddModel.UseVisualStyleBackColor = true;
             // 
             // btnAddBrand
             // 
-            this.btnAddBrand.Location = new System.Drawing.Point(281, 68);
+            this.btnAddBrand.Location = new System.Drawing.Point(363, 45);
             this.btnAddBrand.Name = "btnAddBrand";
-            this.btnAddBrand.Size = new System.Drawing.Size(202, 33);
+            this.btnAddBrand.Size = new System.Drawing.Size(202, 29);
             this.btnAddBrand.TabIndex = 43;
             this.btnAddBrand.Text = "Добавить марку";
             this.btnAddBrand.UseVisualStyleBackColor = true;
@@ -231,9 +239,9 @@
             // btnOK
             // 
             this.btnOK.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnOK.Location = new System.Drawing.Point(395, 441);
+            this.btnOK.Location = new System.Drawing.Point(363, 366);
             this.btnOK.Name = "btnOK";
-            this.btnOK.Size = new System.Drawing.Size(88, 23);
+            this.btnOK.Size = new System.Drawing.Size(103, 30);
             this.btnOK.TabIndex = 47;
             this.btnOK.Text = "Сохранить";
             this.btnOK.UseVisualStyleBackColor = true;
@@ -242,9 +250,9 @@
             // btnCancel
             // 
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCancel.Location = new System.Drawing.Point(488, 441);
+            this.btnCancel.Location = new System.Drawing.Point(471, 366);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(94, 23);
+            this.btnCancel.Size = new System.Drawing.Size(94, 30);
             this.btnCancel.TabIndex = 48;
             this.btnCancel.Text = "Отмена";
             this.btnCancel.UseVisualStyleBackColor = true;
@@ -252,26 +260,27 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(9, 332);
+            this.label1.Location = new System.Drawing.Point(12, 334);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(136, 17);
+            this.label1.Size = new System.Drawing.Size(194, 17);
             this.label1.TabIndex = 50;
-            this.label1.Text = "Поправочный коэф";
+            this.label1.Text = "Поправочный коэффициент";
             // 
             // txtCorrectCoef
             // 
-            this.txtCorrectCoef.Location = new System.Drawing.Point(168, 332);
+            this.txtCorrectCoef.Location = new System.Drawing.Point(218, 331);
+            this.txtCorrectCoef.Margin = new System.Windows.Forms.Padding(9);
             this.txtCorrectCoef.Name = "txtCorrectCoef";
-            this.txtCorrectCoef.Size = new System.Drawing.Size(100, 22);
+            this.txtCorrectCoef.Size = new System.Drawing.Size(137, 22);
             this.txtCorrectCoef.TabIndex = 49;
             // 
             // btnCalculateCoef
             // 
-            this.btnCalculateCoef.Location = new System.Drawing.Point(300, 285);
+            this.btnCalculateCoef.Location = new System.Drawing.Point(363, 288);
             this.btnCalculateCoef.Name = "btnCalculateCoef";
-            this.btnCalculateCoef.Size = new System.Drawing.Size(202, 33);
+            this.btnCalculateCoef.Size = new System.Drawing.Size(202, 29);
             this.btnCalculateCoef.TabIndex = 51;
-            this.btnCalculateCoef.Text = "Рассчитать коэф";
+            this.btnCalculateCoef.Text = "Рассчитать коэффициент";
             this.btnCalculateCoef.UseVisualStyleBackColor = true;
             this.btnCalculateCoef.Click += new System.EventHandler(this.btnCalculateCoef_Click);
             // 
@@ -279,7 +288,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(590, 476);
+            this.ClientSize = new System.Drawing.Size(571, 402);
             this.Controls.Add(this.btnCalculateCoef);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtCorrectCoef);
@@ -306,7 +315,6 @@
             this.Controls.Add(this.txtCoef);
             this.Controls.Add(this.txtTitle);
             this.Name = "FmTransportEditor";
-            this.Text = "FmTransportEditor";
             this.Load += new System.EventHandler(this.FmTransportEditor_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

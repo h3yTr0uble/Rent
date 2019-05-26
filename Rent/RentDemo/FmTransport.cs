@@ -153,5 +153,10 @@ namespace RentDemo
         {
             OpenSelectedTransportHistory();
         }
+
+        private void CtlToMainForm_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

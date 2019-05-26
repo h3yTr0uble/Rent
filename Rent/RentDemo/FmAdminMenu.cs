@@ -21,8 +21,32 @@ namespace RentDemo
         private void btnOpenBackup_Click(object sender, EventArgs e)
         {
             FmBackup fmBackup = new FmBackup();
-            fmBackup.Show();
+            fmBackup.ShowDialog();
+        }
+
+        private void CtlChangeUser_Click(object sender, EventArgs e)
+        {
+            FmLogin fmLogin = new FmLogin();
+            fmLogin.Show();
             this.Hide();
+        }
+
+        private void CtlExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void FmAdminMenu_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (MessageBox.Show("Закрыть приложение?", "Информационное сообщение", MessageBoxButtons.OKCancel, MessageBoxIcon.Information) == DialogResult.Cancel)
+            {
+                e.Cancel = true;
+            }
+        }
+
+        private void FmAdminMenu_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

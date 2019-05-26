@@ -65,8 +65,16 @@ namespace RentDemo
                 Reciept reciept = (Reciept)ctlReciepts.Rows[i].DataBoundItem;
                 if (reciept.RecieptForReturn == null)
                 {
-                    ctlReciepts.Rows[i].DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(255, 128, 128);
-                    ctlReciepts.Rows[i].DefaultCellStyle.SelectionBackColor = System.Drawing.Color.Red;
+                    if (reciept.NecessaryReturnDate < DateTime.Now)
+                    {
+                        ctlReciepts.Rows[i].DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(235, 228, 40);
+                        ctlReciepts.Rows[i].DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(209, 209, 23);
+                    }
+                    else
+                    {
+                        ctlReciepts.Rows[i].DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(255, 128, 128); 
+                        ctlReciepts.Rows[i].DefaultCellStyle.SelectionBackColor = System.Drawing.Color.Red;
+                    }
                 }
             }
         }
@@ -124,6 +132,11 @@ namespace RentDemo
             SelectedReciept = (Reciept)ctlReciepts.SelectedCells[0].OwningRow.DataBoundItem;
             FmRecieptInfoReport fmRecieptInfoReport = new FmRecieptInfoReport(SelectedReciept);
             fmRecieptInfoReport.ShowDialog();
+        }
+
+        private void CtlInfo_Click(object sender, EventArgs e)
+        {
+            OpenSelectedRecieptInfo();
         }
     }
 }

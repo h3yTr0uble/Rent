@@ -20,6 +20,7 @@ namespace RentDemo
         {
             this.reciept = reciept;
             InitializeComponent();
+            this.Text += reciept.Id;
         }
 
         private void FmRecieptInfoReport_Load(object sender, EventArgs e)
@@ -42,7 +43,7 @@ namespace RentDemo
 
             if (reciept.RecieptForReturn != null)
             {
-                reportParameters.Add(new ReportParameter("returnDateMessage", "Дата возврата"));
+                reportParameters.Add(new ReportParameter("returnDateMessage", "Дата возврата:"));
                 reportParameters.Add(new ReportParameter("returnDate", reciept.RecieptForReturn.CreationDate.ToString()));
                 reportParameters.Add(new ReportParameter("returnParkingMessage", "Возвращено на парковку:"));
                 reportParameters.Add(new ReportParameter("returnParking", reciept.RecieptForReturn.Parking.Title));

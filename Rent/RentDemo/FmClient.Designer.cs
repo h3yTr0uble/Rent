@@ -62,6 +62,8 @@
             this.rb1 = new System.Windows.Forms.RadioButton();
             this.rb3 = new System.Windows.Forms.RadioButton();
             this.rb2 = new System.Windows.Forms.RadioButton();
+            this.btnSearchClient = new System.Windows.Forms.Button();
+            this.btnResetSearchResult = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.ctlClients)).BeginInit();
             this.contextMenu.SuspendLayout();
             this.mainMenu.SuspendLayout();
@@ -70,18 +72,18 @@
             // 
             // txtClientsDrivingCategory
             // 
-            this.txtClientsDrivingCategory.Location = new System.Drawing.Point(743, 96);
+            this.txtClientsDrivingCategory.Location = new System.Drawing.Point(725, 96);
             this.txtClientsDrivingCategory.Multiline = true;
             this.txtClientsDrivingCategory.Name = "txtClientsDrivingCategory";
-            this.txtClientsDrivingCategory.Size = new System.Drawing.Size(396, 169);
+            this.txtClientsDrivingCategory.Size = new System.Drawing.Size(235, 169);
             this.txtClientsDrivingCategory.TabIndex = 7;
             this.txtClientsDrivingCategory.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label1
             // 
-            this.label1.Location = new System.Drawing.Point(738, 39);
+            this.label1.Location = new System.Drawing.Point(722, 39);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(401, 94);
+            this.label1.Size = new System.Drawing.Size(238, 54);
             this.label1.TabIndex = 6;
             this.label1.Text = "Категории вождения, которыми владеет выбранный клиент:";
             // 
@@ -103,6 +105,7 @@
             this.ctlClients.Name = "ctlClients";
             this.ctlClients.ReadOnly = true;
             this.ctlClients.RowHeadersVisible = false;
+            this.ctlClients.RowHeadersWidth = 51;
             this.ctlClients.RowTemplate.Height = 24;
             this.ctlClients.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.ctlClients.Size = new System.Drawing.Size(714, 226);
@@ -113,14 +116,17 @@
             // 
             this.Id.DataPropertyName = "Id";
             this.Id.HeaderText = "Id";
+            this.Id.MinimumWidth = 6;
             this.Id.Name = "Id";
             this.Id.ReadOnly = true;
             this.Id.Visible = false;
+            this.Id.Width = 125;
             // 
             // Column1
             // 
             this.Column1.DataPropertyName = "Passport";
             this.Column1.HeaderText = "Паспорт";
+            this.Column1.MinimumWidth = 6;
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;
             this.Column1.Width = 115;
@@ -129,6 +135,7 @@
             // 
             this.Column2.DataPropertyName = "FullName";
             this.Column2.HeaderText = "ФИО";
+            this.Column2.MinimumWidth = 6;
             this.Column2.Name = "Column2";
             this.Column2.ReadOnly = true;
             this.Column2.Width = 400;
@@ -137,6 +144,7 @@
             // 
             this.Column3.DataPropertyName = "Phone";
             this.Column3.HeaderText = "Телефон";
+            this.Column3.MinimumWidth = 6;
             this.Column3.Name = "Column3";
             this.Column3.ReadOnly = true;
             this.Column3.Width = 155;
@@ -208,7 +216,7 @@
             this.ctlFile});
             this.mainMenu.Location = new System.Drawing.Point(0, 0);
             this.mainMenu.Name = "mainMenu";
-            this.mainMenu.Size = new System.Drawing.Size(1146, 28);
+            this.mainMenu.Size = new System.Drawing.Size(961, 28);
             this.mainMenu.TabIndex = 9;
             this.mainMenu.Text = "menuStrip1";
             // 
@@ -225,67 +233,70 @@
             this.toolStripMenuItem5,
             this.ctlToMainForm});
             this.ctlFile.Name = "ctlFile";
-            this.ctlFile.Size = new System.Drawing.Size(57, 24);
+            this.ctlFile.Size = new System.Drawing.Size(59, 24);
             this.ctlFile.Text = "Файл";
             // 
             // ctlAddClient
             // 
             this.ctlAddClient.Name = "ctlAddClient";
-            this.ctlAddClient.Size = new System.Drawing.Size(245, 26);
+            this.ctlAddClient.Size = new System.Drawing.Size(253, 26);
             this.ctlAddClient.Text = "Добавить клиента";
             this.ctlAddClient.Click += new System.EventHandler(this.ctlAddClient_Click);
             // 
             // ctlEditClient
             // 
             this.ctlEditClient.Name = "ctlEditClient";
-            this.ctlEditClient.Size = new System.Drawing.Size(245, 26);
+            this.ctlEditClient.Size = new System.Drawing.Size(253, 26);
             this.ctlEditClient.Text = "Редактировать клиента";
             this.ctlEditClient.Click += new System.EventHandler(this.ctlEditClient_Click);
             // 
             // toolStripMenuItem3
             // 
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(242, 6);
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(250, 6);
             // 
             // ctlEnterClient
             // 
             this.ctlEnterClient.Name = "ctlEnterClient";
-            this.ctlEnterClient.Size = new System.Drawing.Size(245, 26);
+            this.ctlEnterClient.Size = new System.Drawing.Size(253, 26);
             this.ctlEnterClient.Text = "Выбрать";
             this.ctlEnterClient.Click += new System.EventHandler(this.ctlEnterClient_Click);
             // 
             // ctlCreateRecieptClient
             // 
             this.ctlCreateRecieptClient.Name = "ctlCreateRecieptClient";
-            this.ctlCreateRecieptClient.Size = new System.Drawing.Size(245, 26);
+            this.ctlCreateRecieptClient.Size = new System.Drawing.Size(253, 26);
             this.ctlCreateRecieptClient.Text = "Оформить квитанцию";
             this.ctlCreateRecieptClient.Click += new System.EventHandler(this.ctlCreateRecieptClient_Click);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(242, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(250, 6);
             // 
             // ctlHistoryClient
             // 
             this.ctlHistoryClient.Name = "ctlHistoryClient";
-            this.ctlHistoryClient.Size = new System.Drawing.Size(245, 26);
+            this.ctlHistoryClient.Size = new System.Drawing.Size(253, 26);
             this.ctlHistoryClient.Text = "История активности";
             this.ctlHistoryClient.Click += new System.EventHandler(this.ctlHistoryClient_Click);
             // 
             // toolStripMenuItem5
             // 
             this.toolStripMenuItem5.Name = "toolStripMenuItem5";
-            this.toolStripMenuItem5.Size = new System.Drawing.Size(242, 6);
+            this.toolStripMenuItem5.Size = new System.Drawing.Size(250, 6);
             // 
             // ctlToMainForm
             // 
             this.ctlToMainForm.Name = "ctlToMainForm";
-            this.ctlToMainForm.Size = new System.Drawing.Size(245, 26);
+            this.ctlToMainForm.Size = new System.Drawing.Size(253, 26);
             this.ctlToMainForm.Text = "В главное меню";
+            this.ctlToMainForm.Click += new System.EventHandler(this.CtlToMainForm_Click);
             // 
             // ctlSearch
             // 
+            this.ctlSearch.Controls.Add(this.btnResetSearchResult);
+            this.ctlSearch.Controls.Add(this.btnSearchClient);
             this.ctlSearch.Controls.Add(this.tbPasportPoisk);
             this.ctlSearch.Controls.Add(this.tbFioPoisk);
             this.ctlSearch.Controls.Add(this.tbTelPoisk);
@@ -294,7 +305,7 @@
             this.ctlSearch.Controls.Add(this.rb2);
             this.ctlSearch.Location = new System.Drawing.Point(12, 273);
             this.ctlSearch.Name = "ctlSearch";
-            this.ctlSearch.Size = new System.Drawing.Size(1127, 277);
+            this.ctlSearch.Size = new System.Drawing.Size(948, 147);
             this.ctlSearch.TabIndex = 10;
             this.ctlSearch.TabStop = false;
             this.ctlSearch.Text = "Поиск по клиентам";
@@ -302,7 +313,7 @@
             // tbPasportPoisk
             // 
             this.tbPasportPoisk.Enabled = false;
-            this.tbPasportPoisk.Location = new System.Drawing.Point(420, 121);
+            this.tbPasportPoisk.Location = new System.Drawing.Point(261, 70);
             this.tbPasportPoisk.Mask = "0000000000";
             this.tbPasportPoisk.Name = "tbPasportPoisk";
             this.tbPasportPoisk.Size = new System.Drawing.Size(464, 22);
@@ -312,7 +323,7 @@
             // tbFioPoisk
             // 
             this.tbFioPoisk.Enabled = false;
-            this.tbFioPoisk.Location = new System.Drawing.Point(420, 65);
+            this.tbFioPoisk.Location = new System.Drawing.Point(261, 29);
             this.tbFioPoisk.MaxLength = 255;
             this.tbFioPoisk.Name = "tbFioPoisk";
             this.tbFioPoisk.Size = new System.Drawing.Size(464, 22);
@@ -322,7 +333,7 @@
             // tbTelPoisk
             // 
             this.tbTelPoisk.Enabled = false;
-            this.tbTelPoisk.Location = new System.Drawing.Point(420, 177);
+            this.tbTelPoisk.Location = new System.Drawing.Point(261, 108);
             this.tbTelPoisk.Mask = "8(999)-000-00-00";
             this.tbTelPoisk.Name = "tbTelPoisk";
             this.tbTelPoisk.Size = new System.Drawing.Size(464, 22);
@@ -332,7 +343,7 @@
             // rb1
             // 
             this.rb1.AutoSize = true;
-            this.rb1.Location = new System.Drawing.Point(12, 66);
+            this.rb1.Location = new System.Drawing.Point(27, 30);
             this.rb1.Name = "rb1";
             this.rb1.Size = new System.Drawing.Size(127, 21);
             this.rb1.TabIndex = 21;
@@ -343,7 +354,7 @@
             // rb3
             // 
             this.rb3.AutoSize = true;
-            this.rb3.Location = new System.Drawing.Point(12, 178);
+            this.rb3.Location = new System.Drawing.Point(24, 109);
             this.rb3.Name = "rb3";
             this.rb3.Size = new System.Drawing.Size(211, 21);
             this.rb3.TabIndex = 20;
@@ -354,7 +365,7 @@
             // rb2
             // 
             this.rb2.AutoSize = true;
-            this.rb2.Location = new System.Drawing.Point(12, 122);
+            this.rb2.Location = new System.Drawing.Point(27, 71);
             this.rb2.Margin = new System.Windows.Forms.Padding(20);
             this.rb2.Name = "rb2";
             this.rb2.Size = new System.Drawing.Size(154, 21);
@@ -363,11 +374,29 @@
             this.rb2.Text = "Поиск по паспорту";
             this.rb2.UseVisualStyleBackColor = true;
             // 
+            // btnSearchClient
+            // 
+            this.btnSearchClient.Location = new System.Drawing.Point(796, 30);
+            this.btnSearchClient.Name = "btnSearchClient";
+            this.btnSearchClient.Size = new System.Drawing.Size(103, 22);
+            this.btnSearchClient.TabIndex = 26;
+            this.btnSearchClient.Text = "Найти";
+            this.btnSearchClient.UseVisualStyleBackColor = true;
+            // 
+            // btnResetSearchResult
+            // 
+            this.btnResetSearchResult.Location = new System.Drawing.Point(796, 71);
+            this.btnResetSearchResult.Name = "btnResetSearchResult";
+            this.btnResetSearchResult.Size = new System.Drawing.Size(103, 23);
+            this.btnResetSearchResult.TabIndex = 27;
+            this.btnResetSearchResult.Text = "Сбросить";
+            this.btnResetSearchResult.UseVisualStyleBackColor = true;
+            // 
             // FmClient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1146, 552);
+            this.ClientSize = new System.Drawing.Size(961, 423);
             this.Controls.Add(this.ctlSearch);
             this.Controls.Add(this.mainMenu);
             this.Controls.Add(this.txtClientsDrivingCategory);
@@ -375,7 +404,7 @@
             this.Controls.Add(this.ctlClients);
             this.Name = "FmClient";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FmClient";
+            this.Text = "Клиенты";
             this.Load += new System.EventHandler(this.FmClient_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ctlClients)).EndInit();
             this.contextMenu.ResumeLayout(false);
@@ -423,5 +452,7 @@
         private System.Windows.Forms.ToolStripMenuItem ctlHistoryClientContext;
         private System.Windows.Forms.ToolStripMenuItem ctlHistoryClient;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem5;
+        private System.Windows.Forms.Button btnResetSearchResult;
+        private System.Windows.Forms.Button btnSearchClient;
     }
 }

@@ -150,6 +150,10 @@ namespace RentDemo
             }
 
             RecieptDAO.Add(reciept);
+
+            FmRecieptInfoReport fmRecieptInfoReport = new FmRecieptInfoReport(reciept);
+            fmRecieptInfoReport.ShowDialog();
+            this.Close();
         }
 
         private Reciept CreateNewReciept()

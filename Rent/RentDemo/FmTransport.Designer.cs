@@ -37,6 +37,8 @@
             this.ctlCreateRecieptTransport = new System.Windows.Forms.ToolStripMenuItem();
             this.ctlEnterTransport = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
+            this.ctlHistoryTransport = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripSeparator();
             this.ctlToMainForm = new System.Windows.Forms.ToolStripMenuItem();
             this.ctlTransports = new System.Windows.Forms.DataGridView();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -55,6 +57,8 @@
             this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripSeparator();
             this.ctlCreateRecieptTransportContext = new System.Windows.Forms.ToolStripMenuItem();
             this.ctlEnterTransportContext = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripSeparator();
+            this.ctlHistoryTransportContext = new System.Windows.Forms.ToolStripMenuItem();
             this.ctlSearch = new System.Windows.Forms.GroupBox();
             this.rb5 = new System.Windows.Forms.RadioButton();
             this.btnSbros = new System.Windows.Forms.Button();
@@ -78,10 +82,6 @@
             this.rb3 = new System.Windows.Forms.RadioButton();
             this.rb2 = new System.Windows.Forms.RadioButton();
             this.rb1 = new System.Windows.Forms.RadioButton();
-            this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripSeparator();
-            this.ctlHistoryTransportContext = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripSeparator();
-            this.ctlHistoryTransport = new System.Windows.Forms.ToolStripMenuItem();
             this.mainMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ctlTransports)).BeginInit();
             this.contextMenu.SuspendLayout();
@@ -112,52 +112,65 @@
             this.toolStripMenuItem5,
             this.ctlToMainForm});
             this.ctlFile.Name = "ctlFile";
-            this.ctlFile.Size = new System.Drawing.Size(57, 24);
+            this.ctlFile.Size = new System.Drawing.Size(59, 24);
             this.ctlFile.Text = "Файл";
             // 
             // ctlAddTransport
             // 
             this.ctlAddTransport.Name = "ctlAddTransport";
-            this.ctlAddTransport.Size = new System.Drawing.Size(262, 26);
+            this.ctlAddTransport.Size = new System.Drawing.Size(270, 26);
             this.ctlAddTransport.Text = "Добавить транспорт";
             this.ctlAddTransport.Click += new System.EventHandler(this.ctlAddTransport_Click);
             // 
             // ctlEditTransport
             // 
             this.ctlEditTransport.Name = "ctlEditTransport";
-            this.ctlEditTransport.Size = new System.Drawing.Size(262, 26);
+            this.ctlEditTransport.Size = new System.Drawing.Size(270, 26);
             this.ctlEditTransport.Text = "Редактировать транспорт";
             this.ctlEditTransport.Click += new System.EventHandler(this.ctlEditTransport_Click);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(259, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(267, 6);
             // 
             // ctlCreateRecieptTransport
             // 
             this.ctlCreateRecieptTransport.Name = "ctlCreateRecieptTransport";
-            this.ctlCreateRecieptTransport.Size = new System.Drawing.Size(262, 26);
+            this.ctlCreateRecieptTransport.Size = new System.Drawing.Size(270, 26);
             this.ctlCreateRecieptTransport.Text = "Оформить квитанцию";
             this.ctlCreateRecieptTransport.Click += new System.EventHandler(this.ctlCreateRecieptTransport_Click);
             // 
             // ctlEnterTransport
             // 
             this.ctlEnterTransport.Name = "ctlEnterTransport";
-            this.ctlEnterTransport.Size = new System.Drawing.Size(262, 26);
+            this.ctlEnterTransport.Size = new System.Drawing.Size(270, 26);
             this.ctlEnterTransport.Text = "Выбрать";
             this.ctlEnterTransport.Click += new System.EventHandler(this.ctlEnterTransport_Click);
             // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(259, 6);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(267, 6);
+            // 
+            // ctlHistoryTransport
+            // 
+            this.ctlHistoryTransport.Name = "ctlHistoryTransport";
+            this.ctlHistoryTransport.Size = new System.Drawing.Size(270, 26);
+            this.ctlHistoryTransport.Text = "История использования";
+            this.ctlHistoryTransport.Click += new System.EventHandler(this.ctlHistoryTransport_Click);
+            // 
+            // toolStripMenuItem5
+            // 
+            this.toolStripMenuItem5.Name = "toolStripMenuItem5";
+            this.toolStripMenuItem5.Size = new System.Drawing.Size(267, 6);
             // 
             // ctlToMainForm
             // 
             this.ctlToMainForm.Name = "ctlToMainForm";
-            this.ctlToMainForm.Size = new System.Drawing.Size(262, 26);
+            this.ctlToMainForm.Size = new System.Drawing.Size(270, 26);
             this.ctlToMainForm.Text = "В главное меню";
+            this.ctlToMainForm.Click += new System.EventHandler(this.CtlToMainForm_Click);
             // 
             // ctlTransports
             // 
@@ -179,6 +192,7 @@
             this.ctlTransports.MultiSelect = false;
             this.ctlTransports.Name = "ctlTransports";
             this.ctlTransports.RowHeadersVisible = false;
+            this.ctlTransports.RowHeadersWidth = 51;
             this.ctlTransports.RowTemplate.Height = 24;
             this.ctlTransports.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.ctlTransports.Size = new System.Drawing.Size(1057, 222);
@@ -188,62 +202,82 @@
             // 
             this.ID.DataPropertyName = "Id";
             this.ID.HeaderText = "ID";
+            this.ID.MinimumWidth = 6;
             this.ID.Name = "ID";
             this.ID.Visible = false;
+            this.ID.Width = 125;
             // 
             // Title
             // 
             this.Title.DataPropertyName = "Title";
             this.Title.HeaderText = "ГосНомер";
+            this.Title.MinimumWidth = 6;
             this.Title.Name = "Title";
+            this.Title.Width = 125;
             // 
             // Brand
             // 
             this.Brand.DataPropertyName = "Brand";
             this.Brand.HeaderText = "Марка";
+            this.Brand.MinimumWidth = 6;
             this.Brand.Name = "Brand";
+            this.Brand.Width = 125;
             // 
             // Model
             // 
             this.Model.DataPropertyName = "Model";
             this.Model.HeaderText = "Модель";
+            this.Model.MinimumWidth = 6;
             this.Model.Name = "Model";
+            this.Model.Width = 125;
             // 
             // Year
             // 
             this.Year.DataPropertyName = "Year";
             this.Year.HeaderText = "Год выпуска";
+            this.Year.MinimumWidth = 6;
             this.Year.Name = "Year";
+            this.Year.Width = 125;
             // 
             // Color
             // 
             this.Color.DataPropertyName = "Color";
             this.Color.HeaderText = "Цвет";
+            this.Color.MinimumWidth = 6;
             this.Color.Name = "Color";
+            this.Color.Width = 125;
             // 
             // DrivingCategory
             // 
             this.DrivingCategory.DataPropertyName = "DrivingCategory";
             this.DrivingCategory.HeaderText = "Категория вождения";
+            this.DrivingCategory.MinimumWidth = 6;
             this.DrivingCategory.Name = "DrivingCategory";
+            this.DrivingCategory.Width = 125;
             // 
             // Parking
             // 
             this.Parking.DataPropertyName = "Parking";
             this.Parking.HeaderText = "Парковка";
+            this.Parking.MinimumWidth = 6;
             this.Parking.Name = "Parking";
+            this.Parking.Width = 125;
             // 
             // Coef
             // 
             this.Coef.DataPropertyName = "Coef";
             this.Coef.HeaderText = "Коэффициент стоимости";
+            this.Coef.MinimumWidth = 6;
             this.Coef.Name = "Coef";
+            this.Coef.Width = 125;
             // 
             // CorrectCoef
             // 
             this.CorrectCoef.DataPropertyName = "CorrectCoef";
             this.CorrectCoef.HeaderText = "Поправочный коэффициент";
+            this.CorrectCoef.MinimumWidth = 6;
             this.CorrectCoef.Name = "CorrectCoef";
+            this.CorrectCoef.Width = 125;
             // 
             // contextMenu
             // 
@@ -257,7 +291,7 @@
             this.toolStripMenuItem4,
             this.ctlHistoryTransportContext});
             this.contextMenu.Name = "contextMenu";
-            this.contextMenu.Size = new System.Drawing.Size(257, 164);
+            this.contextMenu.Size = new System.Drawing.Size(257, 136);
             // 
             // ctlAddTransportContext
             // 
@@ -291,6 +325,18 @@
             this.ctlEnterTransportContext.Size = new System.Drawing.Size(256, 24);
             this.ctlEnterTransportContext.Text = "Выбрать";
             this.ctlEnterTransportContext.Click += new System.EventHandler(this.ctlEnterTransportContext_Click);
+            // 
+            // toolStripMenuItem4
+            // 
+            this.toolStripMenuItem4.Name = "toolStripMenuItem4";
+            this.toolStripMenuItem4.Size = new System.Drawing.Size(253, 6);
+            // 
+            // ctlHistoryTransportContext
+            // 
+            this.ctlHistoryTransportContext.Name = "ctlHistoryTransportContext";
+            this.ctlHistoryTransportContext.Size = new System.Drawing.Size(256, 24);
+            this.ctlHistoryTransportContext.Text = "История использования";
+            this.ctlHistoryTransportContext.Click += new System.EventHandler(this.ctlHistoryTransportContext_Click);
             // 
             // ctlSearch
             // 
@@ -349,9 +395,9 @@
             // btnPoisk
             // 
             this.btnPoisk.Enabled = false;
-            this.btnPoisk.Location = new System.Drawing.Point(844, 231);
+            this.btnPoisk.Location = new System.Drawing.Point(844, 265);
             this.btnPoisk.Name = "btnPoisk";
-            this.btnPoisk.Size = new System.Drawing.Size(180, 62);
+            this.btnPoisk.Size = new System.Drawing.Size(180, 28);
             this.btnPoisk.TabIndex = 41;
             this.btnPoisk.Text = "Найти";
             this.btnPoisk.UseVisualStyleBackColor = true;
@@ -543,30 +589,6 @@
             this.rb1.Text = "Поиск по нормепу транспорта";
             this.rb1.UseVisualStyleBackColor = true;
             // 
-            // toolStripMenuItem4
-            // 
-            this.toolStripMenuItem4.Name = "toolStripMenuItem4";
-            this.toolStripMenuItem4.Size = new System.Drawing.Size(253, 6);
-            // 
-            // ctlHistoryTransportContext
-            // 
-            this.ctlHistoryTransportContext.Name = "ctlHistoryTransportContext";
-            this.ctlHistoryTransportContext.Size = new System.Drawing.Size(256, 24);
-            this.ctlHistoryTransportContext.Text = "История использования";
-            this.ctlHistoryTransportContext.Click += new System.EventHandler(this.ctlHistoryTransportContext_Click);
-            // 
-            // toolStripMenuItem5
-            // 
-            this.toolStripMenuItem5.Name = "toolStripMenuItem5";
-            this.toolStripMenuItem5.Size = new System.Drawing.Size(259, 6);
-            // 
-            // ctlHistoryTransport
-            // 
-            this.ctlHistoryTransport.Name = "ctlHistoryTransport";
-            this.ctlHistoryTransport.Size = new System.Drawing.Size(262, 26);
-            this.ctlHistoryTransport.Text = "История использования";
-            this.ctlHistoryTransport.Click += new System.EventHandler(this.ctlHistoryTransport_Click);
-            // 
             // FmTransport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -577,7 +599,8 @@
             this.Controls.Add(this.mainMenu);
             this.MainMenuStrip = this.mainMenu;
             this.Name = "FmTransport";
-            this.Text = "FmTransport";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Список транспорта";
             this.Load += new System.EventHandler(this.FmTransport_Load);
             this.mainMenu.ResumeLayout(false);
             this.mainMenu.PerformLayout();

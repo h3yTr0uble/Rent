@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             this.gbClient = new System.Windows.Forms.GroupBox();
-            this.linkLblTransportInfo = new System.Windows.Forms.LinkLabel();
             this.txtClientPassport = new System.Windows.Forms.TextBox();
+            this.linkLblClientInfo = new System.Windows.Forms.LinkLabel();
             this.ctlClient = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.linkLblTransportInfo = new System.Windows.Forms.LinkLabel();
             this.gbTransport = new System.Windows.Forms.GroupBox();
             this.label3 = new System.Windows.Forms.Label();
             this.ctlTransport = new System.Windows.Forms.ComboBox();
-            this.linkLblClientInfo = new System.Windows.Forms.LinkLabel();
             this.ctlRentInterval = new System.Windows.Forms.GroupBox();
             this.ctlHours = new System.Windows.Forms.NumericUpDown();
             this.ctlDays = new System.Windows.Forms.NumericUpDown();
@@ -72,99 +72,27 @@
             this.gbClient.Controls.Add(this.ctlClient);
             this.gbClient.Controls.Add(this.label2);
             this.gbClient.Controls.Add(this.label1);
-            this.gbClient.Location = new System.Drawing.Point(12, 12);
+            this.gbClient.Location = new System.Drawing.Point(14, 14);
             this.gbClient.Name = "gbClient";
-            this.gbClient.Size = new System.Drawing.Size(1015, 140);
+            this.gbClient.Size = new System.Drawing.Size(846, 121);
             this.gbClient.TabIndex = 0;
             this.gbClient.TabStop = false;
             this.gbClient.Text = "Клиент";
             // 
-            // linkLblTransportInfo
-            // 
-            this.linkLblTransportInfo.AutoSize = true;
-            this.linkLblTransportInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.linkLblTransportInfo.LinkColor = System.Drawing.Color.Blue;
-            this.linkLblTransportInfo.Location = new System.Drawing.Point(387, 48);
-            this.linkLblTransportInfo.Name = "linkLblTransportInfo";
-            this.linkLblTransportInfo.Size = new System.Drawing.Size(101, 20);
-            this.linkLblTransportInfo.TabIndex = 42;
-            this.linkLblTransportInfo.TabStop = true;
-            this.linkLblTransportInfo.Text = "подробнее";
-            this.linkLblTransportInfo.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLblTransportInfo_LinkClicked);
-            // 
             // txtClientPassport
             // 
-            this.txtClientPassport.Location = new System.Drawing.Point(178, 87);
+            this.txtClientPassport.Location = new System.Drawing.Point(94, 79);
             this.txtClientPassport.Name = "txtClientPassport";
             this.txtClientPassport.ReadOnly = true;
-            this.txtClientPassport.Size = new System.Drawing.Size(378, 22);
+            this.txtClientPassport.Size = new System.Drawing.Size(425, 24);
             this.txtClientPassport.TabIndex = 41;
-            // 
-            // ctlClient
-            // 
-            this.ctlClient.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.ctlClient.FormattingEnabled = true;
-            this.ctlClient.Location = new System.Drawing.Point(178, 31);
-            this.ctlClient.Name = "ctlClient";
-            this.ctlClient.Size = new System.Drawing.Size(374, 24);
-            this.ctlClient.TabIndex = 40;
-            this.ctlClient.SelectedIndexChanged += new System.EventHandler(this.ctlClient_SelectedIndexChanged);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(88, 34);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(42, 17);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "ФИО";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(88, 90);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(64, 17);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Паспорт";
-            // 
-            // gbTransport
-            // 
-            this.gbTransport.Controls.Add(this.linkLblTransportInfo);
-            this.gbTransport.Controls.Add(this.label3);
-            this.gbTransport.Controls.Add(this.ctlTransport);
-            this.gbTransport.Location = new System.Drawing.Point(12, 176);
-            this.gbTransport.Name = "gbTransport";
-            this.gbTransport.Size = new System.Drawing.Size(1015, 110);
-            this.gbTransport.TabIndex = 1;
-            this.gbTransport.TabStop = false;
-            this.gbTransport.Text = "Транспорт";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(35, 55);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(76, 17);
-            this.label3.TabIndex = 35;
-            this.label3.Text = "Гос номер";
-            // 
-            // ctlTransport
-            // 
-            this.ctlTransport.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.ctlTransport.FormattingEnabled = true;
-            this.ctlTransport.Location = new System.Drawing.Point(210, 48);
-            this.ctlTransport.Name = "ctlTransport";
-            this.ctlTransport.Size = new System.Drawing.Size(171, 24);
-            this.ctlTransport.TabIndex = 33;
-            this.ctlTransport.SelectedIndexChanged += new System.EventHandler(this.ctlTransport_SelectedIndexChanged);
             // 
             // linkLblClientInfo
             // 
             this.linkLblClientInfo.AutoSize = true;
             this.linkLblClientInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.linkLblClientInfo.LinkColor = System.Drawing.Color.Blue;
-            this.linkLblClientInfo.Location = new System.Drawing.Point(558, 34);
+            this.linkLblClientInfo.Location = new System.Drawing.Point(532, 39);
             this.linkLblClientInfo.Name = "linkLblClientInfo";
             this.linkLblClientInfo.Size = new System.Drawing.Size(101, 20);
             this.linkLblClientInfo.TabIndex = 34;
@@ -172,60 +100,133 @@
             this.linkLblClientInfo.Text = "подробнее";
             this.linkLblClientInfo.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLblClientInfo_LinkClicked);
             // 
+            // ctlClient
+            // 
+            this.ctlClient.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ctlClient.FormattingEnabled = true;
+            this.ctlClient.Location = new System.Drawing.Point(94, 35);
+            this.ctlClient.Name = "ctlClient";
+            this.ctlClient.Size = new System.Drawing.Size(425, 26);
+            this.ctlClient.TabIndex = 40;
+            this.ctlClient.SelectedIndexChanged += new System.EventHandler(this.ctlClient_SelectedIndexChanged);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(36, 35);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(48, 18);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "ФИО:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(11, 79);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(71, 18);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Паспорт:";
+            // 
+            // linkLblTransportInfo
+            // 
+            this.linkLblTransportInfo.AutoSize = true;
+            this.linkLblTransportInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.linkLblTransportInfo.LinkColor = System.Drawing.Color.Blue;
+            this.linkLblTransportInfo.Location = new System.Drawing.Point(320, 40);
+            this.linkLblTransportInfo.Name = "linkLblTransportInfo";
+            this.linkLblTransportInfo.Size = new System.Drawing.Size(101, 20);
+            this.linkLblTransportInfo.TabIndex = 42;
+            this.linkLblTransportInfo.TabStop = true;
+            this.linkLblTransportInfo.Text = "подробнее";
+            this.linkLblTransportInfo.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLblTransportInfo_LinkClicked);
+            // 
+            // gbTransport
+            // 
+            this.gbTransport.Controls.Add(this.linkLblTransportInfo);
+            this.gbTransport.Controls.Add(this.label3);
+            this.gbTransport.Controls.Add(this.ctlTransport);
+            this.gbTransport.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.gbTransport.Location = new System.Drawing.Point(14, 141);
+            this.gbTransport.Name = "gbTransport";
+            this.gbTransport.Size = new System.Drawing.Size(846, 85);
+            this.gbTransport.TabIndex = 1;
+            this.gbTransport.TabStop = false;
+            this.gbTransport.Text = "Транспорт";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(24, 36);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(86, 18);
+            this.label3.TabIndex = 35;
+            this.label3.Text = "Гос номер:";
+            // 
+            // ctlTransport
+            // 
+            this.ctlTransport.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ctlTransport.FormattingEnabled = true;
+            this.ctlTransport.Location = new System.Drawing.Point(120, 36);
+            this.ctlTransport.Name = "ctlTransport";
+            this.ctlTransport.Size = new System.Drawing.Size(192, 26);
+            this.ctlTransport.TabIndex = 33;
+            this.ctlTransport.SelectedIndexChanged += new System.EventHandler(this.ctlTransport_SelectedIndexChanged);
+            // 
             // ctlRentInterval
             // 
             this.ctlRentInterval.Controls.Add(this.ctlHours);
             this.ctlRentInterval.Controls.Add(this.ctlDays);
             this.ctlRentInterval.Controls.Add(this.label11);
             this.ctlRentInterval.Controls.Add(this.label10);
-            this.ctlRentInterval.Location = new System.Drawing.Point(12, 350);
+            this.ctlRentInterval.Location = new System.Drawing.Point(14, 284);
             this.ctlRentInterval.Name = "ctlRentInterval";
-            this.ctlRentInterval.Size = new System.Drawing.Size(1027, 110);
+            this.ctlRentInterval.Size = new System.Drawing.Size(846, 88);
             this.ctlRentInterval.TabIndex = 2;
             this.ctlRentInterval.TabStop = false;
             this.ctlRentInterval.Text = "Срок аренды";
             // 
             // ctlHours
             // 
-            this.ctlHours.Location = new System.Drawing.Point(352, 51);
+            this.ctlHours.Location = new System.Drawing.Point(252, 34);
             this.ctlHours.Maximum = new decimal(new int[] {
             999,
             0,
             0,
             0});
             this.ctlHours.Name = "ctlHours";
-            this.ctlHours.Size = new System.Drawing.Size(120, 22);
+            this.ctlHours.Size = new System.Drawing.Size(135, 24);
             this.ctlHours.TabIndex = 47;
             this.ctlHours.ValueChanged += new System.EventHandler(this.ctlHours_ValueChanged);
             // 
             // ctlDays
             // 
-            this.ctlDays.Location = new System.Drawing.Point(46, 51);
+            this.ctlDays.Location = new System.Drawing.Point(39, 34);
             this.ctlDays.Maximum = new decimal(new int[] {
             999,
             0,
             0,
             0});
             this.ctlDays.Name = "ctlDays";
-            this.ctlDays.Size = new System.Drawing.Size(120, 22);
+            this.ctlDays.Size = new System.Drawing.Size(135, 24);
             this.ctlDays.TabIndex = 46;
             this.ctlDays.ValueChanged += new System.EventHandler(this.ctlDays_ValueChanged);
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(519, 51);
+            this.label11.Location = new System.Drawing.Point(394, 39);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(46, 17);
+            this.label11.Size = new System.Drawing.Size(49, 18);
             this.label11.TabIndex = 44;
             this.label11.Text = "часов";
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(198, 56);
+            this.label10.Location = new System.Drawing.Point(181, 39);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(44, 17);
+            this.label10.Size = new System.Drawing.Size(47, 18);
             this.label10.TabIndex = 43;
             this.label10.Text = "суток";
             // 
@@ -233,38 +234,37 @@
             // 
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Controls.Add(this.btnCreateReciept);
             this.groupBox1.Controls.Add(this.lblReturnDate);
             this.groupBox1.Controls.Add(this.lblPrice);
-            this.groupBox1.Location = new System.Drawing.Point(647, 466);
+            this.groupBox1.Location = new System.Drawing.Point(542, 378);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(380, 170);
+            this.groupBox1.Size = new System.Drawing.Size(318, 105);
             this.groupBox1.TabIndex = 37;
             this.groupBox1.TabStop = false;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(7, 71);
+            this.label7.Location = new System.Drawing.Point(7, 62);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(82, 17);
+            this.label7.Size = new System.Drawing.Size(90, 18);
             this.label7.TabIndex = 6;
             this.label7.Text = "Стоимость:";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(7, 20);
+            this.label9.Location = new System.Drawing.Point(8, 22);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(110, 17);
+            this.label9.Size = new System.Drawing.Size(115, 18);
             this.label9.TabIndex = 8;
             this.label9.Text = "Дата возврата:";
             // 
             // btnCreateReciept
             // 
-            this.btnCreateReciept.Location = new System.Drawing.Point(43, 106);
+            this.btnCreateReciept.Location = new System.Drawing.Point(699, 489);
             this.btnCreateReciept.Name = "btnCreateReciept";
-            this.btnCreateReciept.Size = new System.Drawing.Size(276, 43);
+            this.btnCreateReciept.Size = new System.Drawing.Size(161, 35);
             this.btnCreateReciept.TabIndex = 18;
             this.btnCreateReciept.Text = "Оформить";
             this.btnCreateReciept.UseVisualStyleBackColor = true;
@@ -273,89 +273,89 @@
             // lblReturnDate
             // 
             this.lblReturnDate.AutoSize = true;
-            this.lblReturnDate.Location = new System.Drawing.Point(200, 20);
+            this.lblReturnDate.Location = new System.Drawing.Point(156, 22);
             this.lblReturnDate.Name = "lblReturnDate";
-            this.lblReturnDate.Size = new System.Drawing.Size(0, 17);
+            this.lblReturnDate.Size = new System.Drawing.Size(0, 18);
             this.lblReturnDate.TabIndex = 21;
             // 
             // lblPrice
             // 
             this.lblPrice.AutoSize = true;
-            this.lblPrice.Location = new System.Drawing.Point(200, 71);
+            this.lblPrice.Location = new System.Drawing.Point(156, 62);
             this.lblPrice.Name = "lblPrice";
-            this.lblPrice.Size = new System.Drawing.Size(0, 17);
+            this.lblPrice.Size = new System.Drawing.Size(0, 18);
             this.lblPrice.TabIndex = 22;
             // 
             // lblEmployee
             // 
             this.lblEmployee.AutoSize = true;
-            this.lblEmployee.Location = new System.Drawing.Point(201, 585);
+            this.lblEmployee.Location = new System.Drawing.Point(130, 464);
             this.lblEmployee.Name = "lblEmployee";
-            this.lblEmployee.Size = new System.Drawing.Size(75, 17);
+            this.lblEmployee.Size = new System.Drawing.Size(78, 18);
             this.lblEmployee.TabIndex = 41;
             this.lblEmployee.Text = "laRabotnik";
             // 
             // lblTariff
             // 
             this.lblTariff.AutoSize = true;
-            this.lblTariff.Location = new System.Drawing.Point(201, 537);
+            this.lblTariff.Location = new System.Drawing.Point(130, 427);
             this.lblTariff.Name = "lblTariff";
-            this.lblTariff.Size = new System.Drawing.Size(53, 17);
+            this.lblTariff.Size = new System.Drawing.Size(57, 18);
             this.lblTariff.TabIndex = 40;
             this.lblTariff.Text = "Малый";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(30, 585);
+            this.label6.Location = new System.Drawing.Point(37, 464);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(71, 17);
+            this.label6.Size = new System.Drawing.Size(79, 18);
             this.label6.TabIndex = 39;
-            this.label6.Text = "Работник";
+            this.label6.Text = "Работник:";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(27, 537);
+            this.label5.Location = new System.Drawing.Point(61, 427);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(52, 17);
+            this.label5.Size = new System.Drawing.Size(58, 18);
             this.label5.TabIndex = 38;
-            this.label5.Text = "Тариф";
+            this.label5.Text = "Тариф:";
             // 
             // ctlCreationDate
             // 
             this.ctlCreationDate.CustomFormat = "dd.MM.yyyy HH:mm";
             this.ctlCreationDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.ctlCreationDate.Location = new System.Drawing.Point(276, 306);
+            this.ctlCreationDate.Location = new System.Drawing.Point(175, 239);
             this.ctlCreationDate.Name = "ctlCreationDate";
-            this.ctlCreationDate.Size = new System.Drawing.Size(194, 22);
+            this.ctlCreationDate.Size = new System.Drawing.Size(173, 24);
             this.ctlCreationDate.TabIndex = 43;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 306);
+            this.label4.Location = new System.Drawing.Point(19, 239);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(130, 17);
+            this.label4.Size = new System.Drawing.Size(142, 18);
             this.label4.TabIndex = 42;
-            this.label4.Text = "Дата оформления";
+            this.label4.Text = "Дата оформления:";
             // 
             // ctlDriver
             // 
             this.ctlDriver.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ctlDriver.Enabled = false;
             this.ctlDriver.FormattingEnabled = true;
-            this.ctlDriver.Location = new System.Drawing.Point(161, 483);
+            this.ctlDriver.Location = new System.Drawing.Point(134, 378);
             this.ctlDriver.Name = "ctlDriver";
-            this.ctlDriver.Size = new System.Drawing.Size(425, 24);
+            this.ctlDriver.Size = new System.Drawing.Size(399, 26);
             this.ctlDriver.TabIndex = 45;
             // 
             // checkDriver
             // 
             this.checkDriver.AutoSize = true;
-            this.checkDriver.Location = new System.Drawing.Point(20, 488);
+            this.checkDriver.Location = new System.Drawing.Point(22, 378);
             this.checkDriver.Name = "checkDriver";
-            this.checkDriver.Size = new System.Drawing.Size(93, 21);
+            this.checkDriver.Size = new System.Drawing.Size(98, 22);
             this.checkDriver.TabIndex = 44;
             this.checkDriver.Text = "Водитель";
             this.checkDriver.UseVisualStyleBackColor = true;
@@ -363,11 +363,12 @@
             // 
             // FmReciept
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1039, 648);
+            this.ClientSize = new System.Drawing.Size(865, 530);
             this.Controls.Add(this.ctlDriver);
             this.Controls.Add(this.checkDriver);
+            this.Controls.Add(this.btnCreateReciept);
             this.Controls.Add(this.ctlCreationDate);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.lblEmployee);
@@ -378,8 +379,10 @@
             this.Controls.Add(this.ctlRentInterval);
             this.Controls.Add(this.gbTransport);
             this.Controls.Add(this.gbClient);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Name = "FmReciept";
-            this.Text = "FmReciept";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Оформление квитанции";
             this.gbClient.ResumeLayout(false);
             this.gbClient.PerformLayout();
             this.gbTransport.ResumeLayout(false);

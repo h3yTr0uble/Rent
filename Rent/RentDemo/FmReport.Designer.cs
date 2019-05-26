@@ -29,13 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource3 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.RecieptReportBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.RelevanceTransportHoursBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.RelevanceTransportHoursCoefBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.ParkingAttendanceReportBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ctlRecieptsReport = new Microsoft.Reporting.WinForms.ReportViewer();
             this.ctlToDate = new System.Windows.Forms.DateTimePicker();
             this.ctlFromDate = new System.Windows.Forms.DateTimePicker();
@@ -43,30 +36,26 @@
             this.ctlKindsReports = new System.Windows.Forms.ComboBox();
             this.ctlParkingsAttendanceReport = new Microsoft.Reporting.WinForms.ReportViewer();
             this.ctlRelevanceTransportsReport = new Microsoft.Reporting.WinForms.ReportViewer();
-            ((System.ComponentModel.ISupportInitialize)(this.RecieptReportBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.RelevanceTransportHoursBindingSource)).BeginInit();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.ctlReportPicture = new System.Windows.Forms.PictureBox();
+            this.RelevanceTransportHoursCoefBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.RelevanceTransportHoursBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.ParkingAttendanceReportBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.RecieptReportBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.label3 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.ctlReportPicture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.RelevanceTransportHoursCoefBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.RelevanceTransportHoursBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ParkingAttendanceReportBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.RecieptReportBindingSource)).BeginInit();
             this.SuspendLayout();
-            // 
-            // RecieptReportBindingSource
-            // 
-            this.RecieptReportBindingSource.DataSource = typeof(Entities.RecieptReport);
-            // 
-            // RelevanceTransportHoursBindingSource
-            // 
-            this.RelevanceTransportHoursBindingSource.DataSource = typeof(Entities.TransportReport);
-            // 
-            // RelevanceTransportHoursCoefBindingSource
-            // 
-            this.RelevanceTransportHoursCoefBindingSource.DataSource = typeof(Entities.TransportReport);
-            // 
-            // ParkingAttendanceReportBindingSource
-            // 
-            this.ParkingAttendanceReportBindingSource.DataSource = typeof(Entities.ParkingAttendancePerort);
             // 
             // ctlRecieptsReport
             // 
+            this.ctlRecieptsReport.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.ctlRecieptsReport.LocalReport.ReportEmbeddedResource = "RentDemo.Reports.RecieptsReport.rdlc";
             this.ctlRecieptsReport.Location = new System.Drawing.Point(12, 95);
             this.ctlRecieptsReport.Name = "ctlRecieptsReport";
@@ -79,23 +68,23 @@
             // 
             this.ctlToDate.Location = new System.Drawing.Point(301, 12);
             this.ctlToDate.Name = "ctlToDate";
-            this.ctlToDate.Size = new System.Drawing.Size(200, 22);
+            this.ctlToDate.Size = new System.Drawing.Size(166, 22);
             this.ctlToDate.TabIndex = 6;
             // 
             // ctlFromDate
             // 
             this.ctlFromDate.Location = new System.Drawing.Point(72, 12);
             this.ctlFromDate.Name = "ctlFromDate";
-            this.ctlFromDate.Size = new System.Drawing.Size(200, 22);
+            this.ctlFromDate.Size = new System.Drawing.Size(174, 22);
             this.ctlFromDate.TabIndex = 5;
             // 
             // btnGenerate
             // 
-            this.btnGenerate.Location = new System.Drawing.Point(570, 53);
+            this.btnGenerate.Location = new System.Drawing.Point(534, 52);
             this.btnGenerate.Name = "btnGenerate";
-            this.btnGenerate.Size = new System.Drawing.Size(152, 23);
+            this.btnGenerate.Size = new System.Drawing.Size(185, 24);
             this.btnGenerate.TabIndex = 4;
-            this.btnGenerate.Text = "btnGenerate";
+            this.btnGenerate.Text = "Сформировать отчет";
             this.btnGenerate.UseVisualStyleBackColor = true;
             this.btnGenerate.Click += new System.EventHandler(this.BtnGenerate_Click);
             // 
@@ -106,16 +95,16 @@
             "Прибыль по квитанциям",
             "Популярность парковок",
             "Актуальность транспорта"});
-            this.ctlKindsReports.Location = new System.Drawing.Point(396, 53);
+            this.ctlKindsReports.Location = new System.Drawing.Point(301, 52);
             this.ctlKindsReports.Name = "ctlKindsReports";
-            this.ctlKindsReports.Size = new System.Drawing.Size(121, 24);
+            this.ctlKindsReports.Size = new System.Drawing.Size(166, 24);
             this.ctlKindsReports.TabIndex = 7;
             // 
             // ctlParkingsAttendanceReport
             // 
-            reportDataSource1.Name = "ParkingsAttendance";
-            reportDataSource1.Value = this.ParkingAttendanceReportBindingSource;
-            this.ctlParkingsAttendanceReport.LocalReport.DataSources.Add(reportDataSource1);
+            this.ctlParkingsAttendanceReport.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.ctlParkingsAttendanceReport.LocalReport.ReportEmbeddedResource = "RentDemo.Reports.ParkingsAttendanceReport.rdlc";
             this.ctlParkingsAttendanceReport.Location = new System.Drawing.Point(12, 95);
             this.ctlParkingsAttendanceReport.Name = "ctlParkingsAttendanceReport";
@@ -126,12 +115,9 @@
             // 
             // ctlRelevanceTransportsReport
             // 
-            reportDataSource2.Name = "RelevanceTransportHoursCoef";
-            reportDataSource2.Value = this.RelevanceTransportHoursCoefBindingSource;
-            reportDataSource3.Name = "RelevanceTransportHours";
-            reportDataSource3.Value = this.RelevanceTransportHoursBindingSource;
-            this.ctlRelevanceTransportsReport.LocalReport.DataSources.Add(reportDataSource2);
-            this.ctlRelevanceTransportsReport.LocalReport.DataSources.Add(reportDataSource3);
+            this.ctlRelevanceTransportsReport.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.ctlRelevanceTransportsReport.LocalReport.ReportEmbeddedResource = "RentDemo.Reports.RelevanceTransportsReport.rdlc";
             this.ctlRelevanceTransportsReport.Location = new System.Drawing.Point(12, 95);
             this.ctlRelevanceTransportsReport.Name = "ctlRelevanceTransportsReport";
@@ -140,11 +126,70 @@
             this.ctlRelevanceTransportsReport.TabIndex = 9;
             this.ctlRelevanceTransportsReport.Visible = false;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(51, 13);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(15, 17);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "с";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(271, 13);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(24, 17);
+            this.label2.TabIndex = 11;
+            this.label2.Text = "до";
+            // 
+            // ctlReportPicture
+            // 
+            this.ctlReportPicture.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.ctlReportPicture.Location = new System.Drawing.Point(12, 95);
+            this.ctlReportPicture.Name = "ctlReportPicture";
+            this.ctlReportPicture.Size = new System.Drawing.Size(776, 343);
+            this.ctlReportPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ctlReportPicture.TabIndex = 12;
+            this.ctlReportPicture.TabStop = false;
+            // 
+            // RelevanceTransportHoursCoefBindingSource
+            // 
+            this.RelevanceTransportHoursCoefBindingSource.DataSource = typeof(Entities.TransportReport);
+            // 
+            // RelevanceTransportHoursBindingSource
+            // 
+            this.RelevanceTransportHoursBindingSource.DataSource = typeof(Entities.TransportReport);
+            // 
+            // ParkingAttendanceReportBindingSource
+            // 
+            this.ParkingAttendanceReportBindingSource.DataSource = typeof(Entities.ParkingAttendancePerort);
+            // 
+            // RecieptReportBindingSource
+            // 
+            this.RecieptReportBindingSource.DataSource = typeof(Entities.RecieptReport);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(208, 56);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(87, 17);
+            this.label3.TabIndex = 13;
+            this.label3.Text = "Тип отчета:";
+            // 
             // FmReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.ctlReportPicture);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.ctlRelevanceTransportsReport);
             this.Controls.Add(this.ctlParkingsAttendanceReport);
             this.Controls.Add(this.ctlKindsReports);
@@ -153,13 +198,16 @@
             this.Controls.Add(this.btnGenerate);
             this.Controls.Add(this.ctlRecieptsReport);
             this.Name = "FmReport";
-            this.Text = "FmReport";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Формирование отчетов";
             this.Load += new System.EventHandler(this.FmReport_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.RecieptReportBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.RelevanceTransportHoursBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ctlReportPicture)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.RelevanceTransportHoursCoefBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.RelevanceTransportHoursBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ParkingAttendanceReportBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.RecieptReportBindingSource)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -176,5 +224,9 @@
         private Microsoft.Reporting.WinForms.ReportViewer ctlRelevanceTransportsReport;
         private System.Windows.Forms.BindingSource RelevanceTransportHoursBindingSource;
         private System.Windows.Forms.BindingSource RelevanceTransportHoursCoefBindingSource;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.PictureBox ctlReportPicture;
+        private System.Windows.Forms.Label label3;
     }
 }

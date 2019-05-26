@@ -25,36 +25,56 @@ namespace RentDemo
         private void btnTransport_Click(object sender, EventArgs e)
         {
             FmTransport fmTransport = new FmTransport(employee);
-            fmTransport.Show();
-            this.Hide();
+            fmTransport.ShowDialog();
         }
 
         private void btnClient_Click(object sender, EventArgs e)
         {
             FmClient fmClient = new FmClient(employee);
-            fmClient.Show();
-            this.Hide();
+            fmClient.ShowDialog();
         }
 
         private void btnReciept_Click(object sender, EventArgs e)
         {
             FmReciept fmReciept = new FmReciept(employee);
-            fmReciept.Show();
-            this.Hide();
+            fmReciept.ShowDialog();
         }
 
         private void btnRecieptsList_Click(object sender, EventArgs e)
         {
             FmHistory fmHistory = new FmHistory();
-            fmHistory.Show();
-            this.Hide();
+            fmHistory.ShowDialog();
         }
 
         private void BtnReport_Click(object sender, EventArgs e)
         {
             FmReport fmReport = new FmReport();
-            fmReport.Show();
+            fmReport.ShowDialog();
+        }
+
+        private void CtlChangeUser_Click(object sender, EventArgs e)
+        {
+            FmLogin fmLogin = new FmLogin();
+            fmLogin.Show();
             this.Hide();
+        }
+
+        private void CtlExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void FmMainMenu_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (MessageBox.Show("Закрыть приложение?", "Информационное сообщение", MessageBoxButtons.OKCancel, MessageBoxIcon.Information) == DialogResult.Cancel)
+            {
+                e.Cancel = true;
+            }
+        }
+
+        private void FmMainMenu_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

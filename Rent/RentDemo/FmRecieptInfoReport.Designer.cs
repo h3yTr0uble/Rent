@@ -38,17 +38,17 @@
             this.ctlRecieptInfo.Location = new System.Drawing.Point(0, 0);
             this.ctlRecieptInfo.Name = "ctlRecieptInfo";
             this.ctlRecieptInfo.ServerReport.BearerToken = null;
-            this.ctlRecieptInfo.Size = new System.Drawing.Size(800, 450);
+            this.ctlRecieptInfo.Size = new System.Drawing.Size(800, 550);
             this.ctlRecieptInfo.TabIndex = 0;
             // 
             // FmRecieptInfoReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 550);
             this.Controls.Add(this.ctlRecieptInfo);
             this.Name = "FmRecieptInfoReport";
-            this.Text = "FmRecieptInfoReport";
+            this.Text = "Квитанция №";
             this.Load += new System.EventHandler(this.FmRecieptInfoReport_Load);
             this.ResumeLayout(false);
 
