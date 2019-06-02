@@ -96,13 +96,16 @@
                         <UseValueAsLabel>true</UseValueAsLabel>
                         <Visible>true</Visible>
                       </ChartDataLabel>
-                      <Style />
+                      <Style>
+                        <Color>CornflowerBlue</Color>
+                      </Style>
                       <ChartMarker>
                         <Style />
                       </ChartMarker>
                       <DataElementOutput>Output</DataElementOutput>
                     </ChartDataPoint>
                   </ChartDataPoints>
+                  <Type>Bar</Type>
                   <Style />
                   <ChartEmptyPoints>
                     <Style />
@@ -150,6 +153,7 @@
                       </Style>
                     </ChartMajorGridLines>
                     <ChartMinorGridLines>
+                      <Enabled>False</Enabled>
                       <Style>
                         <Border>
                           <Color>Gainsboro</Color>
@@ -349,34 +353,20 @@
                     </ChartAxisScaleBreak>
                   </ChartAxis>
                 </ChartValueAxes>
+                <ChartThreeDProperties>
+                  <ProjectionMode>Perspective</ProjectionMode>
+                </ChartThreeDProperties>
                 <Style>
-                  <BackgroundColor>#00ffffff</BackgroundColor>
+                  <BackgroundColor>White</BackgroundColor>
                   <BackgroundGradientType>None</BackgroundGradientType>
+                  <BackgroundHatchType>None</BackgroundHatchType>
+                  <ShadowOffset>1pt</ShadowOffset>
                 </Style>
               </ChartArea>
             </ChartAreas>
-            <ChartLegends>
-              <ChartLegend Name="Default">
-                <Style>
-                  <BackgroundGradientType>None</BackgroundGradientType>
-                  <FontSize>8pt</FontSize>
-                </Style>
-                <Position>TopLeft</Position>
-                <ChartLegendTitle>
-                  <Caption />
-                  <Style>
-                    <FontSize>8pt</FontSize>
-                    <FontWeight>Bold</FontWeight>
-                    <TextAlign>Center</TextAlign>
-                  </Style>
-                </ChartLegendTitle>
-                <HeaderSeparatorColor>Black</HeaderSeparatorColor>
-                <ColumnSeparatorColor>Black</ColumnSeparatorColor>
-              </ChartLegend>
-            </ChartLegends>
             <ChartTitles>
               <ChartTitle Name="Default">
-                <Caption>Заголовок диаграммы</Caption>
+                <Caption>Каоличество часов аренды для каждого транспорта</Caption>
                 <Style>
                   <BackgroundGradientType>None</BackgroundGradientType>
                   <FontSize>9pt</FontSize>
@@ -406,10 +396,9 @@
               </Style>
             </ChartNoDataMessage>
             <DataSetName>RelevanceTransportHours</DataSetName>
-            <Top>0.17639cm</Top>
-            <Left>0.49953cm</Left>
-            <Height>5.29633cm</Height>
-            <Width>8.55833cm</Width>
+            <Left>0.17992cm</Left>
+            <Height>5.84666cm</Height>
+            <Width>16.51cm</Width>
             <Style>
               <Border>
                 <Color>LightGrey</Color>
@@ -457,13 +446,16 @@
                         <UseValueAsLabel>true</UseValueAsLabel>
                         <Visible>true</Visible>
                       </ChartDataLabel>
-                      <Style />
+                      <Style>
+                        <Color>CornflowerBlue</Color>
+                      </Style>
                       <ChartMarker>
                         <Style />
                       </ChartMarker>
                       <DataElementOutput>Output</DataElementOutput>
                     </ChartDataPoint>
                   </ChartDataPoints>
+                  <Type>Bar</Type>
                   <Style />
                   <ChartEmptyPoints>
                     <Style />
@@ -710,33 +702,15 @@
                   </ChartAxis>
                 </ChartValueAxes>
                 <Style>
-                  <BackgroundColor>#00ffffff</BackgroundColor>
+                  <BackgroundColor>White</BackgroundColor>
                   <BackgroundGradientType>None</BackgroundGradientType>
+                  <ShadowOffset>1pt</ShadowOffset>
                 </Style>
               </ChartArea>
             </ChartAreas>
-            <ChartLegends>
-              <ChartLegend Name="Default">
-                <Style>
-                  <BackgroundGradientType>None</BackgroundGradientType>
-                  <FontSize>8pt</FontSize>
-                </Style>
-                <Position>TopLeft</Position>
-                <ChartLegendTitle>
-                  <Caption />
-                  <Style>
-                    <FontSize>8pt</FontSize>
-                    <FontWeight>Bold</FontWeight>
-                    <TextAlign>Center</TextAlign>
-                  </Style>
-                </ChartLegendTitle>
-                <HeaderSeparatorColor>Black</HeaderSeparatorColor>
-                <ColumnSeparatorColor>Black</ColumnSeparatorColor>
-              </ChartLegend>
-            </ChartLegends>
             <ChartTitles>
               <ChartTitle Name="Default">
-                <Caption>Заголовок диаграммы</Caption>
+                <Caption>Количество часов аренды на единицу коэффициента стоимости для каждого транспорта</Caption>
                 <Style>
                   <BackgroundGradientType>None</BackgroundGradientType>
                   <FontSize>9pt</FontSize>
@@ -766,10 +740,10 @@
               </Style>
             </ChartNoDataMessage>
             <DataSetName>RelevanceTransportHoursCoef</DataSetName>
-            <Top>6.25687cm</Top>
-            <Left>0.49953cm</Left>
-            <Height>5cm</Height>
-            <Width>8.55833cm</Width>
+            <Top>5.84666cm</Top>
+            <Left>0.17992cm</Left>
+            <Height>5.8255cm</Height>
+            <Width>16.51cm</Width>
             <ZIndex>1</ZIndex>
             <Style>
               <Border>
@@ -781,31 +755,99 @@
             </Style>
           </Chart>
         </ReportItems>
-        <Height>5.00684in</Height>
+        <Height>4.61517in</Height>
         <Style />
       </Body>
-      <Width>6.5in</Width>
+      <Width>6.64167in</Width>
       <Page>
         <PageHeader>
-          <Height>2.54cm</Height>
+          <Height>1.41817cm</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
+          <ReportItems>
+            <Textbox Name="Textbox1">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>Отчет по актуальности транспортных средст</Value>
+                      <Style>
+                        <FontSize>14pt</FontSize>
+                        <FontWeight>Bold</FontWeight>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Center</TextAlign>
+                  </Style>
+                </Paragraph>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value />
+                      <Style>
+                        <FontSize>14pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox1</rd:DefaultName>
+              <Left>0.17992cm</Left>
+              <Height>0.76933cm</Height>
+              <Width>16.51cm</Width>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox2">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>="Отчетный период: " &amp; Parameters!fromDate.Value &amp; " - " &amp; Parameters!toDate.Value</Value>
+                      <Style />
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Right</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox2</rd:DefaultName>
+              <Top>0.7795cm</Top>
+              <Left>0.17992cm</Left>
+              <Height>0.6cm</Height>
+              <Width>16.51cm</Width>
+              <ZIndex>1</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+          </ReportItems>
           <Style>
             <Border>
               <Style>None</Style>
             </Border>
           </Style>
         </PageHeader>
-        <PageFooter>
-          <Height>2.54cm</Height>
-          <PrintOnFirstPage>true</PrintOnFirstPage>
-          <PrintOnLastPage>true</PrintOnLastPage>
-          <Style>
-            <Border>
-              <Style>None</Style>
-            </Border>
-          </Style>
-        </PageFooter>
         <PageHeight>29.7cm</PageHeight>
         <PageWidth>21cm</PageWidth>
         <LeftMargin>2cm</LeftMargin>
@@ -817,10 +859,32 @@
       </Page>
     </ReportSection>
   </ReportSections>
+  <ReportParameters>
+    <ReportParameter Name="fromDate">
+      <DataType>String</DataType>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="toDate">
+      <DataType>String</DataType>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+  </ReportParameters>
   <ReportParametersLayout>
     <GridLayoutDefinition>
       <NumberOfColumns>4</NumberOfColumns>
       <NumberOfRows>2</NumberOfRows>
+      <CellDefinitions>
+        <CellDefinition>
+          <ColumnIndex>0</ColumnIndex>
+          <RowIndex>0</RowIndex>
+          <ParameterName>fromDate</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>1</ColumnIndex>
+          <RowIndex>0</RowIndex>
+          <ParameterName>toDate</ParameterName>
+        </CellDefinition>
+      </CellDefinitions>
     </GridLayoutDefinition>
   </ReportParametersLayout>
   <rd:ReportUnitType>Cm</rd:ReportUnitType>

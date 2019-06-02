@@ -123,17 +123,6 @@ namespace RentDemo
             OpenCreationReciept();
         }
 
-        private void OpenHistorySelectedClient()
-        {
-            if (ctlClients.SelectedCells.Count > 0)
-            {
-                Client client = (Client)ctlClients.SelectedCells[0].OwningRow.DataBoundItem;
-
-                FmHistory fmHistory = new FmHistory(client);
-                fmHistory.ShowDialog();
-            }
-        }
-
         private void ctlEnterClientContext_Click(object sender, EventArgs e)
         {
             EnterSelectedClient();

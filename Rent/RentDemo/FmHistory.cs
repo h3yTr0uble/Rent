@@ -65,7 +65,7 @@ namespace RentDemo
                 Reciept reciept = (Reciept)ctlReciepts.Rows[i].DataBoundItem;
                 if (reciept.RecieptForReturn == null)
                 {
-                    if (reciept.NecessaryReturnDate < DateTime.Now)
+                    if (reciept.NecessaryReturnDate >= DateTime.Now)
                     {
                         ctlReciepts.Rows[i].DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(235, 228, 40);
                         ctlReciepts.Rows[i].DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(209, 209, 23);

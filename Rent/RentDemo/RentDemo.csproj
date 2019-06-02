@@ -94,6 +94,12 @@
     <Compile Include="FmEmployee.Designer.cs">
       <DependentUpon>FmEmployee.cs</DependentUpon>
     </Compile>
+    <Compile Include="FmEmployeeEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FmEmployeeEditor.Designer.cs">
+      <DependentUpon>FmEmployeeEditor.cs</DependentUpon>
+    </Compile>
     <Compile Include="FmHistory.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -123,6 +129,12 @@
     </Compile>
     <Compile Include="FmReport.Designer.cs">
       <DependentUpon>FmReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FmSqlAgentSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FmSqlAgentSettings.Designer.cs">
+      <DependentUpon>FmSqlAgentSettings.cs</DependentUpon>
     </Compile>
     <Compile Include="FmTransport.cs">
       <SubType>Form</SubType>
@@ -168,6 +180,12 @@
     <EmbeddedResource Include="FmClientEditor.resx">
       <DependentUpon>FmClientEditor.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FmEmployee.resx">
+      <DependentUpon>FmEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FmEmployeeEditor.resx">
+      <DependentUpon>FmEmployeeEditor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FmHistory.resx">
       <DependentUpon>FmHistory.cs</DependentUpon>
     </EmbeddedResource>
@@ -182,6 +200,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FmReport.resx">
       <DependentUpon>FmReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FmSqlAgentSettings.resx">
+      <DependentUpon>FmSqlAgentSettings.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FmTransport.resx">
       <DependentUpon>FmTransport.cs</DependentUpon>

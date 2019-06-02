@@ -82,10 +82,10 @@ namespace RentDemo
             ctlParkingsAttendanceReport.Visible = true;
             ParkingAttendanceReportBindingSource.DataSource = ParkingAttendanceReportDAO.GetParkingsAttendance(fromDate, toDate).ToList();
 
-            //List<ReportParameter> reportParameters = new List<ReportParameter>();
-            //reportParameters.Add(new ReportParameter("idReciept", reciept.Id.ToString()));
-            //reportParameters.Add(new ReportParameter("creationDate", reciept.CreationDate.ToString()));
-            //ctlRecieptInfo.LocalReport.SetParameters(reportParameters);
+            List<ReportParameter> reportParameters = new List<ReportParameter>();
+            reportParameters.Add(new ReportParameter("fromDate", fromDate.ToShortDateString()));
+            reportParameters.Add(new ReportParameter("toDate", toDate.ToShortDateString()));
+            ctlParkingsAttendanceReport.LocalReport.SetParameters(reportParameters);
 
             ctlParkingsAttendanceReport.RefreshReport();
         }
@@ -104,10 +104,10 @@ namespace RentDemo
             RelevanceTransportHoursBindingSource.DataSource = TransportReportDAO.GetTransportHours(fromDate, toDate).ToList();
             RelevanceTransportHoursCoefBindingSource.DataSource = TransportReportDAO.GetTransportHoursCoef(fromDate, toDate).ToList();
 
-            //List<ReportParameter> reportParameters = new List<ReportParameter>();
-            //reportParameters.Add(new ReportParameter("idReciept", reciept.Id.ToString()));
-            //reportParameters.Add(new ReportParameter("creationDate", reciept.CreationDate.ToString()));
-            //ctlRecieptInfo.LocalReport.SetParameters(reportParameters);
+            List<ReportParameter> reportParameters = new List<ReportParameter>();
+            reportParameters.Add(new ReportParameter("fromDate", fromDate.ToShortDateString()));
+            reportParameters.Add(new ReportParameter("toDate", toDate.ToShortDateString()));
+            ctlRelevanceTransportsReport.LocalReport.SetParameters(reportParameters);
 
             ctlRelevanceTransportsReport.RefreshReport();
         }

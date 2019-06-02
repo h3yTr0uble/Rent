@@ -57,6 +57,7 @@
             this.btnEmployee.TabIndex = 3;
             this.btnEmployee.Text = "Работники";
             this.btnEmployee.UseVisualStyleBackColor = true;
+            this.btnEmployee.Click += new System.EventHandler(this.BtnEmployee_Click);
             // 
             // btnSqlAgentSettings
             // 
@@ -66,6 +67,7 @@
             this.btnSqlAgentSettings.TabIndex = 4;
             this.btnSqlAgentSettings.Text = "Настройка SQL Agent";
             this.btnSqlAgentSettings.UseVisualStyleBackColor = true;
+            this.btnSqlAgentSettings.Click += new System.EventHandler(this.BtnSqlAgentSettings_Click);
             // 
             // mainMenu
             // 

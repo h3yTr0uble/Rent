@@ -64,5 +64,45 @@ namespace DAL
 
             return null;
         }
+
+        public static IEnumerable<Employee> GetEmployees()
+        {
+            List<Employee> employees = new List<Employee>();
+
+            using (SqlConnection connection = new SqlConnection(ActualConnectionString.Get()))
+            {
+                SqlCommand command = new SqlCommand("GetEmployees");
+                command.CommandType = CommandType.StoredProcedure;
+                command.Connection = connection;
+
+                connection.Open();
+
+                SqlDataReader reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    Employee employee = new Employee();
+                    employee.Id = int.Parse(reader["ID_Работник"].ToString());
+                    employee.Passport = reader["Паспорт"].ToString();
+                    employee.FullName = reader["ФИО"].ToString();
+                    employee.Phone = reader["Телефон"].ToString();
+                    employee.Position = new Position(int.Parse(reader["ID_Должность"].ToString()),
+                                                     reader["НазваниеДолжности"].ToString());
+
+                    employees.Add(employee);
+                }
+            }
+
+            return employees;
+        }
+
+        public static void Edit(Employee employee)
+        {
+            throw new NotImplementedException();
+        }
+
+        public static void Add(Employee employee)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

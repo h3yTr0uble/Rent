@@ -48,5 +48,17 @@ namespace RentDemo
         {
             Application.Exit();
         }
+
+        private void BtnSqlAgentSettings_Click(object sender, EventArgs e)
+        {
+            FmSqlAgentSettings fmSqlAgentSettings = new FmSqlAgentSettings();
+            fmSqlAgentSettings.ShowDialog();
+        }
+
+        private void BtnEmployee_Click(object sender, EventArgs e)
+        {
+            FmEmployee fmEmployee = new FmEmployee();
+            fmEmployee.ShowDialog();
+        }
     }
 }
