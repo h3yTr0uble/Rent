@@ -87,6 +87,8 @@ namespace DAL
                     employee.Phone = reader["Телефон"].ToString();
                     employee.Position = new Position(int.Parse(reader["ID_Должность"].ToString()),
                                                      reader["НазваниеДолжности"].ToString());
+                    employee.AddDrivingCategory(DrivingCategoryDAO.GetEmployeesDrivingCategories(employee));
+                    employee.Account = AccountDAO.GetEmployeesAccaunt(employee);
 
                     employees.Add(employee);
                 }
@@ -95,14 +97,72 @@ namespace DAL
             return employees;
         }
 
-        public static void Edit(Employee employee)
-        {
-            throw new NotImplementedException();
-        }
-
         public static void Add(Employee employee)
         {
-            throw new NotImplementedException();
+            using (SqlConnection connection = new SqlConnection(ActualConnectionString.Get()))
+            {
+                SqlCommand command = new SqlCommand("AddEmployee");
+                command.CommandType = CommandType.StoredProcedure;
+                command.Connection = connection;
+                command.Parameters.AddWithValue("@passport", employee.Passport);
+                command.Parameters.AddWithValue("@fullName", employee.FullName);
+                command.Parameters.AddWithValue("@phone", employee.Phone);
+                command.Parameters.AddWithValue("@idPosition", employee.Position.Id);
+                if (employee.Account != null)
+                {
+                    command.Parameters.AddWithValue("@login", employee.Account.Login);
+                    command.Parameters.AddWithValue("@password", employee.Account.Password);
+                }
+
+                DataTable drivingCategoriesTable = new DataTable();
+                drivingCategoriesTable.Columns.Add(new DataColumn("id", typeof(int)));
+
+                foreach (DrivingCategory drivingCategory in employee.DrivingCategories)
+                {
+                    drivingCategoriesTable.Rows.Add(drivingCategory.Id);
+                }
+
+                SqlParameter drivingCategoryParameter = command.Parameters.AddWithValue("@drivingCategoryIds", drivingCategoriesTable);
+                drivingCategoryParameter.SqlDbType = SqlDbType.Structured;
+
+                connection.Open();
+                command.ExecuteNonQuery();
+            }
+        }
+
+        public static void Edit(Employee employee)
+        {
+            using (SqlConnection connection = new SqlConnection(ActualConnectionString.Get()))
+            {
+                SqlCommand command = new SqlCommand("EditEmployee");
+                command.CommandType = CommandType.StoredProcedure;
+                command.Connection = connection;
+                command.Parameters.AddWithValue("@id", employee.Id);
+                command.Parameters.AddWithValue("@passport", employee.Passport);
+                command.Parameters.AddWithValue("@fullName", employee.FullName);
+                command.Parameters.AddWithValue("@phone", employee.Phone);
+                command.Parameters.AddWithValue("@idPosition", employee.Position.Id);
+                if (employee.Account != null)
+                {
+                    command.Parameters.AddWithValue("@idAccount", employee.Account.Id);
+                    command.Parameters.AddWithValue("@login", employee.Account.Login);
+                    command.Parameters.AddWithValue("@password", employee.Account.Password);
+                }
+
+                DataTable drivingCategoriesTable = new DataTable();
+                drivingCategoriesTable.Columns.Add(new DataColumn("id", typeof(int)));
+
+                foreach (DrivingCategory drivingCategory in employee.DrivingCategories)
+                {
+                    drivingCategoriesTable.Rows.Add(drivingCategory.Id);
+                }
+
+                SqlParameter drivingCategoryParameter = command.Parameters.AddWithValue("@drivingCategoryIds", drivingCategoriesTable);
+                drivingCategoryParameter.SqlDbType = SqlDbType.Structured;
+
+                connection.Open();
+                command.ExecuteNonQuery();
+            }
         }
     }
 }

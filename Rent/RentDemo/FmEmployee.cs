@@ -56,5 +56,35 @@ namespace RentDemo
         {
             AddNewEmployee();
         }
+
+        private void EditSelectedClient()
+        {
+            if (ctlEmployees.SelectedCells.Count > 0)
+            {
+                Employee employee = (Employee)ctlEmployees.SelectedCells[0].OwningRow.DataBoundItem;
+
+                FmEmployeeEditor fmEmployeeEditor = new FmEmployeeEditor(employee);
+                if (fmEmployeeEditor.ShowDialog() == DialogResult.OK)
+                {
+                    List<Employee> employees = new List<Employee>(GetEmployees());
+                    FillCtlEmployees(employees);
+                }
+            }
+        }
+
+        private void CtlEditEmployee_Click(object sender, EventArgs e)
+        {
+            EditSelectedClient();
+        }
+
+        private void CtlEditEmployeeContext_Click(object sender, EventArgs e)
+        {
+            EditSelectedClient();
+        }
+
+        private void CtlToMainForm_Click(object sender, EventArgs e)
+        {
+            ///
+        }
     }
 }

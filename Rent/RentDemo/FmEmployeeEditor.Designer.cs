@@ -43,10 +43,10 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.ctlLogin = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.ctlPassword = new System.Windows.Forms.TextBox();
+            this.txtPassword = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.txtLogin = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -80,6 +80,7 @@
             this.btnOK.TabIndex = 26;
             this.btnOK.Text = "Сохранить";
             this.btnOK.UseVisualStyleBackColor = true;
+            this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
             // 
             // btnCancel
             // 
@@ -186,9 +187,9 @@
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.ctlPassword);
+            this.tabPage2.Controls.Add(this.txtPassword);
             this.tabPage2.Controls.Add(this.label6);
-            this.tabPage2.Controls.Add(this.ctlLogin);
+            this.tabPage2.Controls.Add(this.txtLogin);
             this.tabPage2.Controls.Add(this.label5);
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
@@ -198,32 +199,14 @@
             this.tabPage2.Text = "Аккаунт";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // ctlLogin
+            // txtPassword
             // 
-            this.ctlLogin.Location = new System.Drawing.Point(69, 16);
-            this.ctlLogin.MaxLength = 255;
-            this.ctlLogin.Name = "ctlLogin";
-            this.ctlLogin.Size = new System.Drawing.Size(325, 22);
-            this.ctlLogin.TabIndex = 25;
-            this.ctlLogin.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(6, 16);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(47, 17);
-            this.label5.TabIndex = 24;
-            this.label5.Text = "Логин";
-            // 
-            // ctlPassword
-            // 
-            this.ctlPassword.Location = new System.Drawing.Point(69, 54);
-            this.ctlPassword.MaxLength = 255;
-            this.ctlPassword.Name = "ctlPassword";
-            this.ctlPassword.Size = new System.Drawing.Size(325, 22);
-            this.ctlPassword.TabIndex = 27;
-            this.ctlPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtPassword.Location = new System.Drawing.Point(69, 54);
+            this.txtPassword.MaxLength = 255;
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.Size = new System.Drawing.Size(325, 22);
+            this.txtPassword.TabIndex = 27;
+            this.txtPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label6
             // 
@@ -233,6 +216,24 @@
             this.label6.Size = new System.Drawing.Size(57, 17);
             this.label6.TabIndex = 26;
             this.label6.Text = "Пароль";
+            // 
+            // txtLogin
+            // 
+            this.txtLogin.Location = new System.Drawing.Point(69, 16);
+            this.txtLogin.MaxLength = 255;
+            this.txtLogin.Name = "txtLogin";
+            this.txtLogin.Size = new System.Drawing.Size(325, 22);
+            this.txtLogin.TabIndex = 25;
+            this.txtLogin.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(6, 16);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(47, 17);
+            this.label5.TabIndex = 24;
+            this.label5.Text = "Логин";
             // 
             // FmEmployeeEditor
             // 
@@ -280,9 +281,9 @@
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.TextBox ctlPassword;
+        private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox ctlLogin;
+        private System.Windows.Forms.TextBox txtLogin;
         private System.Windows.Forms.Label label5;
     }
 }

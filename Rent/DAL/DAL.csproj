@@ -52,6 +52,7 @@
     <Compile Include="ModelDAO.cs" />
     <Compile Include="ParkingAttendanceReportDAO.cs" />
     <Compile Include="ParkingDAO.cs" />
+    <Compile Include="PositionDAO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RecieptDAO.cs" />
     <Compile Include="RecieptForReturnDAO.cs" />

@@ -32,7 +32,7 @@ namespace RentDemo
         private void btnEnter_Click(object sender, EventArgs e)
         {
             Account account = new Account();
-            account.Login = txtLogin.Text.Trim();//Надо шифровать логин?
+            account.Login = txtLogin.Text.Trim();
             account.Password = MD5Hasher.GetHash(txtPassword.Text.Trim());
 
             if (account.Login == adminLogin && account.Password == adminPassword)
@@ -44,18 +44,12 @@ namespace RentDemo
                 return;
             }
 
-            //try
-            //{
-                AccountDAO.SearchEmployee(account);
-            //}
-            //catch()
-            //{
-            //    //TODO
-            //}
+            Employee employee = AccountDAO.SearchEmployee(account);
 
-            if (account.Employee != null)
+
+            if (employee != null)
             {
-                FmMainMenu mainMenu = new FmMainMenu(account.Employee);
+                FmMainMenu mainMenu = new FmMainMenu(employee);
                 mainMenu.Show();
                 this.Hide();
 

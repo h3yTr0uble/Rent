@@ -12,7 +12,7 @@ namespace DAL
 {
     public static class AccountDAO
     {
-        public static void SearchEmployee(Account account)
+        public static Employee SearchEmployee(Account account)
         {
             using (SqlConnection connection = new SqlConnection(ActualConnectionString.Get()))
             {
@@ -29,8 +29,34 @@ namespace DAL
 
                 if (int.TryParse(command.Parameters["@idEmployee"].Value.ToString(), out int idEmployee))
                 {
-                    account.Employee = EmployeeDAO.GetEmployeeById(idEmployee);
+                    return EmployeeDAO.GetEmployeeById(idEmployee);
                 }
+
+                return null;
+            }
+        }
+
+        public static Account GetEmployeesAccaunt(Employee employee)
+        {
+            using (SqlConnection connection = new SqlConnection(ActualConnectionString.Get()))
+            {
+                SqlCommand command = new SqlCommand("GetEmployeesAccaunt");
+                command.CommandType = CommandType.StoredProcedure;
+                command.Connection = connection;
+                command.Parameters.AddWithValue("@id", employee.Id);
+
+                connection.Open();
+
+                SqlDataReader reader = command.ExecuteReader();
+                Account account = null;
+                while (reader.Read())
+                {
+                    account = new Account(int.Parse(reader["ID_Аккаунт"].ToString()),
+                                                              reader["Логин"].ToString(),
+                                                              reader["Пароль"].ToString());
+                }
+
+                return account;
             }
         }
     }

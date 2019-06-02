@@ -9,6 +9,7 @@ namespace Entities
     public class Employee:Person
     {
         public Position Position { get; set; }
+        public Account Account { get; set; }
 
         public Employee(int id, string passport, string fullName):base(id, passport, fullName)
         { }

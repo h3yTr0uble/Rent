@@ -60,5 +60,29 @@ namespace DAL
 
             return drivingCategories;
         }
+
+        internal static IEnumerable<DrivingCategory> GetEmployeesDrivingCategories(Employee employee)
+        {
+            List<DrivingCategory> drivingCategories = new List<DrivingCategory>();
+
+            using (SqlConnection connection = new SqlConnection(ActualConnectionString.Get()))
+            {
+                SqlCommand command = new SqlCommand("GetEmployeesDrivingCategories");
+                command.CommandType = CommandType.StoredProcedure;
+                command.Connection = connection;
+                command.Parameters.AddWithValue("@id", employee.Id);
+
+                connection.Open();
+
+                SqlDataReader reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    drivingCategories.Add(new DrivingCategory(int.Parse(reader["ID_Категория"].ToString()),
+                                                              reader["Категория"].ToString()));
+                }
+            }
+
+            return drivingCategories;
+        }
     }
 }

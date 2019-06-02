@@ -30,6 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             this.ctlSearch = new System.Windows.Forms.GroupBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.btnResetSearchResult = new System.Windows.Forms.Button();
             this.btnSearchClient = new System.Windows.Forms.Button();
             this.tbPasportPoisk = new System.Windows.Forms.MaskedTextBox();
@@ -44,21 +46,19 @@
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Position = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.contextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.ctlAddEmployeeContext = new System.Windows.Forms.ToolStripMenuItem();
+            this.ctlEditEmployeeContext = new System.Windows.Forms.ToolStripMenuItem();
             this.mainMenu = new System.Windows.Forms.MenuStrip();
             this.ctlFile = new System.Windows.Forms.ToolStripMenuItem();
             this.ctlAddEmployee = new System.Windows.Forms.ToolStripMenuItem();
             this.ctlEditEmployee = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripSeparator();
             this.ctlToMainForm = new System.Windows.Forms.ToolStripMenuItem();
-            this.contextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.ctlAddEmployeeContext = new System.Windows.Forms.ToolStripMenuItem();
-            this.ctlEditEmployeeContext = new System.Windows.Forms.ToolStripMenuItem();
             this.ctlSearch.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ctlEmployees)).BeginInit();
-            this.mainMenu.SuspendLayout();
             this.contextMenu.SuspendLayout();
+            this.mainMenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // ctlSearch
@@ -79,6 +79,25 @@
             this.ctlSearch.TabIndex = 13;
             this.ctlSearch.TabStop = false;
             this.ctlSearch.Text = "Поиск по клиентам";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(261, 146);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(397, 24);
+            this.comboBox1.TabIndex = 29;
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Location = new System.Drawing.Point(24, 146);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(164, 21);
+            this.radioButton1.TabIndex = 28;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "Поиск по должности";
+            this.radioButton1.UseVisualStyleBackColor = true;
             // 
             // btnResetSearchResult
             // 
@@ -233,24 +252,28 @@
             this.Position.ReadOnly = true;
             this.Position.Width = 125;
             // 
-            // radioButton1
+            // contextMenu
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(24, 146);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(164, 21);
-            this.radioButton1.TabIndex = 28;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Поиск по должности";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.contextMenu.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ctlAddEmployeeContext,
+            this.ctlEditEmployeeContext});
+            this.contextMenu.Name = "contextMenu";
+            this.contextMenu.Size = new System.Drawing.Size(259, 52);
             // 
-            // comboBox1
+            // ctlAddEmployeeContext
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(261, 146);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(397, 24);
-            this.comboBox1.TabIndex = 29;
+            this.ctlAddEmployeeContext.Name = "ctlAddEmployeeContext";
+            this.ctlAddEmployeeContext.Size = new System.Drawing.Size(258, 24);
+            this.ctlAddEmployeeContext.Text = "Добавить работника";
+            this.ctlAddEmployeeContext.Click += new System.EventHandler(this.CtlAddEmployeeContext_Click);
+            // 
+            // ctlEditEmployeeContext
+            // 
+            this.ctlEditEmployeeContext.Name = "ctlEditEmployeeContext";
+            this.ctlEditEmployeeContext.Size = new System.Drawing.Size(258, 24);
+            this.ctlEditEmployeeContext.Text = "Редактировать работника";
+            this.ctlEditEmployeeContext.Click += new System.EventHandler(this.CtlEditEmployeeContext_Click);
             // 
             // mainMenu
             // 
@@ -286,6 +309,7 @@
             this.ctlEditEmployee.Name = "ctlEditEmployee";
             this.ctlEditEmployee.Size = new System.Drawing.Size(272, 26);
             this.ctlEditEmployee.Text = "Редактировать работника";
+            this.ctlEditEmployee.Click += new System.EventHandler(this.CtlEditEmployee_Click);
             // 
             // toolStripMenuItem5
             // 
@@ -297,28 +321,7 @@
             this.ctlToMainForm.Name = "ctlToMainForm";
             this.ctlToMainForm.Size = new System.Drawing.Size(272, 26);
             this.ctlToMainForm.Text = "В главное меню";
-            // 
-            // contextMenu
-            // 
-            this.contextMenu.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.contextMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ctlAddEmployeeContext,
-            this.ctlEditEmployeeContext});
-            this.contextMenu.Name = "contextMenu";
-            this.contextMenu.Size = new System.Drawing.Size(259, 52);
-            // 
-            // ctlAddEmployeeContext
-            // 
-            this.ctlAddEmployeeContext.Name = "ctlAddEmployeeContext";
-            this.ctlAddEmployeeContext.Size = new System.Drawing.Size(258, 24);
-            this.ctlAddEmployeeContext.Text = "Добавить работника";
-            this.ctlAddEmployeeContext.Click += new System.EventHandler(this.CtlAddEmployeeContext_Click);
-            // 
-            // ctlEditEmployeeContext
-            // 
-            this.ctlEditEmployeeContext.Name = "ctlEditEmployeeContext";
-            this.ctlEditEmployeeContext.Size = new System.Drawing.Size(258, 24);
-            this.ctlEditEmployeeContext.Text = "Редактировать работника";
+            this.ctlToMainForm.Click += new System.EventHandler(this.CtlToMainForm_Click);
             // 
             // FmEmployee
             // 
@@ -334,9 +337,9 @@
             this.ctlSearch.ResumeLayout(false);
             this.ctlSearch.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ctlEmployees)).EndInit();
+            this.contextMenu.ResumeLayout(false);
             this.mainMenu.ResumeLayout(false);
             this.mainMenu.PerformLayout();
-            this.contextMenu.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
