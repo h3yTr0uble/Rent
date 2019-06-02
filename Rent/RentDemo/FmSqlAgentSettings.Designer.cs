@@ -99,6 +99,7 @@
             this.btnSaveBackup.TabIndex = 9;
             this.btnSaveBackup.Text = "Сохранить";
             this.btnSaveBackup.UseVisualStyleBackColor = true;
+            this.btnSaveBackup.Click += new System.EventHandler(this.BtnSaveBackup_Click);
             // 
             // ctlTimeBackup
             // 
@@ -156,6 +157,7 @@
             this.btnChangeBackupPath.TabIndex = 3;
             this.btnChangeBackupPath.Text = "Выбрать путь";
             this.btnChangeBackupPath.UseVisualStyleBackColor = true;
+            this.btnChangeBackupPath.Click += new System.EventHandler(this.BtnChangeBackupPath_Click);
             // 
             // txtBackupPath
             // 
@@ -353,6 +355,7 @@
             this.Controls.Add(this.tabControl1);
             this.Name = "FmSqlAgentSettings";
             this.Text = "Настройка заданий SQL Agent";
+            this.Load += new System.EventHandler(this.FmSqlAgentSettings_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
